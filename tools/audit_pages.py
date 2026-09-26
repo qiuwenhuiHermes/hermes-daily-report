@@ -65,6 +65,17 @@ def ws_url():
     return pages[0]['webSocketDebuggerUrl']
 
 
+async def settle(c, timeout=15):
+    """等页面导航完成（readyState=complete），避免在文档替换竞态中取数"""
+    for _ in range(int(timeout * 4)):
+        try:
+            if await c.ev('document.readyState') == 'complete':
+                return
+        except Exception:
+            pass
+        await asyncio.sleep(0.25)
+
+
 async def main(base):
     async with websockets.connect(ws_url(), max_size=64 * 1024 * 1024) as ws:
         c = CDP(ws)
@@ -72,7 +83,8 @@ async def main(base):
         await c.send('Runtime.enable')
         await c.send('Emulation.setDeviceMetricsOverride', **UA)
         await c.send('Page.navigate', url=base + '/index.html')
-        await asyncio.sleep(3)
+        await settle(c)
+        await asyncio.sleep(1)
         links = await c.ev(CARDS) or []
         print(f'base={base}  卡片 {len(links)}')
         doc_bad, hint = [], [0, 0, 0]
@@ -80,8 +92,14 @@ async def main(base):
         fonts_seen = set()
         for href in links:
             await c.send('Page.navigate', url=f'{base}/{href}')
-            await asyncio.sleep(1.0)
-            r = await c.ev(MEASURE) or {}
+            await settle(c)
+            r = {}
+            for _ in range(3):
+                try:
+                    r = await c.ev(MEASURE) or {}
+                    break
+                except Exception:
+                    await asyncio.sleep(1.0)  # 导航竞态：文档被替换，重试
             tabs += r.get('tables', 0)
             if r.get('doc', 0) > 2:
                 doc_bad.append((href, r['doc']))
