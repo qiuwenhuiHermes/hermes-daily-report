@@ -120,60 +120,56 @@ def md_to_html(text: str) -> str:
 
     PROSE_LABEL = re.compile(r'^\*{0,2}[^|*：:]{1,12}[：:]')
 
-    def is_table_line(s: str) -> bool:
-        if not s:
-            return False
-        if s.startswith('|') and s.endswith('|') and len(s) > 2:
-            return True
-        # 列表前缀(- 开头)的行不属于表格, 保持列表渲染
-        if s.startswith('- ') or s == '-':
-            return False
-        # 伪表格: 竖线两侧都有空格, 至少 2 列
-        if len(re.findall(r'\s\|\s', s)) >= 1 and not s.startswith('|') and not s.endswith('|'):
-            # 形如 "标签：xxx | yyy" 的散文（市场播报/宏观要点）不是表格
-            if PROSE_LABEL.match(s):
-                return False
-            cells = re.split(r'\s\|\s', s)
-            if len(cells) < 2 or any(len(c) > 40 for c in cells):
-                return False
-            return True
-        # 无空格紧凑式: 代码|价格|日涨跌 (≥2 个竖线, 各格都短)
-        if s.count('|') >= 2 and not s.startswith('|') and not s.endswith('|'):
-            cells = [c.strip() for c in s.split('|')]
-            if len(cells) >= 3 and all(0 < len(c) <= 16 for c in cells):
-                return True
-        # 无空格分隔行: ---|---|---| / ---|--- （必须含竖线，否则是 markdown 的 <hr>）
-        if '|' in s and re.fullmatch(r':?-{2,}:?(?:\|:?-{2,}:?)*\|?', s):
-            return True
-        return False
-
     def is_sep_row(cells) -> bool:
         non_empty = [c for c in cells if c]
         return bool(non_empty) and all(SEP_CELL.fullmatch(c) for c in non_empty)
 
-    # 预扫描: 标记每行是否属于"表格块"（连续 ≥2 行表格线, 或表格线+分隔行开头）
-    # 规则: 单独一行含 ' | ' 的散文(如标题 '📊 **美股盘后评估 | 2026-09-25**')不算表格
-    table_flags = []
-    for i, line in enumerate(lines):
+    # 表格块识别: 连续 ≥2 行、含竖线、且**单元格数相同**的"等列数块"才算表格。
+    # 为什么不用逐行判定: 曾按"本行是否像表格行 + 相邻行是否也像"来标记，结果遇到
+    #     代码|评分|梯队|卡位逻辑
+    #     🔴 TSM|77.4|一|先进制程+CoWoS双卡位，AI供给真瓶颈   ← 末格 20 字，超出紧凑式 16 字闸
+    # 表头会因"下一行不像表格行"被降级成段落，首行数据反被当成表头（整表列名错位）。
+    # 改判整块列数一致，与单行长什么样无关；单行含竖线的散文（如"📊 **美股盘后评估 | 2026-09-25**"）
+    # 因凑不出 ≥2 行同类行而不成表。
+    BAD_PREFIX = ('- ', '* ', '> ', '#', '1. ', '2. ', '3. ')
+    # 括号内的竖线（"NVDA（200.75 | 51%）：AI核心基建…"）+ 句尾标点，都是散文特征而非表格行
+    PIPE_IN_PAREN = re.compile(r'（[^（）]{0,24}\|[^（）]{0,24}）')
+    rows_cells = []
+    for line in lines:
         s = line.strip()
-        prev_tab = i > 0 and table_flags[-1]
-        if not is_table_line(s):
-            # 块内续行: 上一行已判定属于表格 且本行含 ≥2 个 " | " 且不是"标签：xx | yy"式散文
-            # → 仍算表格行（否则长单元格的行会被踢出表格、退化成段落）
-            if (prev_tab and len(re.findall(r'\s\|\s', s)) >= 2
-                    and not PROSE_LABEL.match(s) and not s.startswith('- ')):
-                table_flags.append(True)
-                continue
-            table_flags.append(False)
+        cells = split_cells(s) if '|' in s and s.count('|') >= 1 and len(s) > 2 else None
+        if cells and len(cells) < 2:
+            cells = None
+        if cells and (PROSE_LABEL.match(s) or s.startswith(BAD_PREFIX)
+                      or s.endswith(('。', '！', '？'))
+                      or PIPE_IN_PAREN.search(s)):
+            cells = None        # "标签：xx | yy" 式散文 / 列表 / 引用 / 括号内竖线 一律不算表格行
+        rows_cells.append(cells)
+
+    table_flags = [False] * len(lines)
+    i, nlines = 0, len(lines)
+    while i < nlines:
+        if not rows_cells[i]:
+            i += 1
             continue
-        nxt = lines[i + 1].strip() if i + 1 < len(lines) else ''
-        cells = split_cells(s)
-        if (is_table_line(nxt) or
-                (is_sep_row(cells) and is_table_line(nxt)) or
-                prev_tab):
-            table_flags.append(True)
+        ncol = len(rows_cells[i])
+        j = i
+        while j < nlines and rows_cells[j] and (
+                len(rows_cells[j]) == ncol or is_sep_row(rows_cells[j])):
+            j += 1
+        # 块内夹一行列数不符（LLM 偶尔多/少一个竖线）不打断整块: 下一行回到 ncol 就继续
+        while j < nlines - 1 and rows_cells[j] and rows_cells[j + 1] \
+                and len(rows_cells[j + 1]) == ncol:
+            j += 2
+            while j < nlines and rows_cells[j] and (
+                    len(rows_cells[j]) == ncol or is_sep_row(rows_cells[j])):
+                j += 1
+        if j - i >= 2:
+            for k in range(i, j):
+                table_flags[k] = True
+            i = j
         else:
-            table_flags.append(False)
+            i += 1
 
     def plain(c: str) -> str:
         """去标签取纯文本（用于数值列判定）"""
