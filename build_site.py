@@ -538,7 +538,7 @@ h1{font-size:28px;font-weight:500;line-height:1.3;margin-bottom:26px;text-wrap:b
 .pn .pn-x{flex:1;padding:14px 16px;border:1px dashed var(--border);border-radius:6px;display:block}
 .pn .pn-b.pn-x{text-align:right}
 .pn .pn-none{display:block;font-size:14px;color:#a9a498}
-.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:42px;height:42px;border-radius:50%;background:var(--ivory);border:1px solid var(--border);color:var(--brand);font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:20}
+.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:50%;background:var(--ivory);border:1px solid var(--border);color:var(--brand);font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:20}
 .totop.on{opacity:1;pointer-events:auto}
 .totop:hover{transform:translateY(-2px)}
 @media(max-width:640px){

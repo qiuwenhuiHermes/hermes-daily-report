@@ -127,6 +127,10 @@ async def main():
         c = CDP(ws)
         await c.send("Page.enable")
         await c.send("Runtime.enable")
+        # 必须禁用缓存: 站点的 CSS 内联在 HTML 里, Chrome 磁盘缓存会让 CDP 量到旧样式,
+        # 于是"改完重新测量数字纹丝不动"——曾经因此误判修复未生效
+        await c.send("Network.enable")
+        await c.send("Network.setCacheDisabled", cacheDisabled=True)
         await c.send("Emulation.setDeviceMetricsOverride", width=402, height=874,
                      deviceScaleFactor=3, mobile=True)
         results = {}

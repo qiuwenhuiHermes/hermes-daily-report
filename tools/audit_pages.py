@@ -81,6 +81,9 @@ async def main(base):
         c = CDP(ws)
         await c.send('Page.enable')
         await c.send('Runtime.enable')
+        # 同一坑: 站点 CSS 内联在 HTML 里, 不清缓存会量到旧页面, 导致"改完数字不变"
+        await c.send('Network.enable')
+        await c.send('Network.setCacheDisabled', cacheDisabled=True)
         await c.send('Emulation.setDeviceMetricsOverride', **UA)
         await c.send('Page.navigate', url=base + '/index.html')
         await settle(c)
