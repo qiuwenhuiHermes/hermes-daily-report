@@ -135,8 +135,13 @@ def md_to_html(text: str) -> str:
             if len(cells) < 2 or any(len(c) > 40 for c in cells):
                 return False
             return True
-        # 无空格分隔行: ---|---|---（伪表格风格的分隔行）
-        if re.fullmatch(r':?-{2,}:?(?:\|:?-{2,}:?)+', s):
+        # 无空格紧凑式: 代码|价格|日涨跌 (≥2 个竖线, 各格都短)
+        if s.count('|') >= 2 and not s.startswith('|') and not s.endswith('|'):
+            cells = [c.strip() for c in s.split('|')]
+            if len(cells) >= 3 and all(0 < len(c) <= 16 for c in cells):
+                return True
+        # 无空格分隔行: ---|---|---| / ---|--- （必须含竖线，否则是 markdown 的 <hr>）
+        if '|' in s and re.fullmatch(r':?-{2,}:?(?:\|:?-{2,}:?)*\|?', s):
             return True
         return False
 
