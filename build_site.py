@@ -374,6 +374,7 @@ h1{font-size:32px}
   <h1>每日观察</h1>
   <p class="sub">美股盘后 / 盘前评估 · 价格温度计 · 定投信号。每交易日由 Hermes Agent 自动生成并部署。</p>
   <p class="statusline"><span><b>__COUNT__</b>份报告</span><span>__DAYS__ 个交易日</span><span>__COLUMNS__ 个栏目</span><span>最近更新 __UPDATED__</span></p>
+  <p style="margin:-6px 0 18px"><a href="skills.html" style="display:inline-flex;align-items:center;min-height:44px;font-size:14px;color:var(--brand-ink-light);padding:6px 2px">Skills 清单与使用频率 →</a></p>
   <div class="filters" role="group" aria-label="按栏目筛选">
     <button class="chipf" type="button" data-filter="all" aria-pressed="true">全部 __COUNT__</button>
     __FILTERS__
