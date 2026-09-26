@@ -2,7 +2,11 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <title>📈 -2.44%</title>
 <style>
 @font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
@@ -10,8 +14,11 @@
 :root{--parchment:#f5f4ed;--ivory:#faf9f5;--sand:#e8e6dc;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e8e6dc;--border-soft:#e5e3d8;--tag-bg:#E4ECF5;
 --serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
 *{margin:0;padding:0;box-sizing:border-box}
-html{background:var(--parchment)}
-body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased}
+html{background:var(--parchment);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-wrap::-webkit-scrollbar{height:3px}
+.tbl-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 strong{font-weight:500;color:var(--near-black)}
 a{color:var(--brand-ink-light);text-decoration:none}
 .wrap{max-width:1120px;margin:0 auto;padding:72px 48px 80px}
@@ -34,9 +41,22 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 .rpt-body hr{border:none;border-top:.5px solid var(--border);margin:24px 0}
 .rpt-body .lead{font-size:16px;font-weight:500;color:var(--near-black)}
 .kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
-.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border)}
+.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
 .kami-tb td{padding:7px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black)}
 .kami-tb.striped tbody tr:nth-child(even) td{background:var(--ivory)}
+.tbl-wrap .kami-tb{margin:14px 0;min-width:min-content}
+.top{position:sticky;top:0;z-index:10;background:var(--parchment)}
+@media(max-width:640px){
+.wrap{padding:calc(24px + env(safe-area-inset-top)) 18px calc(48px + env(safe-area-inset-bottom))}
+h1{font-size:23px}
+.rpt-body{font-size:16px;line-height:1.85}
+.rpt-body h3{font-size:19px}
+.rpt-body h4{font-size:17px}
+.kami-tb{font-size:13px}
+.kami-tb th{padding:8px 10px}
+.kami-tb td{padding:8px 10px}
+.top{padding:10px 0 12px}
+}
 </style>
 </head>
 <body>
@@ -53,10 +73,10 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 
 <h3>市场概况</h3>
 
-<table class="kami-tb striped"><thead><tr><th>指数</th><th>收盘</th><th>日涨跌</th><th>52周温度</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>指数</th><th>收盘</th><th>日涨跌</th><th>52周温度</th></tr></thead><tbody>
 <tr><td>Nasdaq</td><td>24,442.94</td><td>**-4.86%** 🔴</td><td>58.6%（合理区）</td></tr>
 <tr><td>VIX</td><td>20.66</td><td>**+10.48%** ⚡</td><td>33.2%（中性）</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <p><strong>一句话：</strong> Nasdaq暴跌4.86%，VIX飙升10%，市场风险偏好急剧下降。大盘科技股被抛售（TSM -11%、NVDA -10%、AMZN -7%、GOOGL -1.6%），但部分中国标的逆势走强（0700.HK +5.9%、LCID +17.4%）。TSLA -20%，几乎触及52周最低。这是一个典型的风险规避日——但恐惧尚未极端（VIX 20.66，远非恐慌水平）。</p>
 
@@ -74,7 +94,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 
 <h3>二、价格温度计 🌡️</h3>
 
-<table class="kami-tb striped"><thead><tr><th>股票</th><th>当前价</th><th>日涨跌</th><th>52周高</th><th>52周低</th><th>温度</th><th>3月趋势</th><th>区间</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>股票</th><th>当前价</th><th>日涨跌</th><th>52周高</th><th>52周低</th><th>温度</th><th>3月趋势</th><th>区间</th></tr></thead><tbody>
 <tr><td>PLTR（Palantir）</td><td>$123.00</td><td>-1.26%</td><td>$207.52</td><td>$106.37</td><td>**16.4%** 🟢</td><td>-11.6%</td><td>低估区</td></tr>
 <tr><td>MSFT（微软）</td><td>$390.54</td><td>+0.05%</td><td>$555.45</td><td>$349.20</td><td>**20.0%** 🟢</td><td>-4.2%</td><td>低估区</td></tr>
 <tr><td>0700.HK（腾讯）</td><td>HK$466.40</td><td>**+5.86%**</td><td>$683.00</td><td>$411.00</td><td>**20.4%** 🟢</td><td>-2.7%</td><td>低估区</td></tr>
@@ -87,7 +107,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 <tr><td>GOOGL（谷歌）</td><td>$336.71</td><td>-1.57%</td><td>$408.61</td><td>$187.82</td><td>**67.4%** 🔴</td><td>-12.5%</td><td>偏贵区</td></tr>
 <tr><td>AAPL（苹果）</td><td>$338.19</td><td>**+3.77%**</td><td>$344.57</td><td>$201.50</td><td>**95.5%** 🔴</td><td>+24.6%</td><td>超买区</td></tr>
 <tr><td>BYD（比亚迪）</td><td>$90.79</td><td>+4.77%</td><td>$91.41</td><td>$76.33</td><td>**95.9%** 🔴</td><td>+4.4%</td><td>超买区</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <hr>
 
@@ -321,13 +341,13 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 
 <h3>四、建议暂缓/跳过的股票 ⚡</h3>
 
-<table class="kami-tb striped"><thead><tr><th>股票</th><th>价格</th><th>温度</th><th>评级</th><th>综合理由</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>股票</th><th>价格</th><th>温度</th><th>评级</th><th>综合理由</th></tr></thead><tbody>
 <tr><td>GOOGL（谷歌）</td><td>$336.71</td><td>67.4%</td><td>**暂缓**</td><td>AI对搜索垄断的颠覆风险正在被定价，67.4%温度偏贵。反垄断监管是持续逆风。Karpathy认为Gemini有竞争力但搜索护城河承压。等回调到50%以下再考虑。</td></tr>
 <tr><td>AAPL（苹果）</td><td>$338.19</td><td>95.5%</td><td>**⛔ 跳过**</td><td>52周高点附近，3个月涨24.6%。巴菲特已在减仓，塔勒布和Marks同时给出🔴——风险补偿不足。Apple Intelligence是&quot;迟到&quot;而非&quot;领先&quot;。追高无安全边际。</td></tr>
 <tr><td>BYD（比亚迪）</td><td>$90.79</td><td>95.9%</td><td>**⛔ 跳过**</td><td>52周高点，与TSLA的暴跌形成极端对比。巴菲特已清仓BYD。中国EV周期可能见顶。等回调到60%以下再考虑。</td></tr>
 <tr><td>RIVN（Rivian）</td><td>$16.33</td><td>42.8%</td><td>**⛔ 跳过**</td><td>持续烧钱，盈利遥遥无期。塔勒布的破产风险警告+巴菲特的能力圈外。即使有大众合作，资金消耗率令人担忧。</td></tr>
 <tr><td>LCID（Lucid）</td><td>$7.96</td><td>23.8%</td><td>**⛔ 跳过**</td><td>虽然温度低，但这是一家季度亏损数亿美元的公司，沙特PIF资金不是无限的。今日+17%可能是空头回补而非基本面改善。葡萄干拌屎还是屎。</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <hr>
 
@@ -335,7 +355,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 
 <p>&gt; <strong>基础预算：【金额已脱敏】-5,000 / 周 | 总弹药：5-10万RMB | 2026年内建仓完成</strong></p>
 
-<table class="kami-tb striped"><thead><tr><th>优先级</th><th>股票</th><th>评级</th><th>建议仓位</th><th>预估金额（以【金额已脱敏】基准）</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>优先级</th><th>股票</th><th>评级</th><th>建议仓位</th><th>预估金额（以【金额已脱敏】基准）</th></tr></thead><tbody>
 <tr><td>🥈</td><td>PLTR（Palantir）</td><td>⭐⭐</td><td>1.5x</td><td>【金额已脱敏】</td></tr>
 <tr><td>🥈</td><td>0700.HK（腾讯）</td><td>⭐⭐</td><td>1.5x</td><td>【金额已脱敏】</td></tr>
 <tr><td>🥉</td><td>NVDA（英伟达）</td><td>⭐</td><td>1x</td><td>【金额已脱敏】</td></tr>
@@ -345,7 +365,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 <tr><td></td><td>**暂缓** TSM/GOOGL</td><td>—</td><td>0</td><td>【金额已脱敏】</td></tr>
 <tr><td></td><td>**跳过** AAPL/BYD/RIVN/LCID</td><td>—</td><td>0</td><td>【金额已脱敏】</td></tr>
 <tr><td></td><td>**合计**</td><td></td><td></td><td>**~【金额已脱敏】**</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <h4>📌 本周操作建议</h4>
 
@@ -359,7 +379,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 
 <h3>六、大师综合点评</h3>
 
-<table class="kami-tb striped"><thead><tr><th>大师</th><th>核心提醒</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>大师</th><th>核心提醒</th></tr></thead><tbody>
 <tr><td>🔥 **芒格**</td><td>&quot;TSLA（特斯拉）是太难（Too Hard）筐——变量太多，我算不明白。MSFT（微软）不一样——它是&#x27;避免愚蠢&#x27;的完美标的。把精力放在你能确定的事上。&quot;</td></tr>
 <tr><td>🧘 **Naval**</td><td>&quot;你的定投组合里，真正有杠杆的是MSFT（微软）（代码+订阅）、PLTR（Palantir）（代码+政府合同）和0700.HK（腾讯）（平台+网络效应）。这些是会复利的资产。RIVN/LCID是制造企业，没有杠杆。&quot;</td></tr>
 <tr><td>⚡ **塔勒布**</td><td>&quot;TSLA（特斯拉）在0.5%温度是一个凸性赌注——下行被$297限定，上行是免费的FSD期权。不要满仓，但完全避开是愚蠢的。同时，AAPL/BYD在95%+温度是反向凸性——下行远大于上行。&quot;</td></tr>
@@ -367,7 +387,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 <tr><td>🚀 **Andreessen**</td><td>&quot;现在市场在抛售科技股——这正是Builder的买入时刻。MSFT（微软）、PLTR（Palantir）、NVDA（英伟达）是AI时代的基础设施。Build vs Prevent，现在是Build time。&quot;</td></tr>
 <tr><td>🌊 **Dalio**</td><td>&quot;让我退一步看——我们处于短期债务周期的放缓阶段，利率在高位，流动性在收紧。长久期资产（MSFT/NVDA/TSLA）对利率敏感。方向上这些价格有吸引力，但时点我给不了你。中美周期错位让中国资产（0700.HK/9988.HK）有独立行情。&quot;</td></tr>
 <tr><td>📊 **Marks**</td><td>&quot;我量了一下温度——钟摆正在从贪婪摆向恐惧，但还没到极端恐惧（VIX 20不是恐慌水平）。MSFT（微软）在20%温度是明确的偏进攻信号。TSLA（特斯拉）在0.5%温度很诱人但风险极高——小仓位。AAPL/BYD在95%+温度——这是钟摆在贪婪端，该防守了。&quot;</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <hr>
 

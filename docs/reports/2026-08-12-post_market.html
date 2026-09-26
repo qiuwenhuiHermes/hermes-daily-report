@@ -2,7 +2,11 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <title>📈 美股盘后评估 | 2026年8月12日（周二）</title>
 <style>
 @font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
@@ -10,8 +14,11 @@
 :root{--parchment:#f5f4ed;--ivory:#faf9f5;--sand:#e8e6dc;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e8e6dc;--border-soft:#e5e3d8;--tag-bg:#E4ECF5;
 --serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
 *{margin:0;padding:0;box-sizing:border-box}
-html{background:var(--parchment)}
-body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased}
+html{background:var(--parchment);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-wrap::-webkit-scrollbar{height:3px}
+.tbl-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 strong{font-weight:500;color:var(--near-black)}
 a{color:var(--brand-ink-light);text-decoration:none}
 .wrap{max-width:1120px;margin:0 auto;padding:72px 48px 80px}
@@ -34,9 +41,22 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 .rpt-body hr{border:none;border-top:.5px solid var(--border);margin:24px 0}
 .rpt-body .lead{font-size:16px;font-weight:500;color:var(--near-black)}
 .kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
-.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border)}
+.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
 .kami-tb td{padding:7px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black)}
 .kami-tb.striped tbody tr:nth-child(even) td{background:var(--ivory)}
+.tbl-wrap .kami-tb{margin:14px 0;min-width:min-content}
+.top{position:sticky;top:0;z-index:10;background:var(--parchment)}
+@media(max-width:640px){
+.wrap{padding:calc(24px + env(safe-area-inset-top)) 18px calc(48px + env(safe-area-inset-bottom))}
+h1{font-size:23px}
+.rpt-body{font-size:16px;line-height:1.85}
+.rpt-body h3{font-size:19px}
+.rpt-body h4{font-size:17px}
+.kami-tb{font-size:13px}
+.kami-tb th{padding:8px 10px}
+.kami-tb td{padding:8px 10px}
+.top{padding:10px 0 12px}
+}
 </style>
 </head>
 <body>
@@ -55,7 +75,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 
 <p>🌡️ <strong>价格温度计</strong></p>
 
-<table class="kami-tb striped"><thead><tr><th>代码</th><th>名称</th><th>价格</th><th>涨跌</th><th>温度</th><th>区间</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>代码</th><th>名称</th><th>价格</th><th>涨跌</th><th>温度</th><th>区间</th></tr></thead><tbody>
 <tr><td>LCID</td><td>Lucid</td><td>$6.70</td><td>+1.36%</td><td>19%</td><td>🟡黄金区</td></tr>
 <tr><td>0700.HK</td><td>腾讯</td><td>HK$470.80</td><td>—</td><td>22%</td><td>🟢低估区</td></tr>
 <tr><td>1211.HK</td><td>比亚迪</td><td>HK$89.70</td><td>—</td><td>37%</td><td>🟢低估区</td></tr>
@@ -68,7 +88,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 <tr><td>MSFT</td><td>Microsoft</td><td>$503.81</td><td>-0.44%</td><td>76%</td><td>🟠偏贵区</td></tr>
 <tr><td>TSM</td><td>台积电</td><td>$422.06</td><td>+0.86%</td><td>78%</td><td>🟠偏贵区</td></tr>
 <tr><td>AMZN</td><td>Amazon</td><td>$272.27</td><td>-2.09%</td><td>84%</td><td>🔴超买区</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <hr>
 
@@ -115,17 +135,17 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 
 <p>⚡ <strong>暂缓/跳过</strong></p>
 
-<table class="kami-tb striped"><thead><tr><th>代码</th><th>名称</th><th>价格</th><th>温度</th><th>原因</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>代码</th><th>名称</th><th>价格</th><th>温度</th><th>原因</th></tr></thead><tbody>
 <tr><td>PLTR</td><td>Palantir</td><td>$174.94</td><td>68% 🟠</td><td>PE 149——这个价格是赌情绪不是投资</td></tr>
 <tr><td>RIVN</td><td>Rivian</td><td>$16.36</td><td>43% ⚪</td><td>持续亏损，现金流堪忧，观察</td></tr>
 <tr><td>LCID</td><td>Lucid</td><td>$6.70</td><td>19% 🟡</td><td>温度低是因为从$25跌到$6，不是便宜是危险</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <hr>
 
 <p>💰 <strong>本周组合建议</strong>（总弹药【已脱敏】RMB，年内建仓）</p>
 
-<table class="kami-tb striped"><thead><tr><th>股票</th><th>评级</th><th>建议仓位</th><th>本周金额</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>股票</th><th>评级</th><th>建议仓位</th><th>本周金额</th></tr></thead><tbody>
 <tr><td>9988.HK</td><td>⭐⭐⭐</td><td>12%</td><td>1000-1500</td></tr>
 <tr><td>0700.HK</td><td>⭐⭐</td><td>10%</td><td>800-1000</td></tr>
 <tr><td>1211.HK</td><td>⭐⭐</td><td>8%</td><td>600-800</td></tr>
@@ -135,7 +155,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 <tr><td>MSFT</td><td>⭐</td><td>7%</td><td>400</td></tr>
 <tr><td>TSM</td><td>⭐</td><td>5%</td><td>300</td></tr>
 <tr><td>现金储备</td><td>—</td><td>15%</td><td>留弹药等回调</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <hr>
 

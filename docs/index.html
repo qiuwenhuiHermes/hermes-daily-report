@@ -2,7 +2,11 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <title>Hermes 每日观察</title>
 <style>
 @font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
@@ -10,8 +14,11 @@
 :root{--parchment:#f5f4ed;--ivory:#faf9f5;--sand:#e8e6dc;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e8e6dc;--border-soft:#e5e3d8;--tag-bg:#E4ECF5;
 --serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
 *{margin:0;padding:0;box-sizing:border-box}
-html{background:var(--parchment)}
-body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased}
+html{background:var(--parchment);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-wrap::-webkit-scrollbar{height:3px}
+.tbl-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 strong{font-weight:500;color:var(--near-black)}
 a{color:var(--brand-ink-light);text-decoration:none}
 .wrap{max-width:1120px;margin:0 auto;padding:72px 48px 80px}
@@ -30,12 +37,26 @@ h1{font-size:40px;font-weight:500;line-height:1.15;color:var(--near-black);margi
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px}
 .card{display:block;background:var(--ivory);border:1px solid var(--border);border-radius:4px;padding:20px 22px;color:inherit;transition:border-color .15s}
 .card:hover{border-color:var(--dark-warm)}
+.card:active{border-color:var(--brand);background:var(--tag-bg)}
 .card-top{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;font-size:12.5px}
 .card-eyebrow{color:var(--brand);font-weight:500;letter-spacing:.08em}
 .card-date{color:var(--stone);margin-left:auto;font-variant-numeric:tabular-nums}
 .card-title{font-size:16.5px;font-weight:500;line-height:1.5;color:var(--near-black);margin-bottom:8px}
 .card-mkt{font-size:13px;color:var(--olive);line-height:1.55;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-@media(max-width:640px){.grid{grid-template-columns:1fr}.metrics{flex-direction:column}}
+@media(max-width:640px){
+.wrap{padding:calc(40px + env(safe-area-inset-top)) 20px calc(48px + env(safe-area-inset-bottom))}
+.grid{grid-template-columns:1fr}
+.metrics{flex-direction:column;gap:10px}
+.metric{display:flex;align-items:baseline;gap:14px;padding:14px 18px}
+.metric .v{font-size:22px;margin-bottom:0;min-width:64px;text-align:right}
+.metric .l{font-size:13px}
+h1{font-size:32px}
+.card{padding:16px 18px}
+.card-top{margin-bottom:8px}
+.card-title{font-size:15.5px}
+.eyebrow{letter-spacing:.18em}
+}
+@supports(padding:max(0px)){.wrap{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}}
 </style>
 </head>
 <body>
@@ -48,7 +69,7 @@ h1{font-size:40px;font-weight:500;line-height:1.15;color:var(--near-black);margi
 <div class="metrics">
   <div class="metric"><div class="v">61</div><div class="l">已收录报告</div></div>
   <div class="metric"><div class="v">2</div><div class="l">日更栏目</div></div>
-  <div class="metric"><div class="v" style="font-size:19px">2026-09-26 18:31</div><div class="l">最近构建</div></div>
+  <div class="metric"><div class="v" style="font-size:19px">2026-09-26 19:00</div><div class="l">最近构建</div></div>
 </div>
 <div class="grid">
 <a class="card" href="reports/2026-09-25-post_market.html">

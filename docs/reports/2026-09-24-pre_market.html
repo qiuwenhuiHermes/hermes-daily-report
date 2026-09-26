@@ -2,7 +2,11 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <title>🌅 美股盘前评估 | 2026-09-24（周四）</title>
 <style>
 @font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
@@ -10,8 +14,11 @@
 :root{--parchment:#f5f4ed;--ivory:#faf9f5;--sand:#e8e6dc;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e8e6dc;--border-soft:#e5e3d8;--tag-bg:#E4ECF5;
 --serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
 *{margin:0;padding:0;box-sizing:border-box}
-html{background:var(--parchment)}
-body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased}
+html{background:var(--parchment);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-wrap::-webkit-scrollbar{height:3px}
+.tbl-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 strong{font-weight:500;color:var(--near-black)}
 a{color:var(--brand-ink-light);text-decoration:none}
 .wrap{max-width:1120px;margin:0 auto;padding:72px 48px 80px}
@@ -34,9 +41,22 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 .rpt-body hr{border:none;border-top:.5px solid var(--border);margin:24px 0}
 .rpt-body .lead{font-size:16px;font-weight:500;color:var(--near-black)}
 .kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
-.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border)}
+.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
 .kami-tb td{padding:7px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black)}
 .kami-tb.striped tbody tr:nth-child(even) td{background:var(--ivory)}
+.tbl-wrap .kami-tb{margin:14px 0;min-width:min-content}
+.top{position:sticky;top:0;z-index:10;background:var(--parchment)}
+@media(max-width:640px){
+.wrap{padding:calc(24px + env(safe-area-inset-top)) 18px calc(48px + env(safe-area-inset-bottom))}
+h1{font-size:23px}
+.rpt-body{font-size:16px;line-height:1.85}
+.rpt-body h3{font-size:19px}
+.rpt-body h4{font-size:17px}
+.kami-tb{font-size:13px}
+.kami-tb th{padding:8px 10px}
+.kami-tb td{padding:8px 10px}
+.top{padding:10px 0 12px}
+}
 </style>
 </head>
 <body>
@@ -55,7 +75,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 
 <p>🌡️ <strong>温度计</strong>（昨收 / 盘前 / 52周区间温度 / PE）</p>
 
-<table class="kami-tb striped"><thead><tr><th>代码</th><th>昨收</th><th>涨跌</th><th>盘前</th><th>温度</th><th>PE</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>代码</th><th>昨收</th><th>涨跌</th><th>盘前</th><th>温度</th><th>PE</th></tr></thead><tbody>
 <tr><td>NVDA</td><td>225.51</td><td>-1.5%</td><td>-1.2%</td><td>85%</td><td>34.3</td></tr>
 <tr><td>TSM</td><td>446.57</td><td>-1.2%</td><td>-1.4%</td><td>85%</td><td>37.1</td></tr>
 <tr><td>PLTR</td><td>191.79</td><td>+3.7%</td><td>-2.0%</td><td>84%</td><td>200</td></tr>
@@ -68,7 +88,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 <tr><td>BYD</td><td>79.50</td><td>-1.1%</td><td>已收</td><td>19%❄️</td><td>20.0</td></tr>
 <tr><td>0700.HK</td><td>438.40</td><td>-0.6%</td><td>已收</td><td>10%❄️</td><td>15.9</td></tr>
 <tr><td>LCID</td><td>4.16</td><td>-3.7%</td><td>-0.2%</td><td>8%❄️</td><td>亏损</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <p>⭐ <strong>今日建议操作</strong></p>
 
@@ -90,20 +110,20 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 
 <p>⚡ <strong>暂缓/跳过</strong></p>
 
-<table class="kami-tb striped"><thead><tr><th>标的</th><th>判定</th><th>一句话</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>标的</th><th>判定</th><th>一句话</th></tr></thead><tbody>
 <tr><td>AAPL</td><td>跳过</td><td>温度 92%，AI 落后无催化</td></tr>
 <tr><td>TSLA</td><td>跳过</td><td>317 倍 PE，叙事驱动</td></tr>
 <tr><td>RIVN/LCID</td><td>跳过</td><td>亏损烧钱，Too Hard</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <p>🔗 <strong>瓶颈评分速览</strong>（沿用 09-23 盘后复核，今晨无新 ±3% 触发）</p>
 
-<table class="kami-tb striped"><thead><tr><th>代码</th><th>评分</th><th>梯队</th><th>卡位逻辑</th><th>更新</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>代码</th><th>评分</th><th>梯队</th><th>卡位逻辑</th><th>更新</th></tr></thead><tbody>
 <tr><td>🔴MU</td><td>66.9</td><td>一</td><td>HBM 稀缺+存储涨价</td><td>09-17</td></tr>
 <tr><td>🔴NVDA</td><td>65.6</td><td>二</td><td>CUDA 生态支配</td><td>09-23</td></tr>
 <tr><td>AVGO</td><td>61.7</td><td>二</td><td>ASIC 定制+网络芯片</td><td>09-17</td></tr>
 <tr><td>GOOGL</td><td>60.2</td><td>二</td><td>TPU 自供+低估值，Muse 冲击未动卡位</td><td>09-23</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <p>评分变化 &gt;±5：无（PLTR 31.0→28.5 系昨日盘后已调整）。</p>
 

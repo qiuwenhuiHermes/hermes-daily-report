@@ -2,7 +2,11 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <title>📈 美股盘后评估 | 2026-08-07</title>
 <style>
 @font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
@@ -10,8 +14,11 @@
 :root{--parchment:#f5f4ed;--ivory:#faf9f5;--sand:#e8e6dc;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e8e6dc;--border-soft:#e5e3d8;--tag-bg:#E4ECF5;
 --serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
 *{margin:0;padding:0;box-sizing:border-box}
-html{background:var(--parchment)}
-body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased}
+html{background:var(--parchment);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-wrap::-webkit-scrollbar{height:3px}
+.tbl-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 strong{font-weight:500;color:var(--near-black)}
 a{color:var(--brand-ink-light);text-decoration:none}
 .wrap{max-width:1120px;margin:0 auto;padding:72px 48px 80px}
@@ -34,9 +41,22 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 .rpt-body hr{border:none;border-top:.5px solid var(--border);margin:24px 0}
 .rpt-body .lead{font-size:16px;font-weight:500;color:var(--near-black)}
 .kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
-.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border)}
+.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
 .kami-tb td{padding:7px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black)}
 .kami-tb.striped tbody tr:nth-child(even) td{background:var(--ivory)}
+.tbl-wrap .kami-tb{margin:14px 0;min-width:min-content}
+.top{position:sticky;top:0;z-index:10;background:var(--parchment)}
+@media(max-width:640px){
+.wrap{padding:calc(24px + env(safe-area-inset-top)) 18px calc(48px + env(safe-area-inset-bottom))}
+h1{font-size:23px}
+.rpt-body{font-size:16px;line-height:1.85}
+.rpt-body h3{font-size:19px}
+.rpt-body h4{font-size:17px}
+.kami-tb{font-size:13px}
+.kami-tb th{padding:8px 10px}
+.kami-tb td{padding:8px 10px}
+.top{padding:10px 0 12px}
+}
 </style>
 </head>
 <body>
@@ -55,7 +75,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 
 <p>🌡️ <strong>价格温度计</strong></p>
 
-<table class="kami-tb striped"><thead><tr><th>代码</th><th>公司</th><th>价格</th><th>涨跌</th><th>温度</th><th>区间</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>代码</th><th>公司</th><th>价格</th><th>涨跌</th><th>温度</th><th>区间</th></tr></thead><tbody>
 <tr><td>LCID</td><td>Lucid</td><td>$6.98</td><td>+4.2%</td><td>**20%**</td><td>🟡低估区</td></tr>
 <tr><td>0700</td><td>腾讯</td><td>479.2HKD</td><td>-2.6%</td><td>**26%**</td><td>🟡低估区</td></tr>
 <tr><td>RIVN</td><td>Rivian</td><td>$15.38</td><td>-1.2%</td><td>**34%**</td><td>🟡低估区</td></tr>
@@ -68,7 +88,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 <tr><td>GOOGL</td><td>谷歌</td><td>$357.75</td><td>-1.3%</td><td>76%</td><td>🟠偏贵区</td></tr>
 <tr><td>TSM</td><td>台积电</td><td>$418.20</td><td>+1.0%</td><td>77%</td><td>🟠偏贵区</td></tr>
 <tr><td>AMZN</td><td>亚马逊</td><td>$272.26</td><td>-0.1%</td><td>**84%**</td><td>🔴超买区</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <hr>
 
@@ -76,7 +96,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 
 <p class="lead"><strong>⭐⭐⭐ TSLA 特斯拉 — 加重仓</strong></p>
 
-<table class="kami-tb striped"><thead><tr><th>大师</th><th>一句话理由</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>大师</th><th>一句话理由</th></tr></thead><tbody>
 <tr><td>芒格</td><td>逆向切入：所有人因政治风险逃离TSLA时，恰好是被剥夺超级反应制造的低估</td></tr>
 <tr><td>Naval</td><td>跌至52周低位附近，Elon的specific knowledge + 多重杠杆（代码+媒体+资本）在这里打折</td></tr>
 <tr><td>塔勒布</td><td>从$499到$320的回撤提供了下行动能保护，当前位置下行风险远小于上行空间</td></tr>
@@ -84,7 +104,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 <tr><td>Andreessen</td><td>Little Tech核心资产，跌到温度11%意味着市场在低估AI+能源+机器人的范式</td></tr>
 <tr><td>Dalio</td><td>VIX在21.7说明流动性紧张，但TSLA已price-in最坏情景——短期周期底部信号</td></tr>
 <tr><td>Marks</td><td>钟摆从贪婪极端摆向恐惧端，TSLA是恐惧最深的大盘股——温度计读数：冷</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <p class="lead"><strong>⭐⭐ 0700.HK 腾讯 — 加仓</strong></p>
 <p>腾讯跌到温度26%，52周低点411已近在咫尺。游戏+社交+支付的护城河未变，价格却回到了2024年的水平。微信生态是中国互联网的"基础设施税"，这个生意10年后还在。HK科技股整体被抛售，但腾讯的现金流和回购力度提供了安全垫。</p>
@@ -102,7 +122,7 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 
 <p>⚡ <strong>暂缓/跳过</strong></p>
 
-<table class="kami-tb striped"><thead><tr><th>代码</th><th>温度</th><th>理由</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>代码</th><th>温度</th><th>理由</th></tr></thead><tbody>
 <tr><td>LCID</td><td>20%</td><td>黄金区门口但基本面恶化，纯投机标的</td></tr>
 <tr><td>MSFT</td><td>75%</td><td>偏贵区，等回调到$450以下再考虑</td></tr>
 <tr><td>AAPL</td><td>75%</td><td>偏贵区，$312不便宜，等$280</td></tr>
@@ -110,19 +130,19 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 <tr><td>GOOGL</td><td>76%</td><td>偏贵区，反垄断风险悬顶</td></tr>
 <tr><td>TSM</td><td>77%</td><td>偏贵区，地缘风险未消除</td></tr>
 <tr><td>AMZN</td><td>84%</td><td>超买区，明显高估，跳过</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <hr>
 
 <p>💰 <strong>本周组合建议</strong></p>
 <p>（弹药【已脱敏】RMB，每周1-2次定投）</p>
 
-<table class="kami-tb striped"><thead><tr><th>股票</th><th>评级</th><th>建议仓位</th><th>金额(RMB)</th></tr></thead><tbody>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>股票</th><th>评级</th><th>建议仓位</th><th>金额(RMB)</th></tr></thead><tbody>
 <tr><td>腾讯</td><td>⭐⭐</td><td>20%</td><td>1000-2000</td></tr>
 <tr><td>BYD</td><td>⭐⭐</td><td>20%</td><td>1000-2000</td></tr>
 <tr><td>阿里</td><td>⭐⭐</td><td>15%</td><td>750-1500</td></tr>
 <tr><td>PLTR</td><td>⭐</td><td>5%</td><td>250-500</td></tr>
-</tbody></table>
+</tbody></table></div>
 
 <hr>
 
