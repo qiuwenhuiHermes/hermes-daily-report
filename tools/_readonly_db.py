@@ -22,7 +22,13 @@ _SNAPSHOT_DIRS = {}
 
 
 def connect_ro(path, retries=3, delay=0.4):
-    """返回一个只读连接；必要时自动改用快照副本。"""
+    """返回一个只读连接；必要时自动改用快照副本。
+
+    注意: 副本必须用普通(读写)方式打开。WAL 模式的库在没有 -wal/-shm 伴随文件时
+    无法以 mode=ro 打开（SQLite 需创建共享内存索引，只读连接做不到），副本恰好
+    只有 .db 文件，因此副本 ro 必然 CANTOPEN。副本是临时文件、无并发写入方，
+    用读写方式打开后用 PRAGMA query_only 保证不会改写。
+    """
     path = Path(path)
     last = None
     for i in range(retries):
@@ -40,9 +46,10 @@ def connect_ro(path, retries=3, delay=0.4):
             src = Path(str(path) + suffix)
             if src.exists():
                 shutil.copy2(src, tmp / (path.name + suffix))
-        con = sqlite3.connect(f"file:{tmp / path.name}?mode=ro", uri=True, timeout=10)
+        con = sqlite3.connect(str(tmp / path.name), timeout=10)
+        con.execute("PRAGMA query_only=ON")  # 副本只读语义由本行保证
         con.execute("SELECT 1").fetchone()
-        _SNAPSHOT_DIRS[id(con)] = tmp  # 调用方 close 后由 close_ro 清理
+        _SNAPSHOT_DIRS[id(con)] = tmp
         return con
     except sqlite3.Error:
         if last is None:

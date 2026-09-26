@@ -274,7 +274,6 @@ td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .idate{float:right;font-size:12px;color:var(--stone)}
 .ierr{font-size:12.5px;color:var(--stone);margin-top:5px;overflow-wrap:anywhere}
 .foot-note{margin-top:46px;font-size:12px;color:var(--stone);line-height:1.8;text-align:center}
-.totip{font-size:11.5px;color:var(--stone);font-weight:400}
 @media(max-width:640px){
 .wrap{padding:calc(40px + env(safe-area-inset-top)) 20px calc(56px + env(safe-area-inset-bottom))}
 h1{font-size:30px}
@@ -311,7 +310,7 @@ h1{font-size:30px}
 <thead><tr><th>模型</th><th class="num">API 调用</th><th class="num">输入 tokens</th><th class="num">输出 tokens</th><th class="num">缓存读</th></tr></thead>
 <tbody>{model_rows}</tbody></table></div>
 
-<h2>Token 用量 · 近 30 天 <span class="totip">（柱高 = 当日输入+输出；悬停看明细）</span></h2>
+<h2>Token 用量 · 近 30 天</h2>
 <div class="chart">{bars_html}</div>
 <p class="chartnote">柱高只算输入和输出；缓存读单独计数，多为上下文复用，计费口径与输入不同。峰值日 {fmt_k(peak)} tokens。</p>
 
