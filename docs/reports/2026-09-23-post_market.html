@@ -3,36 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f5f4ed">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="每日观察">
 <meta name="format-detection" content="telephone=no">
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://qiuwenhuihermes.github.io/hermes-daily-report/" crossorigin>
+<link rel="preload" href="../fonts/kami-400.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hermes 每日观察">
+<meta property="og:url" content="https://qiuwenhuihermes.github.io/hermes-daily-report/reports/2026-09-23-post_market.html">
+<meta property="og:title" content="美股盘后评估 | 2026-09-23">
+<meta property="og:description" content="SPX 7764.6 (0.0%) | 纳指 27244 (+0.5%，连续第二日收盘新高) | VIX 14.2（回落）">
+<meta property="og:image" content="https://qiuwenhuihermes.github.io/hermes-daily-report/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="美股盘后评估 | 2026-09-23">
+<meta name="twitter:description" content="SPX 7764.6 (0.0%) | 纳指 27244 (+0.5%，连续第二日收盘新高) | VIX 14.2（回落）">
+<meta name="twitter:image" content="https://qiuwenhuihermes.github.io/hermes-daily-report/assets/og.png">
 <title>📈 美股盘后评估 | 2026-09-23</title>
+<meta name="description" content="SPX 7764.6 (0.0%) | 纳指 27244 (+0.5%，连续第二日收盘新高) | VIX 14.2（回落）">
 <style>
-@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W05.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
-:root{--parchment:#f5f4ed;--ivory:#faf9f5;--sand:#e8e6dc;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e8e6dc;--border-soft:#e5e3d8;--tag-bg:#E4ECF5;
+@font-face{font-family:"TsangerJinKai02";src:url("../fonts/kami-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"TsangerJinKai02";src:url("../fonts/kami-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+:root{--parchment:#f5f4ed;--ivory:#fbfaf6;--sand:#e2dfd1;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e4e1d4;--border-soft:#e8e6dc;--tag-bg:#E4ECF5;
+--shadow:0 1px 2px rgba(27,54,93,.045),0 10px 24px -14px rgba(27,54,93,.13);
 --serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
 *{margin:0;padding:0;box-sizing:border-box}
-html{background:var(--parchment);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{background:var(--parchment);-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
 body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
-.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.tbl-wrap::-webkit-scrollbar{height:3px}
-.tbl-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 strong{font-weight:500;color:var(--near-black)}
 a{color:var(--brand-ink-light);text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:72px 48px 80px}
-@media(max-width:640px){.wrap{padding:48px 20px 56px}}
+.wrap{max-width:1120px;margin:0 auto;padding:72px 48px 88px}
 .eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--brand);letter-spacing:.25em;font-weight:500;text-transform:uppercase;margin-bottom:14px}
 .eyebrow::before{content:"";width:12px;height:2px;border-radius:1px;background:var(--brand);flex-shrink:0}
-.foot-note{margin-top:56px;padding-top:12px;border-top:1px dotted var(--border);font-size:12.5px;color:var(--stone);text-align:center;line-height:1.9}
+.foot-note{margin-top:64px;padding-top:14px;border-top:1px dotted var(--border);font-size:13px;color:var(--stone);text-align:center;line-height:1.9;overflow-wrap:anywhere;text-wrap:balance}
+/* 表格：横向溢出仅作兜底；滚动阴影只在真溢出时可见（Roman Komarov 技法） */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:4px;
+  background:linear-gradient(to right,var(--parchment) 40%,rgba(245,244,237,0)),
+    linear-gradient(to left,var(--parchment) 40%,rgba(245,244,237,0)) 100% 0,
+    radial-gradient(farthest-side at 0% 50%,rgba(27,54,93,.16),rgba(27,54,93,0)),
+    radial-gradient(farthest-side at 100% 50%,rgba(27,54,93,.16),rgba(27,54,93,0)) 100% 0;
+  background-repeat:no-repeat;background-size:32px 100%,32px 100%,14px 100%,14px 100%;
+  background-attachment:local,local,scroll,scroll}
+.tbl-wrap::-webkit-scrollbar{height:4px}
+.tbl-wrap::-webkit-scrollbar-thumb{background:var(--sand);border-radius:2px}
+.tbl-hint{font-size:12.5px;color:var(--stone);text-align:center;margin:-6px 0 16px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
 .wrap{max-width:860px}
-.top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:26px;padding-bottom:14px;border-bottom:.5px solid var(--border)}
-.back{font-size:13.5px;color:var(--brand-ink-light)}
-.meta{font-size:12.5px;color:var(--stone);font-variant-numeric:tabular-nums}
-h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
-.rpt-body{font-size:15px;line-height:1.75;letter-spacing:.15px;color:var(--near-black)}
+.top{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:baseline;gap:12px;background:var(--parchment);padding:12px 0 13px;margin-bottom:24px;border-bottom:.5px solid var(--border)}
+.back{font-size:13.5px;color:var(--brand-ink-light);white-space:nowrap}
+.back:focus-visible,a:focus-visible{outline:2px solid var(--brand-ink-light);outline-offset:2px;border-radius:2px}
+.meta{font-size:13px;color:var(--stone);font-variant-numeric:tabular-nums;white-space:nowrap}
+h1{font-size:28px;font-weight:500;line-height:1.3;margin-bottom:26px;text-wrap:balance}
+.rpt-body{font-size:15px;line-height:1.75;letter-spacing:.15px;color:var(--near-black);overflow-wrap:anywhere}
 .rpt-body p{margin:0 0 13px}
 .rpt-body .li{padding-left:18px;position:relative}
 .rpt-body h3,.rpt-body h4{margin:26px 0 10px;font-weight:500;color:var(--near-black)}
@@ -40,29 +68,38 @@ h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
 .rpt-body h4{font-size:16.5px;color:var(--dark-warm)}
 .rpt-body hr{border:none;border-top:.5px solid var(--border);margin:24px 0}
 .rpt-body .lead{font-size:16px;font-weight:500;color:var(--near-black)}
-.kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
-.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
-.kami-tb td{padding:7px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black)}
-.kami-tb.striped tbody tr:nth-child(even) td{background:var(--ivory)}
-.tbl-wrap .kami-tb{margin:14px 0;min-width:min-content}
-.top{position:sticky;top:0;z-index:10;background:var(--parchment)}
+.kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;font-variant-numeric:tabular-nums}
+.kami-tb th{text-align:left;font-weight:500;color:var(--near-black);padding:9px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
+.kami-tb td{padding:9px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black);overflow-wrap:break-word}
+.kami-tb .num{text-align:right}
+.kami-tb.striped tbody tr:nth-child(even) td{background:rgba(61,59,53,.045)}
+.pn{display:flex;justify-content:space-between;gap:14px;align-items:stretch;margin:44px 0 8px;padding-top:18px;border-top:.5px solid var(--border);font-size:13.5px}
+.pn a{flex:1;background:var(--ivory);border:1px solid var(--border);border-radius:6px;padding:14px 16px;box-shadow:var(--shadow);transition:border-color .18s,transform .18s;font-size:15px;color:var(--brand);display:block}
+.pn a:hover{border-color:#cfcaba;transform:translateY(-1px)}
+.pn .pn-b{text-align:right}
+.pn .pn-lab{display:block;font-size:11.5px;color:var(--stone);letter-spacing:.06em;margin-bottom:5px}
+.pn .pn-x{flex:1;padding:14px 16px;border:1px dashed var(--border);border-radius:6px;display:block}
+.pn .pn-b.pn-x{text-align:right}
+.pn .pn-none{display:block;font-size:14px;color:#a9a498}
+.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:42px;height:42px;border-radius:50%;background:var(--ivory);border:1px solid var(--border);color:var(--brand);font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:20}
+.totop.on{opacity:1;pointer-events:auto}
+.totop:hover{transform:translateY(-2px)}
 @media(max-width:640px){
-.wrap{padding:calc(24px + env(safe-area-inset-top)) 18px calc(48px + env(safe-area-inset-bottom))}
-h1{font-size:23px}
+.wrap{padding:calc(22px + env(safe-area-inset-top)) 18px calc(52px + env(safe-area-inset-bottom))}
+h1{font-size:23px;margin-bottom:22px}
 .rpt-body{font-size:16px;line-height:1.85}
 .rpt-body h3{font-size:19px}
 .rpt-body h4{font-size:17px}
 .kami-tb{font-size:13px}
-.kami-tb th{padding:8px 10px}
-.kami-tb td{padding:8px 10px}
+.pn{flex-direction:column;gap:10px}
+.pn .pn-b{text-align:left}
 .top{padding:10px 0 12px}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
-<div class="top"><a class="back" href="../index.html">← 返回首页</a><span class="meta">美股盘后评估 · 2026-09-23 08:05</span></div>
-<div class="eyebrow">美股盘后评估</div>
+<div class="top"><a class="back" href="../index.html">← 返回首页</a><span class="meta">9月23日 08:05</span></div>
 <h1>📈 美股盘后评估 | 2026-09-23</h1>
 <div class="rpt-body">
 <p>数据齐了：13 只标的日 K + 实时价、三大指数、VIX、宏观背景（Fed 9/16 加息、油价、美债）全部到位，Serenity 评分沿用 09-22 复核结果（当日无 ±3% 触发重估的评分池标的）。生成报告：</p>
@@ -76,20 +113,20 @@ h1{font-size:23px}
 <p>宏观一句话：Fed 9/16 加息 25bp 至 3.75-4.00%（三年来首次），点阵图转鹰、年内或再加一次；10Y 美债 ~4.96% 一度破 5%（2007 年来高位）；油价回落（伊朗拟重开霍尔木兹海峡）→ 成长股受益、银行/道指承压。AI 资本开支多为多年期合同，对加息不敏感——半导体连涨 6 日。</p>
 
 <p>🌡️ <strong>价格温度计</strong></p>
-<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>代码</th><th>价格</th><th>涨跌</th><th>温度</th><th>区间</th></tr></thead><tbody>
-<tr><td>AAPL</td><td>339.8</td><td>+0.2%</td><td>94%</td><td>超买</td></tr>
-<tr><td>NVDA</td><td>228.9</td><td>+0.7%</td><td>89%</td><td>超买</td></tr>
-<tr><td>TSM</td><td>452.0</td><td>+1.5%</td><td>87%</td><td>超买</td></tr>
-<tr><td>PLTR</td><td>185.0</td><td>+1.0%</td><td>78%</td><td>偏贵</td></tr>
-<tr><td>MSFT</td><td>498.0</td><td>-0.7%</td><td>73%</td><td>偏贵</td></tr>
-<tr><td>GOOGL</td><td>351.2</td><td>-1.1%</td><td>67%</td><td>偏贵</td></tr>
-<tr><td>AMZN</td><td>255.0</td><td>-1.3%</td><td>65%</td><td>偏贵</td></tr>
-<tr><td>TSLA</td><td>378.9</td><td>+1.0%</td><td>41%</td><td>合理</td></tr>
-<tr><td>9988.HK</td><td>114.8</td><td>+2.0%</td><td>27%</td><td>低估</td></tr>
-<tr><td>RIVN</td><td>15.1</td><td>-1.4%</td><td>27%</td><td>低估</td></tr>
-<tr><td>0700.HK</td><td>451.6</td><td>+5.0%</td><td>15%</td><td>黄金</td></tr>
-<tr><td>LCID</td><td>4.3</td><td>+0.5%</td><td>9%</td><td>黄金</td></tr>
-<tr><td>BYDDY</td><td>10.4</td><td>-0.1%</td><td>—</td><td>数据缺</td></tr>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th class="">代码</th><th class="num">价格</th><th class="num">涨跌</th><th class="num">温度</th><th class="">区间</th></tr></thead><tbody>
+<tr><td class="">AAPL</td><td class="num">339.8</td><td class="num">+0.2%</td><td class="num">94%</td><td class="">超买</td></tr>
+<tr><td class="">NVDA</td><td class="num">228.9</td><td class="num">+0.7%</td><td class="num">89%</td><td class="">超买</td></tr>
+<tr><td class="">TSM</td><td class="num">452.0</td><td class="num">+1.5%</td><td class="num">87%</td><td class="">超买</td></tr>
+<tr><td class="">PLTR</td><td class="num">185.0</td><td class="num">+1.0%</td><td class="num">78%</td><td class="">偏贵</td></tr>
+<tr><td class="">MSFT</td><td class="num">498.0</td><td class="num">-0.7%</td><td class="num">73%</td><td class="">偏贵</td></tr>
+<tr><td class="">GOOGL</td><td class="num">351.2</td><td class="num">-1.1%</td><td class="num">67%</td><td class="">偏贵</td></tr>
+<tr><td class="">AMZN</td><td class="num">255.0</td><td class="num">-1.3%</td><td class="num">65%</td><td class="">偏贵</td></tr>
+<tr><td class="">TSLA</td><td class="num">378.9</td><td class="num">+1.0%</td><td class="num">41%</td><td class="">合理</td></tr>
+<tr><td class="">9988.HK</td><td class="num">114.8</td><td class="num">+2.0%</td><td class="num">27%</td><td class="">低估</td></tr>
+<tr><td class="">RIVN</td><td class="num">15.1</td><td class="num">-1.4%</td><td class="num">27%</td><td class="">低估</td></tr>
+<tr><td class="">0700.HK</td><td class="num">451.6</td><td class="num">+5.0%</td><td class="num">15%</td><td class="">黄金</td></tr>
+<tr><td class="">LCID</td><td class="num">4.3</td><td class="num">+0.5%</td><td class="num">9%</td><td class="">黄金</td></tr>
+<tr><td class="">BYDDY</td><td class="num">10.4</td><td class="num">-0.1%</td><td class="num">—</td><td class="">数据缺</td></tr>
 </tbody></table></div>
 
 <p>⭐ <strong>本周建议定投</strong></p>
@@ -122,27 +159,27 @@ h1{font-size:23px}
 <p><strong>⭐ 正常定投（一句综合）：</strong> MSFT/AMZN（巨头稳但 3 个月已涨 33%/9%，等回调）；NVDA/AAPL（生意顶级的超买区——纪律比兴奋重要，正常档不加重）；TSLA（温度合理但叙事驱动、瓶颈分垫底，只按计划）；BYDDY（数据源受限，按原计划）</p>
 
 <p>⚡ <strong>暂缓/跳过</strong></p>
-<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>代码</th><th>原因</th></tr></thead><tbody>
-<tr><td>PLTR</td><td>3个月+58%、温度78%，应用层无瓶颈、估值透支（芒格：Too Hard 筐）</td></tr>
-<tr><td>RIVN</td><td>低温≠低估，烧钱无护城河</td></tr>
-<tr><td>LCID</td><td>温度9%黄金区，但便宜的理由是它在融化：3个月-17%+稀释循环</td></tr>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th class="">代码</th><th class="">原因</th></tr></thead><tbody>
+<tr><td class="">PLTR</td><td class="">3个月+58%、温度78%，应用层无瓶颈、估值透支（芒格：Too Hard 筐）</td></tr>
+<tr><td class="">RIVN</td><td class="">低温≠低估，烧钱无护城河</td></tr>
+<tr><td class="">LCID</td><td class="">温度9%黄金区，但便宜的理由是它在融化：3个月-17%+稀释循环</td></tr>
 </tbody></table></div>
 
 <p>💰 <strong>本周组合</strong>（周预算 ~2000-2400 RMB）</p>
-<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>股票</th><th>评级</th><th>金额</th></tr></thead><tbody>
-<tr><td>0700.HK</td><td>⭐⭐⭐</td><td>700</td></tr>
-<tr><td>GOOGL</td><td>⭐⭐⭐</td><td>700</td></tr>
-<tr><td>9988.HK</td><td>⭐⭐</td><td>400</td></tr>
-<tr><td>TSM</td><td>⭐⭐(限跌)</td><td>300/0</td></tr>
-<tr><td>其余</td><td>⭐/跳过</td><td>0</td></tr>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th class="">股票</th><th class="">评级</th><th class="num">金额</th></tr></thead><tbody>
+<tr><td class="">0700.HK</td><td class="">⭐⭐⭐</td><td class="num">700</td></tr>
+<tr><td class="">GOOGL</td><td class="">⭐⭐⭐</td><td class="num">700</td></tr>
+<tr><td class="">9988.HK</td><td class="">⭐⭐</td><td class="num">400</td></tr>
+<tr><td class="">TSM</td><td class="">⭐⭐(限跌)</td><td class="num">300/0</td></tr>
+<tr><td class="">其余</td><td class="">⭐/跳过</td><td class="num">0</td></tr>
 </tbody></table></div>
 
 <p>🔗 <strong>瓶颈评分速览</strong>（09-22 复核沿用，当日无 ±3% 触发）</p>
-<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th>🔴 TSM 81.7 一梯队</th><th>先进制程+CoWoS 双卡位</th><th>持平</th></tr></thead><tbody>
-<tr><td>🔴 MU 66.9 一梯队</td><td>存储涨价+HBM 稀缺</td><td>持平</td></tr>
-<tr><td>🔴 AVGO 61.7 二梯队</td><td>ASIC 定制+网络芯片</td><td>持平</td></tr>
-<tr><td>NVDA 65.6 二梯队</td><td>CUDA 生态，超买区</td><td>持平</td></tr>
-<tr><td>GOOGL 60.2 二梯队</td><td>TPU 自供+低估值</td><td>持平</td></tr>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th class="">🔴 TSM 81.7 一梯队</th><th class="">先进制程+CoWoS 双卡位</th><th class="">持平</th></tr></thead><tbody>
+<tr><td class="">🔴 MU 66.9 一梯队</td><td class="">存储涨价+HBM 稀缺</td><td class="">持平</td></tr>
+<tr><td class="">🔴 AVGO 61.7 二梯队</td><td class="">ASIC 定制+网络芯片</td><td class="">持平</td></tr>
+<tr><td class="">NVDA 65.6 二梯队</td><td class="">CUDA 生态，超买区</td><td class="">持平</td></tr>
+<tr><td class="">GOOGL 60.2 二梯队</td><td class="">TPU 自供+低估值</td><td class="">持平</td></tr>
 </tbody></table></div>
 
 <p>📋 <strong>大师提醒</strong></p>
@@ -159,7 +196,20 @@ h1{font-size:23px}
 
 <p>（触发 Skill：warren-buffett / munger / naval / taleb / karpathy / andreessen / dalio / howard-marks / serenity 共9个；工具：腾讯行情API（东财接口当日不可达已降级）、web_search、终端计算）</p>
 </div>
-<div class="foot-note">⚠️ 非投资建议 · 金额已脱敏 · Hermes Agent 自动部署 · kami design</div>
+<nav class="pn" aria-label="报告导航"><a class="pn-a" href="2026-09-24-pre_market.html"><span class="pn-lab">← 较新</span>9月24日 盘前</a> <a class="pn-b" href="2026-09-23-pre_market.html"><span class="pn-lab">较早 →</span>9月23日 盘前</a></nav>
+<footer class="foot-note">非投资建议 · 金额已脱敏 · Hermes Agent 自动部署 · kami design</footer>
 </div>
+<a class="totop" href="#" aria-label="回到顶部">↑</a>
+<script>
+(function(){var t=document.querySelector('.totop');
+window.addEventListener('scroll',function(){if(window.scrollY>600){t.classList.add('on')}else{t.classList.remove('on')}},{passive:true});
+// 宽表提示：运行时按真实溢出量决定（构建期预估不准）
+function mark(){[].slice.call(document.querySelectorAll('.tbl-wrap')).forEach(function(w){
+  var over=(w.scrollWidth-w.clientWidth)>2, nx=w.nextElementSibling, has=nx&&nx.className==='tbl-hint';
+  if(over&&!has){var p=document.createElement('p');p.className='tbl-hint';p.textContent='← 左右滑动查看完整表格 →';w.parentNode.insertBefore(p,w.nextSibling);}
+  else if(!over&&has){nx.remove();}});}
+mark();window.addEventListener('resize',mark,{passive:true});window.addEventListener('orientationchange',mark,{passive:true});
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(mark);}})();
+</script>
 </body>
 </html>

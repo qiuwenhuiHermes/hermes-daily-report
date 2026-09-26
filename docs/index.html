@@ -3,58 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f5f4ed">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="每日观察">
 <meta name="format-detection" content="telephone=no">
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://qiuwenhuihermes.github.io/hermes-daily-report/" crossorigin>
+<link rel="preload" href="fonts/kami-400.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hermes 每日观察">
+<meta property="og:url" content="https://qiuwenhuihermes.github.io/hermes-daily-report/">
+<meta property="og:title" content="Hermes 每日观察 · 美股盘后/盘前评估">
+<meta property="og:description" content="美股盘后 / 盘前评估 · 价格温度计 · 定投信号。每交易日由 Hermes Agent 自动生成并部署。">
+<meta property="og:image" content="https://qiuwenhuihermes.github.io/hermes-daily-report/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hermes 每日观察 · 美股盘后/盘前评估">
+<meta name="twitter:description" content="美股盘后 / 盘前评估 · 价格温度计 · 定投信号。每交易日由 Hermes Agent 自动生成并部署。">
+<meta name="twitter:image" content="https://qiuwenhuihermes.github.io/hermes-daily-report/assets/og.png">
 <title>Hermes 每日观察</title>
+<meta name="description" content="美股盘后 / 盘前评估 · 价格温度计 · 定投信号。每交易日由 Hermes Agent 自动生成并部署。">
 <style>
-@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W05.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
-:root{--parchment:#f5f4ed;--ivory:#faf9f5;--sand:#e8e6dc;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e8e6dc;--border-soft:#e5e3d8;--tag-bg:#E4ECF5;
+@font-face{font-family:"TsangerJinKai02";src:url("fonts/kami-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"TsangerJinKai02";src:url("fonts/kami-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+:root{--parchment:#f5f4ed;--ivory:#fbfaf6;--sand:#e2dfd1;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e4e1d4;--border-soft:#e8e6dc;--tag-bg:#E4ECF5;
+--shadow:0 1px 2px rgba(27,54,93,.045),0 10px 24px -14px rgba(27,54,93,.13);
 --serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
 *{margin:0;padding:0;box-sizing:border-box}
-html{background:var(--parchment);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{background:var(--parchment);-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
 body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
-.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.tbl-wrap::-webkit-scrollbar{height:3px}
-.tbl-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 strong{font-weight:500;color:var(--near-black)}
 a{color:var(--brand-ink-light);text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:72px 48px 80px}
-@media(max-width:640px){.wrap{padding:48px 20px 56px}}
+.wrap{max-width:1120px;margin:0 auto;padding:72px 48px 88px}
 .eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--brand);letter-spacing:.25em;font-weight:500;text-transform:uppercase;margin-bottom:14px}
 .eyebrow::before{content:"";width:12px;height:2px;border-radius:1px;background:var(--brand);flex-shrink:0}
-.foot-note{margin-top:56px;padding-top:12px;border-top:1px dotted var(--border);font-size:12.5px;color:var(--stone);text-align:center;line-height:1.9}
+.foot-note{margin-top:64px;padding-top:14px;border-top:1px dotted var(--border);font-size:13px;color:var(--stone);text-align:center;line-height:1.9;overflow-wrap:anywhere;text-wrap:balance}
+/* 表格：横向溢出仅作兜底；滚动阴影只在真溢出时可见（Roman Komarov 技法） */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:4px;
+  background:linear-gradient(to right,var(--parchment) 40%,rgba(245,244,237,0)),
+    linear-gradient(to left,var(--parchment) 40%,rgba(245,244,237,0)) 100% 0,
+    radial-gradient(farthest-side at 0% 50%,rgba(27,54,93,.16),rgba(27,54,93,0)),
+    radial-gradient(farthest-side at 100% 50%,rgba(27,54,93,.16),rgba(27,54,93,0)) 100% 0;
+  background-repeat:no-repeat;background-size:32px 100%,32px 100%,14px 100%,14px 100%;
+  background-attachment:local,local,scroll,scroll}
+.tbl-wrap::-webkit-scrollbar{height:4px}
+.tbl-wrap::-webkit-scrollbar-thumb{background:var(--sand);border-radius:2px}
+.tbl-hint{font-size:12.5px;color:var(--stone);text-align:center;margin:-6px 0 16px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
-header{margin-bottom:40px}
-h1{font-size:40px;font-weight:500;line-height:1.15;color:var(--near-black);margin-bottom:10px}
-.sub{font-size:15px;color:var(--olive);line-height:1.6}
-.metrics{display:flex;gap:14px;margin:36px 0 44px}
-.metric{flex:1;background:var(--ivory);border:1px solid var(--border);border-radius:4px;padding:18px 20px}
-.metric .v{font-size:26px;font-weight:500;color:var(--brand);line-height:1;font-variant-numeric:tabular-nums;margin-bottom:8px}
-.metric .l{font-size:12.5px;color:var(--olive)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px}
-.card{display:block;background:var(--ivory);border:1px solid var(--border);border-radius:4px;padding:20px 22px;color:inherit;transition:border-color .15s}
-.card:hover{border-color:var(--dark-warm)}
-.card:active{border-color:var(--brand);background:var(--tag-bg)}
-.card-top{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;font-size:12.5px}
-.card-eyebrow{color:var(--brand);font-weight:500;letter-spacing:.08em}
-.card-date{color:var(--stone);margin-left:auto;font-variant-numeric:tabular-nums}
-.card-title{font-size:16.5px;font-weight:500;line-height:1.5;color:var(--near-black);margin-bottom:8px}
-.card-mkt{font-size:13px;color:var(--olive);line-height:1.55;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+header{margin-bottom:34px}
+h1{font-size:40px;font-weight:500;line-height:1.15;color:var(--near-black);margin-bottom:12px;text-wrap:balance}
+.sub{font-size:15px;color:var(--olive);line-height:1.6;max-width:52ch;text-wrap:pretty}
+.statusline{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin-top:22px;font-size:13px;color:var(--stone);font-variant-numeric:tabular-nums}
+.statusline b{font-weight:500;color:var(--near-black);font-size:19px;margin-right:2px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 4px}
+.chipf{border:1px solid var(--border);background:var(--ivory);color:var(--olive);font-family:inherit;font-size:13px;padding:7px 14px;border-radius:3px;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
+.chipf:hover{border-color:var(--dark-warm);color:var(--near-black)}
+.chipf[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+.chipf:focus-visible{outline:2px solid var(--brand-ink-light);outline-offset:2px}
+.day{margin-top:34px}
+.day-h{position:sticky;top:0;z-index:5;display:flex;align-items:baseline;gap:9px;font-size:14px;font-weight:500;color:var(--dark-warm);background:var(--parchment);padding:9px 0 8px;border-bottom:1px solid var(--border);margin-bottom:14px}
+.day-h .dow{font-size:12.5px;color:var(--stone);font-weight:400;letter-spacing:.06em}
+.day-h .n{margin-left:auto;font-size:12.5px;color:var(--stone);font-weight:400;font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.card{display:flex;flex-direction:column;gap:11px;background:var(--ivory);border:1px solid var(--border);border-radius:6px;padding:17px 19px;color:inherit;box-shadow:var(--shadow);transition:transform .18s,border-color .18s,box-shadow .18s}
+.card:hover{border-color:#cfcaba;transform:translateY(-1px);box-shadow:0 2px 4px rgba(27,54,93,.05),0 14px 30px -16px rgba(27,54,93,.2)}
+.card:active{transform:translateY(0);background:var(--tag-bg)}
+.card:focus-visible{outline:2px solid var(--brand-ink-light);outline-offset:2px}
+.card-top{display:flex;align-items:center;gap:9px;font-size:13px}
+.chip{background:var(--tag-bg);color:var(--brand);font-size:12.5px;font-weight:500;padding:3px 8px;border-radius:3px;letter-spacing:.04em}
+.card-time{color:var(--stone);font-variant-numeric:tabular-nums}
+.card-go{margin-left:auto;color:var(--stone);font-size:15px;line-height:1}
+.card-mkt{font-size:13.5px;color:var(--olive);line-height:1.6;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;text-wrap:pretty}
+.more{margin:38px auto 0;display:block;border:1px solid var(--border);background:var(--ivory);color:var(--brand);font-family:inherit;font-size:13.5px;padding:11px 22px;border-radius:3px;cursor:pointer;transition:border-color .18s,background .18s}
+.more:hover{border-color:var(--brand);background:var(--tag-bg)}
+.more:focus-visible{outline:2px solid var(--brand-ink-light);outline-offset:2px}
+.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:42px;height:42px;border-radius:50%;background:var(--ivory);border:1px solid var(--border);color:var(--brand);font-size:17px;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:20}
+.totop.on{opacity:1;pointer-events:auto}
+.totop:hover{transform:translateY(-2px)}
+[data-hidden="1"]{display:none!important}
 @media(max-width:640px){
-.wrap{padding:calc(40px + env(safe-area-inset-top)) 20px calc(48px + env(safe-area-inset-bottom))}
-.grid{grid-template-columns:1fr}
-.metrics{flex-direction:column;gap:10px}
-.metric{display:flex;align-items:baseline;gap:14px;padding:14px 18px}
-.metric .v{font-size:22px;margin-bottom:0;min-width:64px;text-align:right}
-.metric .l{font-size:13px}
+.wrap{padding:calc(40px + env(safe-area-inset-top)) 20px calc(56px + env(safe-area-inset-bottom))}
+.grid{grid-template-columns:1fr;gap:12px}
 h1{font-size:32px}
-.card{padding:16px 18px}
-.card-top{margin-bottom:8px}
-.card-title{font-size:15.5px}
-.eyebrow{letter-spacing:.18em}
+.statusline{gap:4px 14px}
+.day-h{padding:8px 0 7px}
+.card{padding:15px 17px}
 }
 @supports(padding:max(0px)){.wrap{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}}
 </style>
@@ -64,376 +101,490 @@ h1{font-size:32px}
 <header>
   <div class="eyebrow">Hermes Daily Review</div>
   <h1>每日观察</h1>
-  <p class="sub">美股盘后 / 盘前评估 · 温度计 · 定投信号 · 由 Hermes Agent 自动生成并部署</p>
+  <p class="sub">美股盘后 / 盘前评估 · 价格温度计 · 定投信号。每交易日由 Hermes Agent 自动生成并部署。</p>
+  <p class="statusline"><span><b>61</b>份报告</span><span>39 个交易日</span><span>2 个栏目</span><span>最近更新 09-26 20:47</span></p>
+  <div class="filters" role="group" aria-label="按栏目筛选">
+    <button class="chipf" type="button" data-filter="all" aria-pressed="true">全部 61</button>
+    <button class="chipf" type="button" data-filter="post_market" aria-pressed="false">📈 盘后 37</button><button class="chipf" type="button" data-filter="pre_market" aria-pressed="false">🌅 盘前 24</button>
+  </div>
 </header>
-<div class="metrics">
-  <div class="metric"><div class="v">61</div><div class="l">已收录报告</div></div>
-  <div class="metric"><div class="v">2</div><div class="l">日更栏目</div></div>
-  <div class="metric"><div class="v" style="font-size:19px">2026-09-26 19:16</div><div class="l">最近构建</div></div>
-</div>
-<div class="grid">
-<a class="card" href="reports/2026-09-25-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-25</span></div>
-  <div class="card-title">美股盘后评估 | 2026-09-25</div>
+<main>
+<section class="day" data-date="2026-09-25">
+  <h2 class="day-h">9月25日<span class="dow">周五</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-25-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:07</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7704 (-0.02%) | 纳指 26939 (+0.01%) | 道指 -0.31% | VIX ~21.7</div>
 </a>
-<a class="card" href="reports/2026-09-25-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-25</span></div>
-  <div class="card-title">美股盘前评估 | 2026-09-25（周五）</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-25-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:05</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-24-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-24</span></div>
-  <div class="card-title">美股盘后评估 | 2026-09-24</div>
+  </div>
+</section>
+<section class="day" data-date="2026-09-24">
+  <h2 class="day-h">9月24日<span class="dow">周四</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-24-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:12</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7706 (-0.75%) | 纳指100 30470 (-0.85%) | VIX 15.2（低位）</div>
 </a>
-<a class="card" href="reports/2026-09-24-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-24</span></div>
-  <div class="card-title">美股盘前评估 | 2026-09-24（周四）</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-24-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:10</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-23-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-23</span></div>
-  <div class="card-title">美股盘后评估 | 2026-09-23</div>
+  </div>
+</section>
+<section class="day" data-date="2026-09-23">
+  <h2 class="day-h">9月23日<span class="dow">周三</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-23-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:05</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">SPX 7764.6 (0.0%) | 纳指 27244 (+0.5%，连续第二日收盘新高) | VIX 14.2（回落）</div>
 </a>
-<a class="card" href="reports/2026-09-23-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-23</span></div>
-  <div class="card-title">美股盘前评估 | 2026-09-23（周三）</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-23-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:08</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-22-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-22</span></div>
-  <div class="card-title">美股盘后评估 | 2026-09-22（周二）</div>
+  </div>
+</section>
+<section class="day" data-date="2026-09-22">
+  <h2 class="day-h">9月22日<span class="dow">周二</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-22-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:10</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7764.7 (+1.49%) | 纳指100 30482 (+2.83%) | VIX 17.7 (-1.7%)</div>
 </a>
-<a class="card" href="reports/2026-09-22-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-22</span></div>
-  <div class="card-title">美股盘前评估 | 2026-09-22 周二</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-22-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:10</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-21-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-21</span></div>
-  <div class="card-title">美股盘后评估 | 2026-09-21</div>
+  </div>
+</section>
+<section class="day" data-date="2026-09-21">
+  <h2 class="day-h">9月21日<span class="dow">周一</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-21-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:06</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 500 温度90 ⚠️ | Nasdaq100 温度86 | VIX 21.7（中性）</div>
 </a>
-<a class="card" href="reports/2026-09-21-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-21</span></div>
-  <div class="card-title">盘前信号</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-21-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:09</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-18-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-18</span></div>
-  <div class="card-title">盘前信号</div>
-  <div class="card-mkt"></div>
+  </div>
+</section>
+<section class="day" data-date="2026-09-18">
+  <h2 class="day-h">9月18日<span class="dow">周五</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="pre_market" href="reports/2026-09-18-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:49</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-17-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-17</span></div>
-  <div class="card-title">美股盘后评估 | 2026-09-17</div>
+  </div>
+</section>
+<section class="day" data-date="2026-09-17">
+  <h2 class="day-h">9月17日<span class="dow">周四</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-17-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:10</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7551.81 (-0.45%) | 纳指 25978 (-0.01%) | VIX 17.71 (+3.0%)</div>
 </a>
-<a class="card" href="reports/2026-09-17-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-17</span></div>
-  <div class="card-title">美股盘前评估 | 2026-09-17 周四</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-17-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:07</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-16-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-16</span></div>
-  <div class="card-title">市场：</div>
+  </div>
+</section>
+<section class="day" data-date="2026-09-16">
+  <h2 class="day-h">9月16日<span class="dow">周三</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-16-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:07</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7586 -0.45% | 纳指 25982 -0.78% | VIX ~17 持平</div>
 </a>
-<a class="card" href="reports/2026-09-16-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-16</span></div>
-  <div class="card-title">美股盘前评估 | 2026-09-16 周三</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-16-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:08</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-15-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-15</span></div>
-  <div class="card-title">市场：</div>
+  </div>
+</section>
+<section class="day" data-date="2026-09-15">
+  <h2 class="day-h">9月15日<span class="dow">周二</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-15-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:17</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7620 -0.48% | NDX 29127 -0.82% | VIX ~16↑（VIXY +1.1% 估）</div>
 </a>
-<a class="card" href="reports/2026-09-15-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-15</span></div>
-  <div class="card-title">美股盘前评估 | 2026-09-15 周二（盘前版）</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-15-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:10</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-14-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-14</span></div>
-  <div class="card-title">市场：</div>
+  </div>
+</section>
+<section class="day" data-date="2026-09-14">
+  <h2 class="day-h">9月14日<span class="dow">周一</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-14-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:05</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7657 (+0.86%) | NDX 29368 (+0.91%) | VIX 15.85 (-11.2%)</div>
 </a>
-<a class="card" href="reports/2026-09-14-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-14</span></div>
-  <div class="card-title">美股盘前评估 | 2026-09-14 周一</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-14-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:07</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-11-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-11</span></div>
-  <div class="card-title">美股盘后评估 | 2026-09-11 周五</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-09-11">
+  <h2 class="day-h">9月11日<span class="dow">周五</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-11-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:12</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7591.70 (-0.58%) | 纳指 26081.72 (-0.65%) | VIX 16.32</div>
 </a>
-<a class="card" href="reports/2026-09-11-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-11</span></div>
-  <div class="card-title">今晚20:30（开盘前1小时）公布8月CPI，下周三四FOMC，市场定价加息概率50/50</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-11-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:19</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-10-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-10</span></div>
-  <div class="card-title">美股盘后评估 | 2026-09-10</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-09-10">
+  <h2 class="day-h">9月10日<span class="dow">周四</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-10-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:07</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7636 (-0.48%) | 纳指100 29422 (-0.29%) | VIX 15.7</div>
 </a>
-<a class="card" href="reports/2026-09-10-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-10</span></div>
-  <div class="card-title">美股盘前评估 | 2026-09-10 周四</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-10-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:11</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-09-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-09</span></div>
-  <div class="card-title">美股盘后评估 | 2026-09-09</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-09-09">
+  <h2 class="day-h">9月9日<span class="dow">周三</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-09-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:11</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7,674 (-0.58%) | 纳指 26,421 (-0.32%) | VIX 15.72 (+8.2%)</div>
 </a>
-<a class="card" href="reports/2026-09-09-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-09</span></div>
-  <div class="card-title">美股盘前评估 | 2026-09-09 周三</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-09-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:14</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-08-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-08</span></div>
-  <div class="card-title">美股盘后评估 | 2026-09-08（周二）</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-09-08">
+  <h2 class="day-h">9月8日<span class="dow">周二</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-08-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:08</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7718.6（-0.4%，距52周高仅1.3%）｜纳指100 29544（+0.2%）｜VIX 14.5（低位，平静偏暖）</div>
 </a>
-<a class="card" href="reports/2026-09-08-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-08</span></div>
-  <div class="card-title">美股盘前评估 | 2026-09-08 周二（劳动节后首个交易日）</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-08-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:11</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-07-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-07</span></div>
-  <div class="card-title">美股盘后评估 | 2026-09-07（周一）</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-09-07">
+  <h2 class="day-h">9月7日<span class="dow">周一</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-07-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:05</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7718.60 (-0.4%) | 纳指100 26507 (-0.3%) | VIX 21.7</div>
 </a>
-<a class="card" href="reports/2026-09-07-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-07</span></div>
-  <div class="card-title">美股盘前评估 | 2026-09-07（周一）</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-07-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:10</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-09-02-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-02</span></div>
-  <div class="card-title">美股盘后评估 | 2026-09-02</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-09-02">
+  <h2 class="day-h">9月2日<span class="dow">周三</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-02-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:10</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7631 (-0.71%) | 纳指 26099 (-1.03%) | VIX ~17.8（VIXY代理+3.0%，低位略回升*）</div>
 </a>
-<a class="card" href="reports/2026-09-01-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-09-01</span></div>
-  <div class="card-title">数据核验摘要</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-09-01">
+  <h2 class="day-h">9月1日<span class="dow">周二</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-09-01-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:11</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">SPX 7686 (-0.33%) | NDX 29457 (+0.08%) | VIX 14.93（低位平静）</div>
 </a>
-<a class="card" href="reports/2026-09-01-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-09-01</span></div>
-  <div class="card-title">美股盘前评估 | 2026-09-01 周二 20:00 BJ</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-09-01-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:06</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-08-31-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-31</span></div>
-  <div class="card-title">美股盘后评估 | 2026-08-31</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-31">
+  <h2 class="day-h">8月31日<span class="dow">周一</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-31-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:16</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7711.76 (-0.25%) | Nasdaq 26402 (-0.52%) | VIX 数据源未提供</div>
 </a>
-<a class="card" href="reports/2026-08-29-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-08-29</span></div>
-  <div class="card-title">周一（8/31）开盘前</div>
-  <div class="card-mkt"></div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-29">
+  <h2 class="day-h">8月29日<span class="dow">周六</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="pre_market" href="reports/2026-08-29-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:43</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-08-27-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-27</span></div>
-  <div class="card-title">美股盘后评估 | 2026-08-26（周三收盘）</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-27">
+  <h2 class="day-h">8月27日<span class="dow">周四</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-27-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">09:09</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">SPX 7675.70 (-0.02%) | NDX 26130 (-0.08%) | DJIA 53464 (-0.21%)</div>
 </a>
-<a class="card" href="reports/2026-08-27-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-08-27</span></div>
-  <div class="card-title">美股盘前评估 | 2026-08-27 周四</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-08-27-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:07</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-08-26-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-26</span></div>
-  <div class="card-title">美股盘后评估 | 2026-08-26</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-26">
+  <h2 class="day-h">8月26日<span class="dow">周三</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-26-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:12</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7677 (+0.3%) | 纳指100 29209 (+0.6%) | VIX 低位区（直接读数缺失，VIXY恐慌ETF创52周新低交叉验证——市场毫无恐惧）</div>
 </a>
-<a class="card" href="reports/2026-08-26-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-08-26</span></div>
-  <div class="card-title">美股盘前评估 | 2026-08-26 周三</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-08-26-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:20</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-08-25-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-25</span></div>
-  <div class="card-title">美股盘后评估 | 2026-08-24收盘</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-25">
+  <h2 class="day-h">8月25日<span class="dow">周二</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-25-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:18</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">SPX 7653 (-0.3%) 温度90%·超买 | NDX 25980 (-0.8%) 82%·超买 | VIX代理VIXY贴52周最低→恐慌极低</div>
 </a>
-<a class="card" href="reports/2026-08-24-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-24</span></div>
-  <div class="card-title">市场：</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-24">
+  <h2 class="day-h">8月24日<span class="dow">周一</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-24-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:18</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7674(+0.4%) | 纳指100 29309(+0.3%) | VIX 21.7（低位，市场偏自满）</div>
 </a>
-<a class="card" href="reports/2026-08-24-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-08-24</span></div>
-  <div class="card-title">美股盘前评估 | 2026-08-24 周一</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-08-24-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:11</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-08-21-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-21</span></div>
-  <div class="card-title">美股盘后评估 | 2026-08-21</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-21">
+  <h2 class="day-h">8月21日<span class="dow">周五</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-21-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:17</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7641 (-0.87%) | 纳指 26067 (-1.00%) | 道指 52759 (-1.32%) | VIX ≈21.7</div>
 </a>
-<a class="card" href="reports/2026-08-21-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-08-21</span></div>
-  <div class="card-title">美股盘前评估 | 2026-08-21 周五</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-08-21-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:05</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-08-20-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-20</span></div>
-  <div class="card-title">数据底稿（2026-08-19美股收盘，港股同日）</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-20">
+  <h2 class="day-h">8月20日<span class="dow">周四</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-20-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:08</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7708 (+0.2%) | 纳指 26331 (+0.2%) | VIX 15.8 (8/18)</div>
 </a>
-<a class="card" href="reports/2026-08-20-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-08-20</span></div>
-  <div class="card-title">美股盘前评估 | 2026-08-20 周四（美东 08:13 盘前）</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-08-20-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:17</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-08-19-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-19</span></div>
-  <div class="card-title">美股盘后评估 | 2026-08-19</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-19">
+  <h2 class="day-h">8月19日<span class="dow">周三</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-19-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:06</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7691(-0.7%) 距52周高仅1.6% | 纳指 26290(-1.3%) | VIX 21.7中性</div>
 </a>
-<a class="card" href="reports/2026-08-19-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-08-19</span></div>
-  <div class="card-title">美股盘前评估 | 2026-08-19 周三</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-08-19-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:16</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-08-18-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-18</span></div>
-  <div class="card-title">温度计算（已验证）：</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-18">
+  <h2 class="day-h">8月18日<span class="dow">周二</span><span class="n">2 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-18-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">09:19</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7745 (-0.5%) | 纳指 26645 (-0.3%) | 恐慌代理VIXY 18.8 (+1.0%)，情绪中性偏稳</div>
 </a>
-<a class="card" href="reports/2026-08-18-pre_market.html">
-  <div class="card-top"><span class="card-eyebrow">🌅 美股盘前评估</span>
-    <span class="card-date">2026-08-18</span></div>
-  <div class="card-title">数据核对</div>
-  <div class="card-mkt"></div>
+<a class="card" data-type="pre_market" href="reports/2026-08-18-pre_market.html">
+  <div class="card-top"><span class="chip">🌅 盘前</span><span class="card-time">20:07</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘前评估</div>
 </a>
-<a class="card" href="reports/2026-08-17-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-17</span></div>
-  <div class="card-title">市场：</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-17">
+  <h2 class="day-h">8月17日<span class="dow">周一</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-17-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:11</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7785.76（-0.17%，52周温度99%，贴着历史高点）| 纳指100 26729（-0.28%）| VIXY 18.63（52周新低→恐慌指数处于低位，市场偏自满）</div>
 </a>
-<a class="card" href="reports/2026-08-14-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-14</span></div>
-  <div class="card-title">大盘</div>
-  <div class="card-mkt"></div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-14">
+  <h2 class="day-h">8月14日<span class="dow">周五</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-14-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:05</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘后评估</div>
 </a>
-<a class="card" href="reports/2026-08-12-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-12</span></div>
-  <div class="card-title">美股盘后评估 | 2026年8月12日（周二）</div>
-  <div class="card-mkt"></div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-12">
+  <h2 class="day-h">8月12日<span class="dow">周三</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-12-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:18</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘后评估</div>
 </a>
-<a class="card" href="reports/2026-08-11-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-11</span></div>
-  <div class="card-title">美股盘后评估 | 2026-08-11</div>
-  <div class="card-mkt"></div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-11">
+  <h2 class="day-h">8月11日<span class="dow">周二</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-11-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:09</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘后评估</div>
 </a>
-<a class="card" href="reports/2026-08-10-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-10</span></div>
-  <div class="card-title">市场</div>
-  <div class="card-mkt"></div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-10">
+  <h2 class="day-h">8月10日<span class="dow">周一</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-10-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:11</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘后评估</div>
 </a>
-<a class="card" href="reports/2026-08-07-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-07</span></div>
-  <div class="card-title">美股盘后评估 | 2026-08-07</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-07">
+  <h2 class="day-h">8月7日<span class="dow">周五</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-07-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:14</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 6643.70 (+0.59%) | Nasdaq 22484 (+0.44%) | VIX 21.67 🔺偏高</div>
 </a>
-<a class="card" href="reports/2026-08-06-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-06</span></div>
-  <div class="card-title">美股盘后八大师评估 | 2026-08-06（周四）</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-06">
+  <h2 class="day-h">8月6日<span class="dow">周四</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-06-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:04</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 6,644(+0.6%) | Nasdaq 22,484(+0.4%) | Dow 46,247(+0.7%) | VIX ~16低位(估) | 黄金$4,268 | USDCNY 6.74</div>
 </a>
-<a class="card" href="reports/2026-08-05-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-05</span></div>
-  <div class="card-title">美股盘后评估 | 2026年8月5日（周二收盘数据）</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-05">
+  <h2 class="day-h">8月5日<span class="dow">周三</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-05-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:22</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7,737(+1.79%) | Nasdaq 26,585(+2.59%) | VIX 21.67</div>
 </a>
-<a class="card" href="reports/2026-08-04-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-04</span></div>
-  <div class="card-title">美股盘后评估 | 2026年8月4日（周二）</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-04">
+  <h2 class="day-h">8月4日<span class="dow">周二</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-04-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:14</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 6643.70 (+0.59%) | Nasdaq 28,776 (+1.78%) | 道琼斯 46,247 (+0.65%) | VIX ~16（估）</div>
 </a>
-<a class="card" href="reports/2026-08-03-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-08-03</span></div>
-  <div class="card-title">美股盘后评估 | 2026-08-03</div>
-  <div class="card-mkt"></div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-08-03">
+  <h2 class="day-h">8月3日<span class="dow">周一</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-08-03-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:04</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘后评估</div>
 </a>
-<a class="card" href="reports/2026-07-31-post_market.html">
-  <div class="card-top"><span class="card-eyebrow">📈 美股盘后评估</span>
-    <span class="card-date">2026-07-31</span></div>
-  <div class="card-title">市场：</div>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-07-31">
+  <h2 class="day-h">7月31日<span class="dow">周五</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-07-31-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:07</span><span class="card-go" aria-hidden="true">›</span></div>
   <div class="card-mkt">S&amp;P 7,437(+1.66%) | NDX 28,106(+3.36%) | 道指 52,208(+1.19%) | VIX 21.67</div>
 </a>
+  </div>
+</section>
+<section class="day" data-old="1" data-hidden="1" data-date="2026-07-30">
+  <h2 class="day-h">7月30日<span class="dow">周四</span><span class="n">1 份</span></h2>
+  <div class="grid">
+<a class="card" data-type="post_market" href="reports/2026-07-30-post_market.html">
+  <div class="card-top"><span class="chip">📈 盘后</span><span class="card-time">08:15</span><span class="card-go" aria-hidden="true">›</span></div>
+  <div class="card-mkt">美股盘后评估</div>
+</a>
+  </div>
+</section>
+<button class="more" type="button">显示更早的报告（42 份 / 29 天）</button>
+</main>
+<footer class="foot-note">⚠️ 内容基于公开信息的研究推演，非投资建议 · 金额数据已脱敏<br>Hermes Agent · qiuwenhuiHermes/hermes-daily-report · kami design</footer>
 </div>
-<div class="foot-note">⚠️ 内容基于公开信息的研究推演，非投资建议 · 金额数据已脱敏<br>Hermes Agent · qiuwenhuiHermes/hermes-daily-report · kami design</div>
-</div>
+<a class="totop" href="#" aria-label="回到顶部">↑</a>
+<script>
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  var btns=[].slice.call(document.querySelectorAll('.chipf'));
+  var days=[].slice.call(document.querySelectorAll('.day'));
+  var more=document.querySelector('.more');
+  var revealed=false;
+  function apply(f){
+    btns.forEach(function(x){x.setAttribute('aria-pressed',String(x.getAttribute('data-filter')===f))});
+    cards.forEach(function(c){
+      var keep=(f==='all'||c.getAttribute('data-type')===f);
+      if(keep){c.removeAttribute('data-hidden')}else{c.setAttribute('data-hidden','1')}
+    });
+    days.forEach(function(d){
+      var collapsible=!!d.querySelector('.card[data-hidden]');
+      if(f==='all'&&!revealed&&d.hasAttribute('data-old')){d.setAttribute('data-hidden','1');return}
+      var vis=d.querySelectorAll('.card:not([data-hidden])').length;
+      d.setAttribute('data-hidden',vis?'0':'1');
+    });
+    if(more){more.setAttribute('data-hidden',(!revealed&&f==='all')?'0':'1')}
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){apply(b.getAttribute('data-filter'))})});
+  if(more){more.addEventListener('click',function(){
+    revealed=true;
+    [].slice.call(document.querySelectorAll('.day[data-old]')).forEach(function(d){d.removeAttribute('data-old');d.removeAttribute('data-hidden')});
+    more.setAttribute('data-hidden','1');
+  })}
+  var tt=document.querySelector('.totop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>600){tt.classList.add('on')}else{tt.classList.remove('on')}
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
