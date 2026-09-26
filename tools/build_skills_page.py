@@ -20,6 +20,9 @@ import sqlite3
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _readonly_db import connect_ro, close_ro
+
 ROOT = Path(__file__).resolve().parent.parent
 SKILLS_DIR = Path.home() / ".hermes" / "skills"
 STATE_DB = Path.home() / ".hermes" / "state.db"
@@ -69,7 +72,7 @@ def load_usage():
     usage = {}
     if not STATE_DB.exists():
         return usage, None
-    con = sqlite3.connect(f"file:{STATE_DB}?mode=ro", uri=True)
+    con = connect_ro(STATE_DB)
     try:
         rows = con.execute(
             "SELECT session_id, tool_calls, timestamp FROM messages "
@@ -106,7 +109,7 @@ def load_usage():
                 d["last"] = max(d["last"], ts)
         win = con.execute("SELECT MIN(timestamp), MAX(timestamp) FROM messages").fetchone()
     finally:
-        con.close()
+        close_ro(con)
     span = None
     if win and win[0]:
         f = lambda t: datetime.datetime.fromtimestamp(t).strftime("%Y-%m-%d")
@@ -231,7 +234,7 @@ h1{font-size:30px}
 <header>
   <div class="eyebrow">Hermes Skill Inventory</div>
   <h1>Skills 一览</h1>
-  <p class="sub">已安装 Skill 的清单与真实调用频率。数据来自 Hermes 会话的权威工具调用记录，按次数降序；未出现的即为尚未启用。</p>
+  <p class="sub">按调用次数降序，可筛常用、低频和未使用。次数取自会话里的工具调用记录，没有记录的即未用过。</p>
   <p class="statusline"><span><b>{n}</b> 个已安装</span><span><b>{n_hot}</b> 个常用（≥3 次）</span><span><b>{n_warm}</b> 个低频</span><span><b>{n - n_hot - n_warm}</b> 个未使用</span><span>统计窗口 {span_txt}</span></p>
   <a class="back" href="index.html" style="font-size:14px;color:var(--brand-ink-light);padding:11px 2px;display:inline-block">← 返回报告首页</a>
 </header>

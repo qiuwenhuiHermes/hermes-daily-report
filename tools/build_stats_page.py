@@ -17,7 +17,11 @@ import importlib.util
 import json
 import re
 import sqlite3
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _readonly_db import connect_ro, close_ro
 
 ROOT = Path(__file__).resolve().parent.parent
 STATE_DB = Path.home() / ".hermes" / "state.db"
@@ -69,7 +73,7 @@ def day(ts):
 
 # ── token ──
 def token_stats():
-    db = sqlite3.connect(f"file:{STATE_DB}?mode=ro", uri=True)
+    db = connect_ro(STATE_DB)
     models = db.execute("""
         SELECT model, SUM(api_call_count), SUM(input_tokens), SUM(output_tokens),
                SUM(cache_read_tokens)
@@ -83,7 +87,7 @@ def token_stats():
         daily[d][0] += i or 0
         daily[d][1] += o or 0
         daily[d][2] += cr or 0
-    db.close()
+    close_ro(db)
     span = (day(win[0]).strftime("%Y-%m-%d"), day(win[1]).strftime("%Y-%m-%d")) if win and win[0] else None
     return models, sorted(daily.items()), span
 
@@ -100,7 +104,7 @@ def cron_stats():
         pass
     if not CRON_DB.exists():
         return [], [], 0
-    db = sqlite3.connect(f"file:{CRON_DB}?mode=ro", uri=True)
+    db = connect_ro(CRON_DB)
     rows = db.execute("""
         SELECT job_id, status, COUNT(*),
                AVG((julianday(finished_at)-julianday(started_at))*86400)
@@ -137,7 +141,7 @@ def cron_stats():
     incidents = db.execute(
         "SELECT job_id, last_seen_at, error FROM cron_incidents "
         "WHERE closed_at IS NULL ORDER BY last_seen_at DESC LIMIT 6").fetchall()
-    db.close()
+    close_ro(db)
     out = []
     for jid, j in per_job.items():
         total = j["ok"] + j["fail"]
@@ -157,7 +161,7 @@ def cron_stats():
 
 # ── tools ──
 def tool_stats():
-    db = sqlite3.connect(f"file:{STATE_DB}?mode=ro", uri=True)
+    db = connect_ro(STATE_DB)
     c = collections.Counter()
     for (tc,) in db.execute(
             "SELECT tool_calls FROM messages WHERE tool_calls IS NOT NULL AND tool_calls != '[]'"):
@@ -169,7 +173,7 @@ def tool_stats():
             fn = (call.get("function") or {}).get("name", "")
             if fn:
                 c[fn] += 1
-    db.close()
+    close_ro(db)
     return c.most_common(14)
 
 
@@ -229,7 +233,7 @@ def main():
         f'<b class="tnum">{fmt_k(v)}</b></li>' for n, v in tools)
 
     span_txt = f"{span[0]} → {span[1]}" if span else "无数据"
-    today = datetime.date.today().strftime("%Y-%m-%d %H:%M")
+    today = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 
     kami_css = load_kami_css()
     css = """
@@ -297,7 +301,7 @@ h1{font-size:30px}
 <header>
   <div class="eyebrow">Hermes Operations</div>
   <h1>Agent 运营统计</h1>
-  <p class="sub">token 消耗、定时任务健康度与工具调用的真实记录。统计窗口 {span_txt}，生成于 {today}。</p>
+  <p class="sub">token 消耗、定时任务健康度和工具调用的汇总。统计窗口 {span_txt}，生成于 {today}。</p>
   <p class="statusline"><span><b>{fmt_m(tot_calls)}</b> 次 API 调用</span><span><b>{fmt_m(tot_in + tot_out)}</b> tokens 输入+输出</span><span><b>{fmt_m(tot_cache)}</b> tokens 缓存读</span><span><b>{len(crons)}</b> 个 cron 任务</span></p>
   <a class="back" href="index.html">← 返回报告首页</a>　<a class="back" href="skills.html">Skills 一览 →</a>
 </header>
@@ -309,7 +313,7 @@ h1{font-size:30px}
 
 <h2>Token 用量 · 近 30 天 <span class="totip">（柱高 = 当日输入+输出；悬停看明细）</span></h2>
 <div class="chart">{bars_html}</div>
-<p class="chartnote">缓存读未计入柱高：上下文复用为主，与计费输入不同列。峰值日 {fmt_k(peak)} tokens。</p>
+<p class="chartnote">柱高只算输入和输出；缓存读单独计数，多为上下文复用，计费口径与输入不同。峰值日 {fmt_k(peak)} tokens。</p>
 
 <h2>Cron 定时任务健康度</h2>
 <div class="tbl-wrap"><table>
