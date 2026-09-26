@@ -331,7 +331,7 @@ h1{font-size:40px;font-weight:500;line-height:1.15;color:var(--near-black);margi
 .statusline{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin-top:22px;font-size:13px;color:var(--stone);font-variant-numeric:tabular-nums}
 .statusline b{font-weight:500;color:var(--near-black);font-size:19px;margin-right:2px}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 4px}
-.chipf{border:1px solid var(--border);background:var(--ivory);color:var(--olive);font-family:inherit;font-size:13px;padding:7px 14px;border-radius:3px;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
+.chipf{border:1px solid var(--border);background:var(--ivory);color:var(--olive);font-family:inherit;font-size:13px;padding:7px 14px;border-radius:3px;cursor:pointer;transition:background .18s,color .18s,border-color .18s;display:inline-flex;align-items:center;min-height:44px}
 .chipf:hover{border-color:var(--dark-warm);color:var(--near-black)}
 .chipf[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
 .chipf:focus-visible{outline:2px solid var(--brand-ink-light);outline-offset:2px}
@@ -349,10 +349,10 @@ h1{font-size:40px;font-weight:500;line-height:1.15;color:var(--near-black);margi
 .card-time{color:var(--stone);font-variant-numeric:tabular-nums}
 .card-go{margin-left:auto;color:var(--stone);font-size:15px;line-height:1}
 .card-mkt{font-size:13.5px;color:var(--olive);line-height:1.6;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;text-wrap:pretty}
-.more{margin:38px auto 0;display:block;border:1px solid var(--border);background:var(--ivory);color:var(--brand);font-family:inherit;font-size:13.5px;padding:11px 22px;border-radius:3px;cursor:pointer;transition:border-color .18s,background .18s}
+.more{margin:38px auto 0;display:flex;align-items:center;justify-content:center;min-height:44px;border:1px solid var(--border);background:var(--ivory);color:var(--brand);font-family:inherit;font-size:13.5px;padding:11px 22px;border-radius:3px;cursor:pointer;transition:border-color .18s,background .18s}
 .more:hover{border-color:var(--brand);background:var(--tag-bg)}
 .more:focus-visible{outline:2px solid var(--brand-ink-light);outline-offset:2px}
-.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:42px;height:42px;border-radius:50%;background:var(--ivory);border:1px solid var(--border);color:var(--brand);font-size:17px;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:20}
+.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:50%;background:var(--ivory);border:1px solid var(--border);color:var(--brand);font-size:17px;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:20}
 .totop.on{opacity:1;pointer-events:auto}
 .totop:hover{transform:translateY(-2px)}
 [data-hidden="1"]{display:none!important}
@@ -513,7 +513,7 @@ __HEAD__
 <style>__CSS__
 .wrap{max-width:860px}
 .top{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:baseline;gap:12px;background:var(--parchment);padding:12px 0 13px;margin-bottom:24px;border-bottom:.5px solid var(--border)}
-.back{font-size:13.5px;color:var(--brand-ink-light);white-space:nowrap}
+.back{font-size:14px;color:var(--brand-ink-light);white-space:nowrap;padding:11px 2px}
 .back:focus-visible,a:focus-visible{outline:2px solid var(--brand-ink-light);outline-offset:2px;border-radius:2px}
 .meta{font-size:13px;color:var(--stone);font-variant-numeric:tabular-nums;white-space:nowrap}
 h1{font-size:28px;font-weight:500;line-height:1.3;margin-bottom:26px;text-wrap:balance}
