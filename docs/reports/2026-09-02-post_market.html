@@ -5,30 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>📈 美股盘后评估 | 2026-09-02</title>
 <style>
+@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W05.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+:root{--parchment:#f5f4ed;--ivory:#faf9f5;--sand:#e8e6dc;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e8e6dc;--border-soft:#e5e3d8;--tag-bg:#E4ECF5;
+--serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0b10;color:#e8eaf0;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;padding:20px 16px 60px}
-.wrap{max-width:860px;margin:0 auto}
-.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.back{color:#4f7cff;text-decoration:none;font-size:14px}
-.meta{color:#8b90a0;font-size:13px}
-.rpt-body{font-size:15px;line-height:1.8}
-.rpt-body p{margin:0 0 12px}
-.rpt-body h3,.rpt-body h4{margin:18px 0 10px;font-size:17px;color:#fff}
-.rpt-body hr{border:none;border-top:1px solid #262b3d;margin:18px 0}
-.rpt-body .lead{font-size:16px;font-weight:600;color:#fff}
-.rpt-body strong{color:#fff}
-.stars{color:#e8c547;letter-spacing:2px}
-.em{font-size:17px}
-.rpt-tb{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
-.rpt-tb th{background:#1b1f31;color:#9aa2b8;padding:8px 10px;text-align:left;font-weight:600;border-bottom:1px solid #2a2f45}
-.rpt-tb td{padding:7px 10px;border-bottom:1px solid #1e2334;color:#c3c8d8}
-footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
+html{background:var(--parchment)}
+body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased}
+strong{font-weight:500;color:var(--near-black)}
+a{color:var(--brand-ink-light);text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:72px 48px 80px}
+@media(max-width:640px){.wrap{padding:48px 20px 56px}}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--brand);letter-spacing:.25em;font-weight:500;text-transform:uppercase;margin-bottom:14px}
+.eyebrow::before{content:"";width:12px;height:2px;border-radius:1px;background:var(--brand);flex-shrink:0}
+.foot-note{margin-top:56px;padding-top:12px;border-top:1px dotted var(--border);font-size:12.5px;color:var(--stone);text-align:center;line-height:1.9}
+
+.wrap{max-width:860px}
+.top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:26px;padding-bottom:14px;border-bottom:.5px solid var(--border)}
+.back{font-size:13.5px;color:var(--brand-ink-light)}
+.meta{font-size:12.5px;color:var(--stone);font-variant-numeric:tabular-nums}
+h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
+.rpt-body{font-size:15px;line-height:1.75;letter-spacing:.15px;color:var(--near-black)}
+.rpt-body p{margin:0 0 13px}
+.rpt-body .li{padding-left:18px;position:relative}
+.rpt-body h3,.rpt-body h4{margin:26px 0 10px;font-weight:500;color:var(--near-black)}
+.rpt-body h3{font-size:20px}
+.rpt-body h4{font-size:16.5px;color:var(--dark-warm)}
+.rpt-body hr{border:none;border-top:.5px solid var(--border);margin:24px 0}
+.rpt-body .lead{font-size:16px;font-weight:500;color:var(--near-black)}
+.kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border)}
+.kami-tb td{padding:7px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black)}
+.kami-tb.striped tbody tr:nth-child(even) td{background:var(--ivory)}
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="top"><a class="back" href="../index.html">← 返回首页</a><span class="meta">美股盘后评估 · 2026-09-02 08:10</span></div>
-<h1 style="font-size:22px;margin-bottom:18px">📈 美股盘后评估 | 2026-09-02</h1>
+<div class="eyebrow">美股盘后评估</div>
+<h1>📈 美股盘后评估 | 2026-09-02</h1>
 <div class="rpt-body">
 <p>数据全部就绪。所有行情已获取（腾讯源，东方财富API被服务器拦截已弃用），8位大师框架已加载。生成最终报告：</p>
 
@@ -43,73 +58,73 @@ footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
 
 <hr>
 
-<p><span class="em">🌡</span>️ <strong>价格温度计</strong>（温度=(现价-52周低)/(52周高-52周低)）</p>
+<p>🌡️ <strong>价格温度计</strong>（温度=(现价-52周低)/(52周高-52周低)）</p>
 
 <p>代码 | 价格 | 日涨跌 | 温度 | 区间</p>
 <p>---|---|---|---|---</p>
-<p>0700.HK | 441.4 | -2.6% | 11% | <span class="em">🟢</span>黄金区</p>
-<p>LCID | 4.55 | -6.2% | 11% | <span class="em">🟢</span>黄金区*</p>
-<p>9988.HK | 110.4 | -3.3% | 22% | <span class="em">🟢</span>低估区</p>
-<p>BYD | 11.04 | +0.1% | 30% | <span class="em">🟢</span>低估区</p>
-<p>TSLA | 356.1 | -3.2% | 30% | <span class="em">🟢</span>低估区</p>
-<p>RIVN | 15.54 | -3.3% | 33% | <span class="em">🟢</span>低估区</p>
+<p>0700.HK | 441.4 | -2.6% | 11% | 🟢黄金区</p>
+<p>LCID | 4.55 | -6.2% | 11% | 🟢黄金区*</p>
+<p>9988.HK | 110.4 | -3.3% | 22% | 🟢低估区</p>
+<p>BYD | 11.04 | +0.1% | 30% | 🟢低估区</p>
+<p>TSLA | 356.1 | -3.2% | 30% | 🟢低估区</p>
+<p>RIVN | 15.54 | -3.3% | 33% | 🟢低估区</p>
 <p>AMZN | 254.9 | -1.9% | 66% | 🟡偏贵区</p>
 <p>GOOGL | 335.0 | -1.3% | 67% | 🟡偏贵区</p>
 <p>PLTR | 179.9 | -3.5% | 73% | 🟡偏贵区</p>
 <p>NVDA | 217.4 | -1.5% | 74% | 🟡偏贵区</p>
 <p>TSM | 414.0 | -0.3% | 75% | 🟡偏贵区</p>
 <p>MSFT | 501.0 | -1.2% | 78% | 🟠偏贵区</p>
-<p>AAPL | 325.1 | +2.6% | 87% | <span class="em">🔴</span>超买区</p>
+<p>AAPL | 325.1 | +2.6% | 87% | 🔴超买区</p>
 
 <p>3个月趋势：中概资产深跌（9988 -16%、0700 -8%、TSLA -16%）；美股科技高位震荡（MSFT +14%、PLTR +18%）。<strong>中美资产温度差达到极端——这是本周最重要的信号。</strong></p>
 
 <hr>
 
-<p><span class="stars">⭐</span> <strong>本周建议定投</strong></p>
+<p>⭐ <strong>本周建议定投</strong></p>
 
-<p class="lead"><strong>🔸 0700.HK 腾讯 441.4｜<span class="stars">⭐⭐⭐</span> 加重仓</strong></p>
+<p class="lead"><strong>🔸 0700.HK 腾讯 441.4｜⭐⭐⭐ 加重仓</strong></p>
 <p>PE 16.1，价格贴着52周地板（411），社交+游戏+支付生态护城河未变，跌的是情绪不是生意。</p>
-<p>- 巴菲特：好生意打七折，微信是消费者心里的墙，我加仓</p>
-<p>- 芒格：众人嫌弃中国资产时，正是逆向者的好球</p>
-<p>- Marks：钟摆明显在恐惧端，风险补偿充足，偏进攻</p>
-<p>- Dalio：中国资产处周期低位、政策转暖，与美股高位形成错位（注：我对中国长期偏乐观，需自知）</p>
-<p>- Taleb：尾部风险是政策，用仓位上限控制，不押单一标的</p>
+<p class="li">- 巴菲特：好生意打七折，微信是消费者心里的墙，我加仓</p>
+<p class="li">- 芒格：众人嫌弃中国资产时，正是逆向者的好球</p>
+<p class="li">- Marks：钟摆明显在恐惧端，风险补偿充足，偏进攻</p>
+<p class="li">- Dalio：中国资产处周期低位、政策转暖，与美股高位形成错位（注：我对中国长期偏乐观，需自知）</p>
+<p class="li">- Taleb：尾部风险是政策，用仓位上限控制，不押单一标的</p>
 
-<p class="lead"><strong>🔸 9988.HK 阿里 110.4｜<span class="stars">⭐⭐⭐</span> 加重仓</strong></p>
+<p class="lead"><strong>🔸 9988.HK 阿里 110.4｜⭐⭐⭐ 加重仓</strong></p>
 <p>PE 18.7，从185回撤40%，云+AI业务被悲观定价，回购持续。</p>
-<p>- 巴菲特：价格远低于我能算出的价值，留足安全边际</p>
-<p>- 芒格：便宜+能看懂的商业模式，两个条件都满足</p>
-<p>- Marks：三个月跌16%，坏消息已充分计入价格</p>
-<p>- Andreessen：云计算是软件吞噬世界的地基，被弃售时正是买结构性资产的机会</p>
-<p>- Taleb：中概波动是常态，控制单次投入节奏即可</p>
+<p class="li">- 巴菲特：价格远低于我能算出的价值，留足安全边际</p>
+<p class="li">- 芒格：便宜+能看懂的商业模式，两个条件都满足</p>
+<p class="li">- Marks：三个月跌16%，坏消息已充分计入价格</p>
+<p class="li">- Andreessen：云计算是软件吞噬世界的地基，被弃售时正是买结构性资产的机会</p>
+<p class="li">- Taleb：中概波动是常态，控制单次投入节奏即可</p>
 
-<p class="lead"><strong>🔸 GOOGL 335.0｜<span class="stars">⭐⭐</span> 加仓</strong></p>
+<p class="lead"><strong>🔸 GOOGL 335.0｜⭐⭐ 加仓</strong></p>
 <p>巨头中估值最低（PE 16.8），回调10%后温度67%，搜索+云+Gemini组合。</p>
-<p>- 巴菲特：以合理价格买伟大生意的一角，这价格我能接受</p>
-<p>- Andreessen：AI是让搜索更强的杠杆而非杀手，Gemini是强形式布局</p>
-<p>- Marks：回调消化了部分热度，从偏贵回到接近合理</p>
-<p>- Karpathy：AI颠覆搜索的担忧被夸大，分发优势仍在（imo）</p>
+<p class="li">- 巴菲特：以合理价格买伟大生意的一角，这价格我能接受</p>
+<p class="li">- Andreessen：AI是让搜索更强的杠杆而非杀手，Gemini是强形式布局</p>
+<p class="li">- Marks：回调消化了部分热度，从偏贵回到接近合理</p>
+<p class="li">- Karpathy：AI颠覆搜索的担忧被夸大，分发优势仍在（imo）</p>
 
-<p class="lead"><strong>🔸 AMZN 254.9｜<span class="stars">⭐⭐</span> 加仓</strong></p>
+<p class="lead"><strong>🔸 AMZN 254.9｜⭐⭐ 加仓</strong></p>
 <p>PE 20.5，月回调10%，AWS+零售飞轮完好。</p>
-<p>- 巴菲特：AWS是收费桥梁，客户黏性强，回撤给了入场缝隙</p>
-<p>- Munger：避开热点噪音，这家生意的单位经济模型清楚</p>
-<p>- Marks：跌出来的安全边际在改善</p>
-<p>- Andreessen：电商+云双重软件化，长期趋势未变</p>
+<p class="li">- 巴菲特：AWS是收费桥梁，客户黏性强，回撤给了入场缝隙</p>
+<p class="li">- Munger：避开热点噪音，这家生意的单位经济模型清楚</p>
+<p class="li">- Marks：跌出来的安全边际在改善</p>
+<p class="li">- Andreessen：电商+云双重软件化，长期趋势未变</p>
 
-<p class="lead"><strong>🔸 BYD 11.04｜<span class="stars">⭐⭐</span> 加仓</strong></p>
+<p class="lead"><strong>🔸 BYD 11.04｜⭐⭐ 加仓</strong></p>
 <p>温度30%低估区，PE 23，垂直整合的成本护城河。</p>
-<p>- 巴菲特：成本优势是结构性护城河，但我自己已在减持，你买的是比我更便宜的价位（诚实说）</p>
-<p>- Munger：造车是苦生意，但这家有真实成本优势，价格补偿了行业缺陷</p>
-<p>- Marks：从众乐观散去后的合理定价区</p>
-<p>- Dalio：中国制造出口周期仍在，价格处低位</p>
+<p class="li">- 巴菲特：成本优势是结构性护城河，但我自己已在减持，你买的是比我更便宜的价位（诚实说）</p>
+<p class="li">- Munger：造车是苦生意，但这家有真实成本优势，价格补偿了行业缺陷</p>
+<p class="li">- Marks：从众乐观散去后的合理定价区</p>
+<p class="li">- Dalio：中国制造出口周期仍在，价格处低位</p>
 
-<p class="lead"><strong><span class="stars">⭐</span> 正常定投（综合理由）：</strong></p>
+<p class="lead"><strong>⭐ 正常定投（综合理由）：</strong></p>
 <p>NVDA 217（PE 27.5不贵但温度74%，等回调加码）｜TSM 414（护城河顶级，地缘尾部风险压估值，小额定投摊薄）｜MSFT 501（质地最优但78%温度，只投底仓）｜TSLA 356（温度30%vs PE 330，大师分歧最大：Munger/Karpathy嫌贵，Andreessen看好机器人期权，只投最小额）</p>
 
 <hr>
 
-<p><span class="em">⚡</span> <strong>暂缓/跳过</strong></p>
+<p>⚡ <strong>暂缓/跳过</strong></p>
 
 <p>代码 | 现价 | 一句话理由</p>
 <p>---|---|---|</p>
@@ -120,35 +135,35 @@ footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
 
 <hr>
 
-<p><span class="em">💰</span> <strong>本周组合</strong>（周预算4000元，年内剩余弹药约按此节奏）</p>
+<p>💰 <strong>本周组合</strong>（周预算4000元，年内剩余弹药约按此节奏）</p>
 
 <p>股票 | 评级 | 本次金额</p>
 <p>---|---|---</p>
-<p>0700.HK | <span class="stars">⭐⭐⭐</span> | 900元</p>
-<p>9988.HK | <span class="stars">⭐⭐⭐</span> | 800元</p>
-<p>GOOGL | <span class="stars">⭐⭐</span> | 700元</p>
-<p>AMZN | <span class="stars">⭐⭐</span> | 600元</p>
-<p>BYD | <span class="stars">⭐⭐</span> | 600元</p>
-<p>NVDA/TSM/MSFT/TSLA | <span class="stars">⭐</span> | 各100元</p>
+<p>0700.HK | ⭐⭐⭐ | 900元</p>
+<p>9988.HK | ⭐⭐⭐ | 800元</p>
+<p>GOOGL | ⭐⭐ | 700元</p>
+<p>AMZN | ⭐⭐ | 600元</p>
+<p>BYD | ⭐⭐ | 600元</p>
+<p>NVDA/TSM/MSFT/TSLA | ⭐ | 各100元</p>
 <p class="lead"><strong>合计</strong> | | <strong>4000元</strong></p>
 
 <hr>
 
-<p><span class="em">📋</span> <strong>大师提醒</strong></p>
-<p>- <strong>巴菲特</strong>：别人恐惧时贪婪——本周的贪婪对象在港股，不在纳指</p>
-<p>- <strong>芒格</strong>：避免愚蠢比追求聪明重要：AAPL/PLTR现在的价格是愚蠢的买入点</p>
-<p>- <strong>塔勒布</strong>：中概是凸性机会但要假设政策尾部会来——分批就是你的杠铃</p>
-<p>- <strong>Naval</strong>：定投的复利来自不间断，别因为大盘高位就清零节奏</p>
-<p>- <strong>Karpathy</strong>：AI资本开支是真实的，但为“AI”三个字母付154倍PE是另一回事</p>
-<p>- <strong>Andreessen</strong>：软件吞噬世界未变，GOOGL/AMZN回调是上车结构性资产的机会</p>
-<p>- <strong>达里奥</strong>：中美周期错位极端化本身就是信号——机制清楚，时点我不装能预测</p>
-<p>- <strong>马克斯</strong>：你无法预测，但可以准备——大盘88%温度时保留干火药不是胆小，是纪律</p>
+<p>📋 <strong>大师提醒</strong></p>
+<p class="li">- <strong>巴菲特</strong>：别人恐惧时贪婪——本周的贪婪对象在港股，不在纳指</p>
+<p class="li">- <strong>芒格</strong>：避免愚蠢比追求聪明重要：AAPL/PLTR现在的价格是愚蠢的买入点</p>
+<p class="li">- <strong>塔勒布</strong>：中概是凸性机会但要假设政策尾部会来——分批就是你的杠铃</p>
+<p class="li">- <strong>Naval</strong>：定投的复利来自不间断，别因为大盘高位就清零节奏</p>
+<p class="li">- <strong>Karpathy</strong>：AI资本开支是真实的，但为“AI”三个字母付154倍PE是另一回事</p>
+<p class="li">- <strong>Andreessen</strong>：软件吞噬世界未变，GOOGL/AMZN回调是上车结构性资产的机会</p>
+<p class="li">- <strong>达里奥</strong>：中美周期错位极端化本身就是信号——机制清楚，时点我不装能预测</p>
+<p class="li">- <strong>马克斯</strong>：你无法预测，但可以准备——大盘88%温度时保留干火药不是胆小，是纪律</p>
 
 <hr>
 
-<p><span class="em">⚠</span>️ 免责声明：本报告为大师框架模拟评估，非投资建议。数据来自腾讯行情接口（东方财富源当日失效），价格为美东9/1收盘，温度基于52周收盘价计算。定投有风险，决策需独立。</p>
+<p>⚠️ 免责声明：本报告为大师框架模拟评估，非投资建议。数据来自腾讯行情接口（东方财富源当日失效），价格为美东9/1收盘，温度基于52周收盘价计算。定投有风险，决策需独立。</p>
 </div>
-<footer>⚠️ 非投资建议 · 金额已脱敏 · Hermes Agent 自动部署</footer>
+<div class="foot-note">⚠️ 非投资建议 · 金额已脱敏 · Hermes Agent 自动部署 · kami design</div>
 </div>
 </body>
 </html>

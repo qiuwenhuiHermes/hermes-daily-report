@@ -5,36 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>📈 市场：</title>
 <style>
+@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W05.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+:root{--parchment:#f5f4ed;--ivory:#faf9f5;--sand:#e8e6dc;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e8e6dc;--border-soft:#e5e3d8;--tag-bg:#E4ECF5;
+--serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0b10;color:#e8eaf0;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;padding:20px 16px 60px}
-.wrap{max-width:860px;margin:0 auto}
-.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.back{color:#4f7cff;text-decoration:none;font-size:14px}
-.meta{color:#8b90a0;font-size:13px}
-.rpt-body{font-size:15px;line-height:1.8}
-.rpt-body p{margin:0 0 12px}
-.rpt-body h3,.rpt-body h4{margin:18px 0 10px;font-size:17px;color:#fff}
-.rpt-body hr{border:none;border-top:1px solid #262b3d;margin:18px 0}
-.rpt-body .lead{font-size:16px;font-weight:600;color:#fff}
-.rpt-body strong{color:#fff}
-.stars{color:#e8c547;letter-spacing:2px}
-.em{font-size:17px}
-.rpt-tb{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
-.rpt-tb th{background:#1b1f31;color:#9aa2b8;padding:8px 10px;text-align:left;font-weight:600;border-bottom:1px solid #2a2f45}
-.rpt-tb td{padding:7px 10px;border-bottom:1px solid #1e2334;color:#c3c8d8}
-footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
+html{background:var(--parchment)}
+body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased}
+strong{font-weight:500;color:var(--near-black)}
+a{color:var(--brand-ink-light);text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:72px 48px 80px}
+@media(max-width:640px){.wrap{padding:48px 20px 56px}}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--brand);letter-spacing:.25em;font-weight:500;text-transform:uppercase;margin-bottom:14px}
+.eyebrow::before{content:"";width:12px;height:2px;border-radius:1px;background:var(--brand);flex-shrink:0}
+.foot-note{margin-top:56px;padding-top:12px;border-top:1px dotted var(--border);font-size:12.5px;color:var(--stone);text-align:center;line-height:1.9}
+
+.wrap{max-width:860px}
+.top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:26px;padding-bottom:14px;border-bottom:.5px solid var(--border)}
+.back{font-size:13.5px;color:var(--brand-ink-light)}
+.meta{font-size:12.5px;color:var(--stone);font-variant-numeric:tabular-nums}
+h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
+.rpt-body{font-size:15px;line-height:1.75;letter-spacing:.15px;color:var(--near-black)}
+.rpt-body p{margin:0 0 13px}
+.rpt-body .li{padding-left:18px;position:relative}
+.rpt-body h3,.rpt-body h4{margin:26px 0 10px;font-weight:500;color:var(--near-black)}
+.rpt-body h3{font-size:20px}
+.rpt-body h4{font-size:16.5px;color:var(--dark-warm)}
+.rpt-body hr{border:none;border-top:.5px solid var(--border);margin:24px 0}
+.rpt-body .lead{font-size:16px;font-weight:500;color:var(--near-black)}
+.kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border)}
+.kami-tb td{padding:7px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black)}
+.kami-tb.striped tbody tr:nth-child(even) td{background:var(--ivory)}
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="top"><a class="back" href="../index.html">← 返回首页</a><span class="meta">美股盘后评估 · 2026-08-24 08:18</span></div>
-<h1 style="font-size:22px;margin-bottom:18px">📈 市场：</h1>
+<div class="eyebrow">美股盘后评估</div>
+<h1>📈 市场：</h1>
 <div class="rpt-body">
 <p>所有数据已获取并验证。现在进行八大师评估并生成最终报告。</p>
 
 <p>关键数据（2026-08-21 美股收盘，腾讯财经源——东方财富接口已从本机屏蔽，已切换至等效的国内数据源）：</p>
 
-<table class="rpt-tb"><thead><tr><th>代码</th><th>价格</th><th>1D%</th><th>温度</th><th>3个月走势</th></tr></thead><tbody>
+<table class="kami-tb striped"><thead><tr><th>代码</th><th>价格</th><th>1D%</th><th>温度</th><th>3个月走势</th></tr></thead><tbody>
 <tr><td>NDX</td><td>29309</td><td>+0.33</td><td>81.7%</td><td>-0.2</td></tr>
 <tr><td>VIX</td><td>~21.7</td><td>—</td><td>低位</td><td>平稳</td></tr>
 <tr><td>AAPL</td><td>309.35</td><td>-0.63</td><td>70.8%</td><td>+1.4</td></tr>
@@ -63,8 +78,8 @@ footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
 
 <p>*注：东方财富接口本周对本机拒绝响应，已切换腾讯财经源（等效国内源）；VIX为约值。*</p>
 
-<p><span class="em">🌡</span>️ 价格温度计</p>
-<table class="rpt-tb"><thead><tr><th>代码</th><th>公司</th><th>价格</th><th>涨跌</th><th>温度</th><th>区间</th></tr></thead><tbody>
+<p>🌡️ 价格温度计</p>
+<table class="kami-tb striped"><thead><tr><th>代码</th><th>公司</th><th>价格</th><th>涨跌</th><th>温度</th><th>区间</th></tr></thead><tbody>
 <tr><td>LCID</td><td>Lucid</td><td>5.51</td><td>-2.0%</td><td>15%</td><td>🟢*(陷阱)</td></tr>
 <tr><td>9988</td><td>阿里</td><td>123.0</td><td>-2.5%</td><td>35%</td><td>🔵低估</td></tr>
 <tr><td>TSLA</td><td>特斯拉</td><td>362.9</td><td>+5.1%</td><td>33%</td><td>🔵低估</td></tr>
@@ -79,66 +94,66 @@ footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
 <tr><td>TSM</td><td>台积电</td><td>419.0</td><td>+0.7%</td><td>76%</td><td>🟡偏贵</td></tr>
 </tbody></table>
 
-<p><span class="stars">⭐</span> 本周建议定投</p>
+<p>⭐ 本周建议定投</p>
 
-<p class="lead"><strong><span class="stars">⭐⭐⭐</span> 腾讯 0700.HK（457，黄金区，重仓档）</strong></p>
-<p>- 巴菲特：社交+游戏+支付的消费级护城河，一年内从683回撤33%——好生意打折，这才是"买打折的袜子"。</p>
-<p>- 芒格：股价趴在底部而基本面没坏，是典型的"别人不看的角落"；回购在持续，激励与股东对齐。</p>
-<p>- 马克斯：钟摆在恐惧端，风险溢价充足——这时候买入的人赚的是情绪修复的钱。</p>
-<p>- 达里奥：中国资产在周期底部区域+政策宽松方向，机制清楚；但时点我不装能预测。</p>
-<p>- 塔勒布：回撤已释放大部分风险，下行有限上行可期，不对称性转正。</p>
-<p>- 卡帕西：游戏+AI云是真实业务，不是故事。</p>
-<p>- 安德森：数字支付与游戏的 Builder 逻辑没有变，变的是情绪。</p>
-<p>- 纳瓦尔：这类资产是把复利装进睡后收入，无需许可。</p>
+<p class="lead"><strong>⭐⭐⭐ 腾讯 0700.HK（457，黄金区，重仓档）</strong></p>
+<p class="li">- 巴菲特：社交+游戏+支付的消费级护城河，一年内从683回撤33%——好生意打折，这才是"买打折的袜子"。</p>
+<p class="li">- 芒格：股价趴在底部而基本面没坏，是典型的"别人不看的角落"；回购在持续，激励与股东对齐。</p>
+<p class="li">- 马克斯：钟摆在恐惧端，风险溢价充足——这时候买入的人赚的是情绪修复的钱。</p>
+<p class="li">- 达里奥：中国资产在周期底部区域+政策宽松方向，机制清楚；但时点我不装能预测。</p>
+<p class="li">- 塔勒布：回撤已释放大部分风险，下行有限上行可期，不对称性转正。</p>
+<p class="li">- 卡帕西：游戏+AI云是真实业务，不是故事。</p>
+<p class="li">- 安德森：数字支付与游戏的 Builder 逻辑没有变，变的是情绪。</p>
+<p class="li">- 纳瓦尔：这类资产是把复利装进睡后收入，无需许可。</p>
 
-<p class="lead"><strong><span class="stars">⭐⭐</span> 阿里 9988.HK（123，低估区）</strong></p>
-<p>- 巴菲特：云+电商现金牛，估值便宜，但电商护城河被拼多多侵蚀——买，但别重仓到看不见缺陷。</p>
-<p>- 芒格：中国仓位需留安全边际，我对中国的判断历史上偏乐观，你也打个折。</p>
-<p>- 马克斯：从186回撤34%后企稳，温度计偏冷——分批接。</p>
+<p class="lead"><strong>⭐⭐ 阿里 9988.HK（123，低估区）</strong></p>
+<p class="li">- 巴菲特：云+电商现金牛，估值便宜，但电商护城河被拼多多侵蚀——买，但别重仓到看不见缺陷。</p>
+<p class="li">- 芒格：中国仓位需留安全边际，我对中国的判断历史上偏乐观，你也打个折。</p>
+<p class="li">- 马克斯：从186回撤34%后企稳，温度计偏冷——分批接。</p>
 
-<p class="lead"><strong><span class="stars">⭐⭐</span> 谷歌 GOOGL（344.8，偏贵区但3个月-11%回调最深）</strong></p>
-<p>- 巴菲特：三大科技里唯一深度回调的，AI反噬搜索的担忧已大幅计价，现金牛+回购依旧。</p>
-<p>- 卡帕斯：模型能力的锯齿状分布里，谷歌的基建与数据飞轮仍在第一梯队——担忧过度了。</p>
-<p>- 马克斯：买回调的优质资产，好过买新高的动量股。</p>
+<p class="lead"><strong>⭐⭐ 谷歌 GOOGL（344.8，偏贵区但3个月-11%回调最深）</strong></p>
+<p class="li">- 巴菲特：三大科技里唯一深度回调的，AI反噬搜索的担忧已大幅计价，现金牛+回购依旧。</p>
+<p class="li">- 卡帕斯：模型能力的锯齿状分布里，谷歌的基建与数据飞轮仍在第一梯队——担忧过度了。</p>
+<p class="li">- 马克斯：买回调的优质资产，好过买新高的动量股。</p>
 
-<p class="lead"><strong><span class="stars">⭐⭐</span> 特斯拉 TSLA（362.9，低估区，轻仓）</strong></p>
-<p>- 塔勒布：高波动=高剂量压力测试，仓位控制在"归零也睡得着"的尺寸——用小桶，不用盆。</p>
-<p>- 安德森：FSD/机器人是强形式赌注，Builder 还在台上，回调就是入场台阶。</p>
-<p>- 芒格：这超出我的能力圈，但温度计说便宜——我只用小注参与。</p>
+<p class="lead"><strong>⭐⭐ 特斯拉 TSLA（362.9，低估区，轻仓）</strong></p>
+<p class="li">- 塔勒布：高波动=高剂量压力测试，仓位控制在"归零也睡得着"的尺寸——用小桶，不用盆。</p>
+<p class="li">- 安德森：FSD/机器人是强形式赌注，Builder 还在台上，回调就是入场台阶。</p>
+<p class="li">- 芒格：这超出我的能力圈，但温度计说便宜——我只用小注参与。</p>
 
-<p class="lead"><strong><span class="stars">⭐⭐</span> 比亚迪 BYD（11.78 ADR，合理区）</strong></p>
-<p>- 巴菲特：低成本制造商的结构性护城河（我持有过它，清楚这一点），价格合理。</p>
-<p>- 达里奥：中国制造出口+周期回暖，方向顺风。（注：ADR流动性低，优先用港股1211替代更划算）</p>
+<p class="lead"><strong>⭐⭐ 比亚迪 BYD（11.78 ADR，合理区）</strong></p>
+<p class="li">- 巴菲特：低成本制造商的结构性护城河（我持有过它，清楚这一点），价格合理。</p>
+<p class="li">- 达里奥：中国制造出口+周期回暖，方向顺风。（注：ADR流动性低，优先用港股1211替代更划算）</p>
 
-<p><span class="stars">⭐</span> 正常定投（综合一句）：AAPL/MSFT/NVDA/AMZN/TSM 均在偏贵区——好公司、错价格，按正常节奏小额投不追加；RIVN 动量强但仍在烧钱，只投正常份。</p>
+<p>⭐ 正常定投（综合一句）：AAPL/MSFT/NVDA/AMZN/TSM 均在偏贵区——好公司、错价格，按正常节奏小额投不追加；RIVN 动量强但仍在烧钱，只投正常份。</p>
 
-<p><span class="em">⚡</span> 暂缓/跳过</p>
-<table class="rpt-tb"><thead><tr><th>代码</th><th>原因</th></tr></thead><tbody>
+<p>⚡ 暂缓/跳过</p>
+<table class="kami-tb striped"><thead><tr><th>代码</th><th>原因</th></tr></thead><tbody>
 <tr><td>LCID</td><td>温度15%是&quot;黄金区&quot;假象：52周区间1.97~25.23，现金持续燃烧，便宜是因为可能归零</td></tr>
 </tbody></table>
 
-<p><span class="em">💰</span> 本周组合（示例按双次定投预算3000元）</p>
-<table class="rpt-tb"><thead><tr><th>股票</th><th>评级</th><th>仓位</th><th>金额</th></tr></thead><tbody>
+<p>💰 本周组合（示例按双次定投预算3000元）</p>
+<table class="kami-tb striped"><thead><tr><th>股票</th><th>评级</th><th>仓位</th><th>金额</th></tr></thead><tbody>
 <tr><td>9988.HK</td><td>⭐⭐</td><td>20%</td><td>600</td></tr>
 <tr><td>GOOGL</td><td>⭐⭐</td><td>20%</td><td>600</td></tr>
 <tr><td>TSLA</td><td>⭐⭐</td><td>15%</td><td>450</td></tr>
 <tr><td>BYD</td><td>⭐⭐</td><td>15%</td><td>450</td></tr>
 </tbody></table>
-<p>（<span class="stars">⭐</span>档本周不占预算，下周轮动；年内弹药5-【金额已脱敏】，当前已投部分保持不动）</p>
+<p>（⭐档本周不占预算，下周轮动；年内弹药5-【金额已脱敏】，当前已投部分保持不动）</p>
 
-<p><span class="em">📋</span> 大师提醒</p>
-<p>- 巴菲特：指数在高位不等于你的股票贵——分开看公司，便宜的好生意在港股。</p>
-<p>- 芒格：避开"便宜的烂公司"，LCID的温度计读数是陷阱，别接飞刀。</p>
-<p>- 纳瓦尔：定投的本质是买复利资产，不是追叙事；一次只加一个信念。</p>
-<p>- 塔勒布：杠铃化——重仓蓝筹+极小注高波动，中间地带（PLTR这类半贵半热）最危险。</p>
-<p>- 卡帕西：AI基建需求真实，但已部分计价；看部署可靠性数据，不看发布会。</p>
-<p>- 安德森：回调买强形式公司（谷歌/特斯拉），弱形式故事股（LCID）归零不意外。</p>
-<p>- 达里奥：美股+港股组合天然分散货币与周期；方向我看估值，时点我不猜。</p>
-<p>- 马克斯：钟摆偏贪婪但未极端——纪律定投、留干火药，极端时刻才用桶接。</p>
+<p>📋 大师提醒</p>
+<p class="li">- 巴菲特：指数在高位不等于你的股票贵——分开看公司，便宜的好生意在港股。</p>
+<p class="li">- 芒格：避开"便宜的烂公司"，LCID的温度计读数是陷阱，别接飞刀。</p>
+<p class="li">- 纳瓦尔：定投的本质是买复利资产，不是追叙事；一次只加一个信念。</p>
+<p class="li">- 塔勒布：杠铃化——重仓蓝筹+极小注高波动，中间地带（PLTR这类半贵半热）最危险。</p>
+<p class="li">- 卡帕西：AI基建需求真实，但已部分计价；看部署可靠性数据，不看发布会。</p>
+<p class="li">- 安德森：回调买强形式公司（谷歌/特斯拉），弱形式故事股（LCID）归零不意外。</p>
+<p class="li">- 达里奥：美股+港股组合天然分散货币与周期；方向我看估值，时点我不猜。</p>
+<p class="li">- 马克斯：钟摆偏贪婪但未极端——纪律定投、留干火药，极端时刻才用桶接。</p>
 
-<p><span class="em">⚠</span>️ 免责声明：本报告为大师思维框架模拟推演，非投资建议；数据来自腾讯财经（08-21收盘），温度为52周区间相对位置，不构成买卖依据。投资有风险，决策需独立。</p>
+<p>⚠️ 免责声明：本报告为大师思维框架模拟推演，非投资建议；数据来自腾讯财经（08-21收盘），温度为52周区间相对位置，不构成买卖依据。投资有风险，决策需独立。</p>
 </div>
-<footer>⚠️ 非投资建议 · 金额已脱敏 · Hermes Agent 自动部署</footer>
+<div class="foot-note">⚠️ 非投资建议 · 金额已脱敏 · Hermes Agent 自动部署 · kami design</div>
 </div>
 </body>
 </html>

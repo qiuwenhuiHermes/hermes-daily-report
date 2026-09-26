@@ -5,30 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>🌅 盘前信号</title>
 <style>
+@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W05.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+:root{--parchment:#f5f4ed;--ivory:#faf9f5;--sand:#e8e6dc;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e8e6dc;--border-soft:#e5e3d8;--tag-bg:#E4ECF5;
+--serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0b10;color:#e8eaf0;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;padding:20px 16px 60px}
-.wrap{max-width:860px;margin:0 auto}
-.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.back{color:#4f7cff;text-decoration:none;font-size:14px}
-.meta{color:#8b90a0;font-size:13px}
-.rpt-body{font-size:15px;line-height:1.8}
-.rpt-body p{margin:0 0 12px}
-.rpt-body h3,.rpt-body h4{margin:18px 0 10px;font-size:17px;color:#fff}
-.rpt-body hr{border:none;border-top:1px solid #262b3d;margin:18px 0}
-.rpt-body .lead{font-size:16px;font-weight:600;color:#fff}
-.rpt-body strong{color:#fff}
-.stars{color:#e8c547;letter-spacing:2px}
-.em{font-size:17px}
-.rpt-tb{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
-.rpt-tb th{background:#1b1f31;color:#9aa2b8;padding:8px 10px;text-align:left;font-weight:600;border-bottom:1px solid #2a2f45}
-.rpt-tb td{padding:7px 10px;border-bottom:1px solid #1e2334;color:#c3c8d8}
-footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
+html{background:var(--parchment)}
+body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased}
+strong{font-weight:500;color:var(--near-black)}
+a{color:var(--brand-ink-light);text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:72px 48px 80px}
+@media(max-width:640px){.wrap{padding:48px 20px 56px}}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--brand);letter-spacing:.25em;font-weight:500;text-transform:uppercase;margin-bottom:14px}
+.eyebrow::before{content:"";width:12px;height:2px;border-radius:1px;background:var(--brand);flex-shrink:0}
+.foot-note{margin-top:56px;padding-top:12px;border-top:1px dotted var(--border);font-size:12.5px;color:var(--stone);text-align:center;line-height:1.9}
+
+.wrap{max-width:860px}
+.top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:26px;padding-bottom:14px;border-bottom:.5px solid var(--border)}
+.back{font-size:13.5px;color:var(--brand-ink-light)}
+.meta{font-size:12.5px;color:var(--stone);font-variant-numeric:tabular-nums}
+h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
+.rpt-body{font-size:15px;line-height:1.75;letter-spacing:.15px;color:var(--near-black)}
+.rpt-body p{margin:0 0 13px}
+.rpt-body .li{padding-left:18px;position:relative}
+.rpt-body h3,.rpt-body h4{margin:26px 0 10px;font-weight:500;color:var(--near-black)}
+.rpt-body h3{font-size:20px}
+.rpt-body h4{font-size:16.5px;color:var(--dark-warm)}
+.rpt-body hr{border:none;border-top:.5px solid var(--border);margin:24px 0}
+.rpt-body .lead{font-size:16px;font-weight:500;color:var(--near-black)}
+.kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border)}
+.kami-tb td{padding:7px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black)}
+.kami-tb.striped tbody tr:nth-child(even) td{background:var(--ivory)}
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="top"><a class="back" href="../index.html">← 返回首页</a><span class="meta">美股盘前评估 · 2026-09-18 20:49</span></div>
-<h1 style="font-size:22px;margin-bottom:18px">🌅 盘前信号</h1>
+<div class="eyebrow">美股盘前评估</div>
+<h1>🌅 盘前信号</h1>
 <div class="rpt-body">
 <p>数据全部到位：13只温度、期货、宏观（Fed 9/16加息25bp至3.75-4%被市场消化，9/17大涨）、瓶颈评分今晨已更新（TSM +3%触发，81.2→81.7）。今日无超±5分评分变化，LCID/9988虽超±3%但不在瓶颈评分池。生成报告：</p>
 
@@ -44,10 +59,10 @@ footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
 
 <hr>
 
-<p><span class="em">🌡</span>️ 温度计（9/17收盘，开盘前有效）</p>
+<p>🌡️ 温度计（9/17收盘，开盘前有效）</p>
 
-<p>AAPL 337.0 +1.4%｜93° <span class="em">🔴</span>热</p>
-<p>TSM 430.3 +3.0%｜79° <span class="em">🔴</span></p>
+<p>AAPL 337.0 +1.4%｜93° 🔴热</p>
+<p>TSM 430.3 +3.0%｜79° 🔴</p>
 <p>NVDA 219.3 +2.5%｜77°</p>
 <p>MSFT 497.8 +1.5%｜74°</p>
 <p>PLTR 176.2 +1.1%｜69°</p>
@@ -58,42 +73,42 @@ footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
 <p>BYD.HK 81.5 +0.4%｜24°</p>
 <p>9988.HK 109.3 +4.0%｜21°</p>
 <p>LCID 4.3 +5.9%｜8°</p>
-<p>0700.HK 419.0 -1.6%｜3° <span class="em">⚠</span>️贴52周低411</p>
+<p>0700.HK 419.0 -1.6%｜3° ⚠️贴52周低411</p>
 
 <hr>
 
-<p><span class="stars">⭐</span> 今日建议操作（盘前核心问题：今天值得动吗？）</p>
+<p>⭐ 今日建议操作（盘前核心问题：今天值得动吗？）</p>
 
 <p class="lead"><strong>综合：今天不动，或只执行既定基础档定投，不加码。</strong></p>
 
 <p>理由链（八大师）：</p>
 
-<p><strong>Marks <span class="stars">⭐⭐⭐</span></strong>：加息日不跌反涨，钟摆偏贪婪端但未到极端——温度计读数“偏热”，偏防守，今日定投减半或不投。太早的正确等于错误，但追高等于把错误提前。</p>
+<p><strong>Marks ⭐⭐⭐</strong>：加息日不跌反涨，钟摆偏贪婪端但未到极端——温度计读数“偏热”，偏防守，今日定投减半或不投。太早的正确等于错误，但追高等于把错误提前。</p>
 
-<p><strong>Dalio <span class="stars">⭐⭐⭐</span></strong>：短期债务周期处于“紧缩中段”——利率3.75-4%且还在加，机制清楚：高利率压长久期估值，AI叙事在对冲。方向=维持节奏不加码；时点我不预测。</p>
+<p><strong>Dalio ⭐⭐⭐</strong>：短期债务周期处于“紧缩中段”——利率3.75-4%且还在加，机制清楚：高利率压长久期估值，AI叙事在对冲。方向=维持节奏不加码；时点我不预测。</p>
 
-<p><strong>Buffett <span class="stars">⭐⭐</span></strong>：市场先生今天很亢奋，货架上没有打折的好东西——93度的苹果、79度的台积电，我不为亢奋付钱。等好球。</p>
+<p><strong>Buffett ⭐⭐</strong>：市场先生今天很亢奋，货架上没有打折的好东西——93度的苹果、79度的台积电，我不为亢奋付钱。等好球。</p>
 
-<p><strong>Karpathy <span class="stars">⭐⭐</span></strong>：工程事实真实——TSM 8月营收+53%创新高、CoWoS产能“紧到限制客户增长”，这不是叙事。但事实真≠今天买，排序TSM&gt;NVDA&gt;其他。</p>
+<p><strong>Karpathy ⭐⭐</strong>：工程事实真实——TSM 8月营收+53%创新高、CoWoS产能“紧到限制客户增长”，这不是叙事。但事实真≠今天买，排序TSM&gt;NVDA&gt;其他。</p>
 
-<p><strong>Andreessen <span class="stars">⭐⭐</span></strong>：Intel CEO点燃芯片、SEC放行代币化股票、CoWoS扩产看至2028——builder在建设，回调是机会。你还没建仓，恰恰不用急：分批开始就是优势。</p>
+<p><strong>Andreessen ⭐⭐</strong>：Intel CEO点燃芯片、SEC放行代币化股票、CoWoS扩产看至2028——builder在建设，回调是机会。你还没建仓，恰恰不用急：分批开始就是优势。</p>
 
-<p><strong>Munger/Taleb/Naval <span class="stars">⭐</span> 综合</strong>：拿不准就不做（利率+油价+金价三高，尾部在变肥）；RIVN/LCID的低温度是“看起来便宜的脆弱”，别接；定投的意义就是不用盯盘，弹药分批，任何单日都不重要。</p>
+<p><strong>Munger/Taleb/Naval ⭐ 综合</strong>：拿不准就不做（利率+油价+金价三高，尾部在变肥）；RIVN/LCID的低温度是“看起来便宜的脆弱”，别接；定投的意义就是不用盯盘，弹药分批，任何单日都不重要。</p>
 
 <hr>
 
-<p><span class="em">⚡</span> 暂缓/跳过</p>
+<p>⚡ 暂缓/跳过</p>
 
 <p>暂缓追高：AAPL(93°)、TSM(79°)、NVDA(77°)、MSFT(74°)、PLTR(69°)</p>
 <p>跳过：RIVN、LCID（质量差+下行无底）、TSLA（叙事驱动+治理风险）</p>
 
 <hr>
 
-<p><span class="em">🔗</span> 瓶颈评分速览（13只清单内，除TSM今晨已更新外沿用9/17）</p>
+<p>🔗 瓶颈评分速览（13只清单内，除TSM今晨已更新外沿用9/17）</p>
 
-<p><span class="em">🔴</span> TSM 81.7｜第一梯队｜先进制程+CoWoS双卡位｜较上次+0.5（今晨+3%触发）</p>
-<p><span class="em">🔴</span> NVDA 65.6｜第二梯队｜CUDA生态支配｜—</p>
-<p><span class="em">🔴</span> GOOGL 60.2｜第二梯队｜TPU自供算力+相对低估值｜—</p>
+<p>🔴 TSM 81.7｜第一梯队｜先进制程+CoWoS双卡位｜较上次+0.5（今晨+3%触发）</p>
+<p>🔴 NVDA 65.6｜第二梯队｜CUDA生态支配｜—</p>
+<p>🔴 GOOGL 60.2｜第二梯队｜TPU自供算力+相对低估值｜—</p>
 <p>MSFT 52.2｜第三梯队｜OpenAI+Azure｜—</p>
 <p>AMZN 50.0｜第三梯队｜Trainium+AWS｜—</p>
 
@@ -103,7 +118,7 @@ footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
 
 <hr>
 
-<p><span class="em">💰</span> 今日操作清单</p>
+<p>💰 今日操作清单</p>
 
 <p>1. 今日无强制操作；若逢既定定投日→只执行基础档（1000-2000元等值），不加码</p>
 <p>2. 观察：0700.HK贴52周低411（回撤38%、PE约16）——不接刀，跌破411后看400-410企稳信号，下周初再评估</p>
@@ -113,9 +128,9 @@ footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
 
 <hr>
 
-<p><span class="em">⚠</span>️ 免责声明：以上为研究参考非投资建议，基于公开数据的个人分析框架，决策责任在您。数据源：腾讯财经（9/17收盘+期货）、东方财富（部分）、公开新闻；瓶颈评分为Serenity 8因子框架本地评分。美股今晚21:30开盘，盘前期货可能变化。</p>
+<p>⚠️ 免责声明：以上为研究参考非投资建议，基于公开数据的个人分析框架，决策责任在您。数据源：腾讯财经（9/17收盘+期货）、东方财富（部分）、公开新闻；瓶颈评分为Serenity 8因子框架本地评分。美股今晚21:30开盘，盘前期货可能变化。</p>
 </div>
-<footer>⚠️ 非投资建议 · 金额已脱敏 · Hermes Agent 自动部署</footer>
+<div class="foot-note">⚠️ 非投资建议 · 金额已脱敏 · Hermes Agent 自动部署 · kami design</div>
 </div>
 </body>
 </html>

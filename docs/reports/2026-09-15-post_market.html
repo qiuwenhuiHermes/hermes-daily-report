@@ -5,30 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>📈 市场：</title>
 <style>
+@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W05.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+:root{--parchment:#f5f4ed;--ivory:#faf9f5;--sand:#e8e6dc;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e8e6dc;--border-soft:#e5e3d8;--tag-bg:#E4ECF5;
+--serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0b10;color:#e8eaf0;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;padding:20px 16px 60px}
-.wrap{max-width:860px;margin:0 auto}
-.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.back{color:#4f7cff;text-decoration:none;font-size:14px}
-.meta{color:#8b90a0;font-size:13px}
-.rpt-body{font-size:15px;line-height:1.8}
-.rpt-body p{margin:0 0 12px}
-.rpt-body h3,.rpt-body h4{margin:18px 0 10px;font-size:17px;color:#fff}
-.rpt-body hr{border:none;border-top:1px solid #262b3d;margin:18px 0}
-.rpt-body .lead{font-size:16px;font-weight:600;color:#fff}
-.rpt-body strong{color:#fff}
-.stars{color:#e8c547;letter-spacing:2px}
-.em{font-size:17px}
-.rpt-tb{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
-.rpt-tb th{background:#1b1f31;color:#9aa2b8;padding:8px 10px;text-align:left;font-weight:600;border-bottom:1px solid #2a2f45}
-.rpt-tb td{padding:7px 10px;border-bottom:1px solid #1e2334;color:#c3c8d8}
-footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
+html{background:var(--parchment)}
+body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased}
+strong{font-weight:500;color:var(--near-black)}
+a{color:var(--brand-ink-light);text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:72px 48px 80px}
+@media(max-width:640px){.wrap{padding:48px 20px 56px}}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--brand);letter-spacing:.25em;font-weight:500;text-transform:uppercase;margin-bottom:14px}
+.eyebrow::before{content:"";width:12px;height:2px;border-radius:1px;background:var(--brand);flex-shrink:0}
+.foot-note{margin-top:56px;padding-top:12px;border-top:1px dotted var(--border);font-size:12.5px;color:var(--stone);text-align:center;line-height:1.9}
+
+.wrap{max-width:860px}
+.top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:26px;padding-bottom:14px;border-bottom:.5px solid var(--border)}
+.back{font-size:13.5px;color:var(--brand-ink-light)}
+.meta{font-size:12.5px;color:var(--stone);font-variant-numeric:tabular-nums}
+h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
+.rpt-body{font-size:15px;line-height:1.75;letter-spacing:.15px;color:var(--near-black)}
+.rpt-body p{margin:0 0 13px}
+.rpt-body .li{padding-left:18px;position:relative}
+.rpt-body h3,.rpt-body h4{margin:26px 0 10px;font-weight:500;color:var(--near-black)}
+.rpt-body h3{font-size:20px}
+.rpt-body h4{font-size:16.5px;color:var(--dark-warm)}
+.rpt-body hr{border:none;border-top:.5px solid var(--border);margin:24px 0}
+.rpt-body .lead{font-size:16px;font-weight:500;color:var(--near-black)}
+.kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border)}
+.kami-tb td{padding:7px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black)}
+.kami-tb.striped tbody tr:nth-child(even) td{background:var(--ivory)}
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="top"><a class="back" href="../index.html">← 返回首页</a><span class="meta">美股盘后评估 · 2026-09-15 08:17</span></div>
-<h1 style="font-size:22px;margin-bottom:18px">📈 市场：</h1>
+<div class="eyebrow">美股盘后评估</div>
+<h1>📈 市场：</h1>
 <div class="rpt-body">
 <p>数据齐了（美东 9/14 收盘 + 港股 9/14 收盘；东财 push2 实时接口今日不可达，美股行情用新浪 + 东财延迟接口交叉核验，港股/比亚迪用腾讯源，VIX 用 VIXY 代理估算）。当日 NVDA/TSM/GOOGL/PLTR 涨跌幅超 ±3%，已用 serenity_scorecard.py 重估瓶颈评分，其余沿用 09-11 档。以下为报告。</p>
 
@@ -40,7 +55,7 @@ footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
 <p><strong>市场：</strong> S&amp;P 7620 -0.48% | NDX 29127 -0.82% | VIX ~16↑（VIXY +1.1% 估）</p>
 <p>关键背景：CPI 超预期 → 周三 FOMC 加息概率约 90%（大摩预计 9 月+12 月各加 25bp）；10Y 美债盘中破 5.0%（2023 年来首次）；AI 领袖呼吁放缓开发 → 费半 -5.8%（一年最大单日跌幅），存储链 -6.2%。</p>
 
-<p><span class="em">🌡</span>️ 价格温度计</p>
+<p>🌡️ 价格温度计</p>
 <p>AAPL 333.1 +0.2% | 90% 超买</p>
 <p>MSFT 505.4 +2.0% | 77% 偏贵</p>
 <p>GOOGL 349.4 +3.2% | 66% 偏贵</p>
@@ -55,47 +70,47 @@ footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
 <p>9988.HK 105.9 -1.5% | 18% 黄金</p>
 <p>0700.HK 430.6 +0.5% | 7% 黄金</p>
 
-<p><span class="stars">⭐</span> 本周建议定投</p>
+<p>⭐ 本周建议定投</p>
 
-<p><strong>0700.HK <span class="stars">⭐⭐⭐</span> 加重仓</strong>（7% 黄金区，贴 52 周地板）</p>
-<p>· Buffett：微信的切换成本是真护城河，市场先生发脾气时我照单全收。</p>
-<p>· Munger：恐惧端定价，生态别人抢不走——便宜是真便宜。</p>
-<p>· Marks：钟摆摆向恐惧端，风险补偿足——偏进攻。</p>
-<p>· Dalio：中国宽松周期早段 + 美债 5% 下低估值占优（注：我对中国判断偏乐观，自行打折）。</p>
-<p>· Taleb：贴地板=下行有限、上行不对称，定投本身反脆弱。</p>
-<p>· Naval：14 亿人社交图谱=零边际成本杠杆资产打折卖。</p>
-<p>· Karpathy：AI 提效广告/游戏是真需求，部署侧受益。</p>
-<p>· Andreessen：中国最大数字娱乐基建，builder 属性强。</p>
+<p><strong>0700.HK ⭐⭐⭐ 加重仓</strong>（7% 黄金区，贴 52 周地板）</p>
+<p class="li">· Buffett：微信的切换成本是真护城河，市场先生发脾气时我照单全收。</p>
+<p class="li">· Munger：恐惧端定价，生态别人抢不走——便宜是真便宜。</p>
+<p class="li">· Marks：钟摆摆向恐惧端，风险补偿足——偏进攻。</p>
+<p class="li">· Dalio：中国宽松周期早段 + 美债 5% 下低估值占优（注：我对中国判断偏乐观，自行打折）。</p>
+<p class="li">· Taleb：贴地板=下行有限、上行不对称，定投本身反脆弱。</p>
+<p class="li">· Naval：14 亿人社交图谱=零边际成本杠杆资产打折卖。</p>
+<p class="li">· Karpathy：AI 提效广告/游戏是真需求，部署侧受益。</p>
+<p class="li">· Andreessen：中国最大数字娱乐基建，builder 属性强。</p>
 
-<p><strong>9988.HK <span class="stars">⭐⭐</span> 加仓</strong>（18% 黄金区）</p>
+<p><strong>9988.HK ⭐⭐ 加仓</strong>（18% 黄金区）</p>
 <p>便宜 + 云 AI 叙事真，但电商竞争是慢性风险——买但不重（共识：估值补偿够，确定性次于一哥）。</p>
 
-<p><strong>BYD <span class="stars">⭐⭐</span> 加仓</strong>（19% 黄金区）</p>
+<p><strong>BYD ⭐⭐ 加仓</strong>（19% 黄金区）</p>
 <p>低成本制造真护城河，价格战里最后死的那个；垂直整合=成本杠杆（Buffett/Munger/Taleb 一致），贸易壁垒是主要逆风（Dalio）。</p>
 
-<p><span class="stars">⭐</span> 正常定投（纪律执行）</p>
+<p>⭐ 正常定投（纪律执行）</p>
 <p>NVDA：-3.4% 回调温度 65，AI 事实标准 + 特朗普电话力挺黄仁勋，不追不逃。</p>
 <p>TSM：-3.5% 回调温度 73，瓶颈评分全场第一，<strong>跌到 60% 以下是第一加码对象</strong>。</p>
 <p>MSFT：质量顶级 +2.0%，但 77% 偏贵，等回调。</p>
 <p>GOOGL：基本面今日最强（全员工程师用 Claude + TPU 自供），但 +3.2% 后 66%——回调到 60% 下再加码。</p>
 
-<p><span class="em">⚡</span> 暂缓/跳过</p>
+<p>⚡ 暂缓/跳过</p>
 <p>AAPL 90% 超买（Siri AI 利好已定价）| PLTR 66% 估值透支 | TSLA 叙事驱动+治理风险 | RIVN/LCID 烧钱稀释</p>
 
-<p><span class="em">💰</span> 本周组合（基准 2000）</p>
-<p>0700.HK <span class="stars">⭐⭐⭐</span> 1500</p>
-<p>9988.HK <span class="stars">⭐⭐</span> 500</p>
-<p>BYD <span class="stars">⭐⭐</span> 400</p>
+<p>💰 本周组合（基准 2000）</p>
+<p>0700.HK ⭐⭐⭐ 1500</p>
+<p>9988.HK ⭐⭐ 500</p>
+<p>BYD ⭐⭐ 400</p>
 <p>合计 2400——FOMC 周三落地前偏防守，留干火药，决议后视温度再加码。</p>
 
-<p><span class="em">🔗</span> 瓶颈评分速览（NVDA/TSM/GOOGL/PLTR 当日波动&gt;3% 已重估，其余沿用 09-11 档）</p>
-<p><span class="em">🔴</span>TSM 76.2 T1 先进制程+CoWoS 双卡位 ↓1.2</p>
-<p><span class="em">🔴</span>NVDA 63.0 T2 CUDA 生态支配 ↑1.8</p>
-<p><span class="em">🔴</span>GOOGL 61.3 T2 TPU 自供+Claude 全开放 ↑1.8</p>
+<p>🔗 瓶颈评分速览（NVDA/TSM/GOOGL/PLTR 当日波动&gt;3% 已重估，其余沿用 09-11 档）</p>
+<p>🔴TSM 76.2 T1 先进制程+CoWoS 双卡位 ↓1.2</p>
+<p>🔴NVDA 63.0 T2 CUDA 生态支配 ↑1.8</p>
+<p>🔴GOOGL 61.3 T2 TPU 自供+Claude 全开放 ↑1.8</p>
 <p>MSFT 57.7 T3 OpenAI+Azure 持平</p>
 <p>AMZN 54.3 T3 Trainium+AWS 持平</p>
 
-<p><span class="em">📋</span> 大师提醒</p>
+<p>📋 大师提醒</p>
 <p>Buffett：市场先生周一开始发脾气——这正是我们等的天气，黄金区筹码照单全收。</p>
 <p>Munger：上周“AI 永远涨”、本周“AI 该放缓”——社会认同反转之快值得敬畏，别碰高温区。</p>
 <p>Marks：10Y 破 5% 是真实收紧，钟摆刚开始回摆——保留干火药，等温度再降几度。</p>
@@ -105,11 +120,11 @@ footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
 <p>Karpathy：“放缓 AI”呼吁是情绪不是工程现实，数据中心订单没取消——买瓶颈不买故事。</p>
 <p>Andreessen：特朗普电话支持黄仁勋=政治顺风确认；强形式与弱形式差距会继续拉大。</p>
 
-<p><span class="em">⚠</span>️ 免责声明：以上为研究参考非投资建议。数据源：新浪美股 + 腾讯港美股 + 东财延迟接口交叉核验（东财 push2 实时接口当日不可达）；VIX 为 VIXY 推算仅供参考。</p>
+<p>⚠️ 免责声明：以上为研究参考非投资建议。数据源：新浪美股 + 腾讯港美股 + 东财延迟接口交叉核验（东财 push2 实时接口当日不可达）；VIX 为 VIXY 推算仅供参考。</p>
 
 <p>（本次触发 Skills：八大师视角 + serenity-skill；本地工具：terminal 数据抓取/评分脚本）</p>
 </div>
-<footer>⚠️ 非投资建议 · 金额已脱敏 · Hermes Agent 自动部署</footer>
+<div class="foot-note">⚠️ 非投资建议 · 金额已脱敏 · Hermes Agent 自动部署 · kami design</div>
 </div>
 </body>
 </html>

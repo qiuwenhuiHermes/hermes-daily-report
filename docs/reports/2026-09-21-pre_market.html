@@ -5,30 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>🌅 盘前信号</title>
 <style>
+@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W05.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+:root{--parchment:#f5f4ed;--ivory:#faf9f5;--sand:#e8e6dc;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e8e6dc;--border-soft:#e5e3d8;--tag-bg:#E4ECF5;
+--serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0b10;color:#e8eaf0;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;padding:20px 16px 60px}
-.wrap{max-width:860px;margin:0 auto}
-.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.back{color:#4f7cff;text-decoration:none;font-size:14px}
-.meta{color:#8b90a0;font-size:13px}
-.rpt-body{font-size:15px;line-height:1.8}
-.rpt-body p{margin:0 0 12px}
-.rpt-body h3,.rpt-body h4{margin:18px 0 10px;font-size:17px;color:#fff}
-.rpt-body hr{border:none;border-top:1px solid #262b3d;margin:18px 0}
-.rpt-body .lead{font-size:16px;font-weight:600;color:#fff}
-.rpt-body strong{color:#fff}
-.stars{color:#e8c547;letter-spacing:2px}
-.em{font-size:17px}
-.rpt-tb{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
-.rpt-tb th{background:#1b1f31;color:#9aa2b8;padding:8px 10px;text-align:left;font-weight:600;border-bottom:1px solid #2a2f45}
-.rpt-tb td{padding:7px 10px;border-bottom:1px solid #1e2334;color:#c3c8d8}
-footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
+html{background:var(--parchment)}
+body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased}
+strong{font-weight:500;color:var(--near-black)}
+a{color:var(--brand-ink-light);text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:72px 48px 80px}
+@media(max-width:640px){.wrap{padding:48px 20px 56px}}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--brand);letter-spacing:.25em;font-weight:500;text-transform:uppercase;margin-bottom:14px}
+.eyebrow::before{content:"";width:12px;height:2px;border-radius:1px;background:var(--brand);flex-shrink:0}
+.foot-note{margin-top:56px;padding-top:12px;border-top:1px dotted var(--border);font-size:12.5px;color:var(--stone);text-align:center;line-height:1.9}
+
+.wrap{max-width:860px}
+.top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:26px;padding-bottom:14px;border-bottom:.5px solid var(--border)}
+.back{font-size:13.5px;color:var(--brand-ink-light)}
+.meta{font-size:12.5px;color:var(--stone);font-variant-numeric:tabular-nums}
+h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
+.rpt-body{font-size:15px;line-height:1.75;letter-spacing:.15px;color:var(--near-black)}
+.rpt-body p{margin:0 0 13px}
+.rpt-body .li{padding-left:18px;position:relative}
+.rpt-body h3,.rpt-body h4{margin:26px 0 10px;font-weight:500;color:var(--near-black)}
+.rpt-body h3{font-size:20px}
+.rpt-body h4{font-size:16.5px;color:var(--dark-warm)}
+.rpt-body hr{border:none;border-top:.5px solid var(--border);margin:24px 0}
+.rpt-body .lead{font-size:16px;font-weight:500;color:var(--near-black)}
+.kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border)}
+.kami-tb td{padding:7px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black)}
+.kami-tb.striped tbody tr:nth-child(even) td{background:var(--ivory)}
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="top"><a class="back" href="../index.html">← 返回首页</a><span class="meta">美股盘前评估 · 2026-09-21 20:09</span></div>
-<h1 style="font-size:22px;margin-bottom:18px">🌅 盘前信号</h1>
+<div class="eyebrow">美股盘前评估</div>
+<h1>🌅 盘前信号</h1>
 <div class="rpt-body">
 <p># 📊 美股盘前评估 | 2026-09-21 周一</p>
 
@@ -46,64 +61,64 @@ footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
 
 <hr>
 
-<p><strong><span class="em">🌡</span>️ 温度计</strong>（52周区间位置）</p>
+<p><strong>🌡️ 温度计</strong>（52周区间位置）</p>
 
 <p>AAPL 96%🔥 | NVDA 82% | TSM 80% | MSFT 76% | PLTR 70% | GOOGL 68% | AMZN 64% | TSLA 34% | RIVN 25% | 9988 24% | BYD 23% | 0700 7%🧊 | LCID 0%🧊</p>
 
 <hr>
 
-<p class="lead"><strong><span class="stars">⭐⭐⭐</span> GOOGL（349.5，68%）—— 今日首选，买入1笔</strong></p>
+<p class="lead"><strong>⭐⭐⭐ GOOGL（349.5，68%）—— 今日首选，买入1笔</strong></p>
 
-<p>· 巴菲特：不管是袜子还是股票，我喜欢打折的好东西——TPU自供+Gemini的AI价值几乎没计进价格，而它的广告现金流我算得明白。</p>
-<p>· 芒格：反过来想——10Y=5%的环境里去追80度以上的热门才是蠢；买估值与质量错配的东西，是“避免愚蠢”。</p>
-<p>· Marks：钟摆在中段偏暖，谷歌是这批大家伙里唯一“温度/质量”错配的；96度的AAPL才站在危险那端。</p>
-<p>· Dalio：机制上紧缩压长久期估值——但谷歌低估值+短久期广告现金流，是逆风里的避风港；方向我能看，时点我给不了。</p>
-<p>· Andreessen：TPU是强形式AI（从零自建算力层），不是给产品“加个AI按钮”的弱形式。</p>
+<p class="li">· 巴菲特：不管是袜子还是股票，我喜欢打折的好东西——TPU自供+Gemini的AI价值几乎没计进价格，而它的广告现金流我算得明白。</p>
+<p class="li">· 芒格：反过来想——10Y=5%的环境里去追80度以上的热门才是蠢；买估值与质量错配的东西，是“避免愚蠢”。</p>
+<p class="li">· Marks：钟摆在中段偏暖，谷歌是这批大家伙里唯一“温度/质量”错配的；96度的AAPL才站在危险那端。</p>
+<p class="li">· Dalio：机制上紧缩压长久期估值——但谷歌低估值+短久期广告现金流，是逆风里的避风港；方向我能看，时点我给不了。</p>
+<p class="li">· Andreessen：TPU是强形式AI（从零自建算力层），不是给产品“加个AI按钮”的弱形式。</p>
 
-<p class="lead"><strong><span class="stars">⭐⭐</span> TSM（434.7，80%）—— 半仓试探或等峰会</strong></p>
+<p class="lead"><strong>⭐⭐ TSM（434.7，80%）—— 半仓试探或等峰会</strong></p>
 
-<p>· Karpathy：march of nines——10GW级AI部署，瓶颈在制造良率与CoWoS产能，不在模型；这层只有台积电撑得住。</p>
-<p>· Taleb：周四峰会是台湾地缘的尾部事件源——半仓保留凸性，落地再加，别在80度追满仓。</p>
+<p class="li">· Karpathy：march of nines——10GW级AI部署，瓶颈在制造良率与CoWoS产能，不在模型；这层只有台积电撑得住。</p>
+<p class="li">· Taleb：周四峰会是台湾地缘的尾部事件源——半仓保留凸性，落地再加，别在80度追满仓。</p>
 
-<p><strong><span class="stars">⭐⭐</span> MSFT（493.8，76%）/ AMZN（253.7，64%）</strong>—— 好生意但当前价格没留犯错余地（芒格），常规小额DCA可执行，不急。</p>
+<p><strong>⭐⭐ MSFT（493.8，76%）/ AMZN（253.7，64%）</strong>—— 好生意但当前价格没留犯错余地（芒格），常规小额DCA可执行，不急。</p>
 
-<p class="lead"><strong><span class="stars">⭐⭐</span> 9988.HK（112.6，24%）—— 等峰会落地</strong></p>
+<p class="lead"><strong>⭐⭐ 9988.HK（112.6，24%）—— 等峰会落地</strong></p>
 
-<p>· Naval：周一+3%是在为单一事件下注——那是催化剂赌局，不是复利；等它跌回无聊的时候再买。</p>
-<p>· Dalio（诚实边界）：我长期看多中国，但桥水在华有商业利益，这条请打折听。</p>
+<p class="li">· Naval：周一+3%是在为单一事件下注——那是催化剂赌局，不是复利；等它跌回无聊的时候再买。</p>
+<p class="li">· Dalio（诚实边界）：我长期看多中国，但桥水在华有商业利益，这条请打折听。</p>
 
-<p><strong><span class="stars">⭐</span> 综合一句</strong>：NVDA 82度+OpenAI循环交易传闻缠身，本周不优先、下笔额度减半；TSLA/BYD温度低但基本面弱/价格战，只观察。</p>
+<p><strong>⭐ 综合一句</strong>：NVDA 82度+OpenAI循环交易传闻缠身，本周不优先、下笔额度减半；TSLA/BYD温度低但基本面弱/价格战，只观察。</p>
 
 <hr>
 
-<p class="lead"><strong><span class="em">⚡</span> 暂缓/跳过</strong></p>
+<p class="lead"><strong>⚡ 暂缓/跳过</strong></p>
 
 <p>AAPL 96%🔥（AI落后）| PLTR 70%（估值透支）| 0700.HK 7%（等峰会）| RIVN 25%（现金消耗）| LCID 0%（Taleb：火鸡问题——遍历性风险，归零路径不可逆，期望值救不了）</p>
 
 <hr>
 
-<p><strong><span class="em">🔗</span> 瓶颈评分速览</strong>（沿用09-18，周五无±3%触发）</p>
+<p><strong>🔗 瓶颈评分速览</strong>（沿用09-18，周五无±3%触发）</p>
 
-<p><span class="em">🔴</span> TSM 81.7 一梯队 | 先进制程+CoWoS双卡位</p>
-<p><span class="em">🔴</span> MU 66.9 一梯队 | 存储涨价+HBM稀缺（池外参考）</p>
-<p><span class="em">🔴</span> NVDA 65.6 二梯队 | CUDA支配，循环交易叙事压估值</p>
+<p>🔴 TSM 81.7 一梯队 | 先进制程+CoWoS双卡位</p>
+<p>🔴 MU 66.9 一梯队 | 存储涨价+HBM稀缺（池外参考）</p>
+<p>🔴 NVDA 65.6 二梯队 | CUDA支配，循环交易叙事压估值</p>
 <p>AVGO 61.7 二梯队 | ASIC定制+网络（池外参考）</p>
 <p>GOOGL 60.2 二梯队 | TPU自供+低估值——今日买点来自“评分/温度/价格”三者错配</p>
 
 <hr>
 
-<p class="lead"><strong><span class="em">💰</span> 今日操作清单</strong></p>
+<p class="lead"><strong>💰 今日操作清单</strong></p>
 
 <p>1. GOOGL 买入1笔（标准仓）</p>
 <p>2. TSM 挂低2–3%限价，或等周四峰会后</p>
 <p>3. 9988/0700/BYD 等峰会落地再评估</p>
 <p>4. 其余不动，本周保留1–2次定投额度</p>
 
-<p><span class="em">⚠</span>️ 免责声明：研究参考，非投资建议，决策自负。</p>
+<p>⚠️ 免责声明：研究参考，非投资建议，决策自负。</p>
 
 <p>（触发Skills：八大师perspective + serenity-skill；本地工具：东方财富API、WebSearch）</p>
 </div>
-<footer>⚠️ 非投资建议 · 金额已脱敏 · Hermes Agent 自动部署</footer>
+<div class="foot-note">⚠️ 非投资建议 · 金额已脱敏 · Hermes Agent 自动部署 · kami design</div>
 </div>
 </body>
 </html>

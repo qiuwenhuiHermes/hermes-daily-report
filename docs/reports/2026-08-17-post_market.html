@@ -5,30 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>📈 市场：</title>
 <style>
+@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W04.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"TsangerJinKai02";src:url("https://cdn.jsdelivr.net/gh/tw93/Kami@main/assets/fonts/TsangerJinKai02-W05.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+:root{--parchment:#f5f4ed;--ivory:#faf9f5;--sand:#e8e6dc;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e8e6dc;--border-soft:#e5e3d8;--tag-bg:#E4ECF5;
+--serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0b10;color:#e8eaf0;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;padding:20px 16px 60px}
-.wrap{max-width:860px;margin:0 auto}
-.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.back{color:#4f7cff;text-decoration:none;font-size:14px}
-.meta{color:#8b90a0;font-size:13px}
-.rpt-body{font-size:15px;line-height:1.8}
-.rpt-body p{margin:0 0 12px}
-.rpt-body h3,.rpt-body h4{margin:18px 0 10px;font-size:17px;color:#fff}
-.rpt-body hr{border:none;border-top:1px solid #262b3d;margin:18px 0}
-.rpt-body .lead{font-size:16px;font-weight:600;color:#fff}
-.rpt-body strong{color:#fff}
-.stars{color:#e8c547;letter-spacing:2px}
-.em{font-size:17px}
-.rpt-tb{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.5px}
-.rpt-tb th{background:#1b1f31;color:#9aa2b8;padding:8px 10px;text-align:left;font-weight:600;border-bottom:1px solid #2a2f45}
-.rpt-tb td{padding:7px 10px;border-bottom:1px solid #1e2334;color:#c3c8d8}
-footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
+html{background:var(--parchment)}
+body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased}
+strong{font-weight:500;color:var(--near-black)}
+a{color:var(--brand-ink-light);text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:72px 48px 80px}
+@media(max-width:640px){.wrap{padding:48px 20px 56px}}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--brand);letter-spacing:.25em;font-weight:500;text-transform:uppercase;margin-bottom:14px}
+.eyebrow::before{content:"";width:12px;height:2px;border-radius:1px;background:var(--brand);flex-shrink:0}
+.foot-note{margin-top:56px;padding-top:12px;border-top:1px dotted var(--border);font-size:12.5px;color:var(--stone);text-align:center;line-height:1.9}
+
+.wrap{max-width:860px}
+.top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:26px;padding-bottom:14px;border-bottom:.5px solid var(--border)}
+.back{font-size:13.5px;color:var(--brand-ink-light)}
+.meta{font-size:12.5px;color:var(--stone);font-variant-numeric:tabular-nums}
+h1{font-size:27px;font-weight:500;line-height:1.25;margin-bottom:28px}
+.rpt-body{font-size:15px;line-height:1.75;letter-spacing:.15px;color:var(--near-black)}
+.rpt-body p{margin:0 0 13px}
+.rpt-body .li{padding-left:18px;position:relative}
+.rpt-body h3,.rpt-body h4{margin:26px 0 10px;font-weight:500;color:var(--near-black)}
+.rpt-body h3{font-size:20px}
+.rpt-body h4{font-size:16.5px;color:var(--dark-warm)}
+.rpt-body hr{border:none;border-top:.5px solid var(--border);margin:24px 0}
+.rpt-body .lead{font-size:16px;font-weight:500;color:var(--near-black)}
+.kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+.kami-tb th{text-align:left;font-weight:500;color:var(--dark-warm);padding:8px 10px;border-bottom:1px solid var(--border)}
+.kami-tb td{padding:7px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black)}
+.kami-tb.striped tbody tr:nth-child(even) td{background:var(--ivory)}
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="top"><a class="back" href="../index.html">← 返回首页</a><span class="meta">美股盘后评估 · 2026-08-17 08:11</span></div>
-<h1 style="font-size:22px;margin-bottom:18px">📈 市场：</h1>
+<div class="eyebrow">美股盘后评估</div>
+<h1>📈 市场：</h1>
 <div class="rpt-body">
 <p>数据已全部获取（东方财富API，截至美东2026-08-14收盘；VIX以VIXY代替，处52周低点）。八大师技能均已加载，评估完成，报告如下：</p>
 
@@ -38,8 +53,8 @@ footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
 
 <p><strong>市场：</strong> S&amp;P 7785.76（-0.17%，52周温度99%，贴着历史高点）| 纳指100 26729（-0.28%）| VIXY 18.63（52周新低→恐慌指数处于低位，市场偏自满）</p>
 
-<p><span class="em">🌡</span>️ 价格温度计</p>
-<table class="rpt-tb"><thead><tr><th>代码</th><th>价格</th><th>涨跌</th><th>温度</th><th>区间</th></tr></thead><tbody>
+<p>🌡️ 价格温度计</p>
+<table class="kami-tb striped"><thead><tr><th>代码</th><th>价格</th><th>涨跌</th><th>温度</th><th>区间</th></tr></thead><tbody>
 <tr><td>LCID</td><td>6.22</td><td>-3.4%</td><td>8%</td><td>🟢黄金区*</td></tr>
 <tr><td>TSLA</td><td>342.3</td><td>+0.7%</td><td>23%</td><td>🟢低估</td></tr>
 <tr><td>9988 阿里</td><td>119.9</td><td>-1.6%</td><td>32%</td><td>🟢低估</td></tr>
@@ -55,80 +70,80 @@ footer{margin-top:36px;color:#5d6272;font-size:12px;text-align:center}
 </tbody></table>
 <p>*LCID见下方陷阱提示</p>
 
-<p><span class="stars">⭐⭐⭐</span> 加重仓</p>
+<p>⭐⭐⭐ 加重仓</p>
 <p><strong>腾讯 0700.HK</strong>（高点672→现440，跌35%，贴近52周低点）</p>
-<p>- 巴菲特：微信的护城河没有在一年里变窄35%——变的是市场先生的心情，价格变了，价值没变。</p>
-<p>- 芒格：网络效应+游戏印钞机+持续回购，激励与股东对齐，清单里唯一“便宜的好东西”。</p>
-<p>- Marks：钟摆摆到中国互联网的恐惧端，全表风险补偿最厚的地方在这里。</p>
-<p>- Dalio：中国政策处宽松端、与美国紧缩错位；机制清楚，时点不承诺。</p>
-<p>- Taleb：政策尾部风险真实存在——<span class="stars">⭐⭐⭐</span>≠满仓，单票别超组合25%。</p>
-<p>- Andreessen：微信是中国的数字生活操作系统，是被低配的在位者，不是被颠覆者。</p>
-<p>- Karpathy：AI入口之争里，微信生态的AI部署进度被严重低估——这是产品判断，不是估值判断。</p>
-<p>- Naval：全表唯一“价格冷、资产热”的错位标的，错位就是定投者的机会。</p>
+<p class="li">- 巴菲特：微信的护城河没有在一年里变窄35%——变的是市场先生的心情，价格变了，价值没变。</p>
+<p class="li">- 芒格：网络效应+游戏印钞机+持续回购，激励与股东对齐，清单里唯一“便宜的好东西”。</p>
+<p class="li">- Marks：钟摆摆到中国互联网的恐惧端，全表风险补偿最厚的地方在这里。</p>
+<p class="li">- Dalio：中国政策处宽松端、与美国紧缩错位；机制清楚，时点不承诺。</p>
+<p class="li">- Taleb：政策尾部风险真实存在——⭐⭐⭐≠满仓，单票别超组合25%。</p>
+<p class="li">- Andreessen：微信是中国的数字生活操作系统，是被低配的在位者，不是被颠覆者。</p>
+<p class="li">- Karpathy：AI入口之争里，微信生态的AI部署进度被严重低估——这是产品判断，不是估值判断。</p>
+<p class="li">- Naval：全表唯一“价格冷、资产热”的错位标的，错位就是定投者的机会。</p>
 
-<p><span class="stars">⭐⭐</span> 加仓</p>
+<p>⭐⭐ 加仓</p>
 <p><strong>阿里巴巴 9988.HK</strong>（184→119.9）</p>
-<p>- 巴菲特：现金流+云业务，价格低于内在价值；但护城河比腾讯窄一档，只给<span class="stars">⭐⭐</span>。</p>
-<p>- 芒格：我2021年买过阿里被烫了手——教训是买入理由必须是生意本身，不是“便宜”。</p>
-<p>- Marks：从184跌到119，悲观已定价大半——开始分批，还不到用桶接的时候。</p>
-<p>- Dalio：同处中国宽松周期，政策转向受益方。</p>
-<p>- Taleb：电商利润率薄、价格战是隐性尾部，仓位上限低于腾讯。</p>
-<p>- Andreessen：云+AI资产被按旧经济打折，市场出错的概率不小。</p>
-<p>- Karpathy：通义的开源路线是真实的技术筹码，不是PPT。</p>
-<p>- Naval：你在用苦生意（电商）的价格，买好生意（云）的期权。</p>
+<p class="li">- 巴菲特：现金流+云业务，价格低于内在价值；但护城河比腾讯窄一档，只给⭐⭐。</p>
+<p class="li">- 芒格：我2021年买过阿里被烫了手——教训是买入理由必须是生意本身，不是“便宜”。</p>
+<p class="li">- Marks：从184跌到119，悲观已定价大半——开始分批，还不到用桶接的时候。</p>
+<p class="li">- Dalio：同处中国宽松周期，政策转向受益方。</p>
+<p class="li">- Taleb：电商利润率薄、价格战是隐性尾部，仓位上限低于腾讯。</p>
+<p class="li">- Andreessen：云+AI资产被按旧经济打折，市场出错的概率不小。</p>
+<p class="li">- Karpathy：通义的开源路线是真实的技术筹码，不是PPT。</p>
+<p class="li">- Naval：你在用苦生意（电商）的价格，买好生意（云）的期权。</p>
 
 <p><strong>比亚迪 1211.HK</strong>（117→88）</p>
-<p>- 巴菲特：我8港币买过、230卖了——它后来证明我卖早了。规模+垂直整合是真护城河。</p>
-<p>- 芒格：它给了我几十倍回报；价格战末期是买入窗口，不是卖出窗口。</p>
-<p>- Marks：行业在痛苦去产能阶段，输家出局后赢家的定价权会回归。</p>
-<p>- Dalio：出口周期+国内以旧换新政策双重支撑。</p>
-<p>- Taleb：欧美关税是尾部变量，仓位控制在12%以内。</p>
-<p>- Andreessen：制造业霸主是真正的builder，规模本身就是技术。</p>
-<p>- Karpathy：垂直整合密度是工程优势，不是故事。</p>
-<p>- Naval：价格战烧的是对手的现金，不是它的护城河。</p>
+<p class="li">- 巴菲特：我8港币买过、230卖了——它后来证明我卖早了。规模+垂直整合是真护城河。</p>
+<p class="li">- 芒格：它给了我几十倍回报；价格战末期是买入窗口，不是卖出窗口。</p>
+<p class="li">- Marks：行业在痛苦去产能阶段，输家出局后赢家的定价权会回归。</p>
+<p class="li">- Dalio：出口周期+国内以旧换新政策双重支撑。</p>
+<p class="li">- Taleb：欧美关税是尾部变量，仓位控制在12%以内。</p>
+<p class="li">- Andreessen：制造业霸主是真正的builder，规模本身就是技术。</p>
+<p class="li">- Karpathy：垂直整合密度是工程优势，不是故事。</p>
+<p class="li">- Naval：价格战烧的是对手的现金，不是它的护城河。</p>
 
 <p><strong>谷歌 GOOGL</strong>（402→345.9，大市值里唯一回调充分的）</p>
-<p>- 巴菲特：14%的折扣买搜索+YouTube+云；AI颠覆是真问题，但价格已经开始付你担心的钱。</p>
-<p>- 芒格：第二层思维——人人喊“搜索已死”时，出价的人已经跑光了。</p>
-<p>- Marks：拥挤交易的另一边，全表美股里温度与基本面错得最开的一只。</p>
-<p>- Dalio：利率若维持高位，成长股估值仍承压——所以是<span class="stars">⭐⭐</span>不是<span class="stars">⭐⭐⭐</span>。</p>
-<p>- Taleb：广告+云+YouTube三引擎，单一AI冲击不致命，下行有底。</p>
-<p>- Andreessen：“在位者必被AI杀死”是我听了二十年的叙事——按微软当年的剧本，这是被错杀。</p>
-<p>- Karpathy：Gemini在第一梯队，YouTube+安卓的分发没有替代品。</p>
-<p>- Naval：用别人恐慌出来的14%，买你自己每天都在用的产品股权。</p>
+<p class="li">- 巴菲特：14%的折扣买搜索+YouTube+云；AI颠覆是真问题，但价格已经开始付你担心的钱。</p>
+<p class="li">- 芒格：第二层思维——人人喊“搜索已死”时，出价的人已经跑光了。</p>
+<p class="li">- Marks：拥挤交易的另一边，全表美股里温度与基本面错得最开的一只。</p>
+<p class="li">- Dalio：利率若维持高位，成长股估值仍承压——所以是⭐⭐不是⭐⭐⭐。</p>
+<p class="li">- Taleb：广告+云+YouTube三引擎，单一AI冲击不致命，下行有底。</p>
+<p class="li">- Andreessen：“在位者必被AI杀死”是我听了二十年的叙事——按微软当年的剧本，这是被错杀。</p>
+<p class="li">- Karpathy：Gemini在第一梯队，YouTube+安卓的分发没有替代品。</p>
+<p class="li">- Naval：用别人恐慌出来的14%，买你自己每天都在用的产品股权。</p>
 
-<p><span class="stars">⭐</span> 正常定投</p>
+<p>⭐ 正常定投</p>
 <p>苹果(71%)、微软(76%)、亚马逊(75%)：温度偏高但生意顶级，正常额度；特斯拉(23%)：温度罕见低温+已从7月低点反弹15%，但估值依赖Robotaxi叙事、大师分歧最大（巴菲特/芒格进Too Hard筐，Andreessen看多）——正常额度，不加不减。</p>
 
-<p><span class="em">⚡</span> 暂缓/跳过</p>
-<table class="rpt-tb"><thead><tr><th>代码</th><th>价格</th><th>温度</th><th>一句话</th></tr></thead><tbody>
+<p>⚡ 暂缓/跳过</p>
+<table class="kami-tb striped"><thead><tr><th>代码</th><th>价格</th><th>温度</th><th>一句话</th></tr></thead><tbody>
 <tr><td>TSM</td><td>426.4</td><td>80%</td><td>地缘尾部是真实折让，等回调</td></tr>
 <tr><td>PLTR</td><td>174.0</td><td>67%</td><td>3月+30%，定价了完美执行</td></tr>
 <tr><td>RIVN</td><td>15.36</td><td>32%</td><td>现金流算不出来，pass</td></tr>
 <tr><td>LCID</td><td>6.22</td><td>8%</td><td>⚠️黄金区陷阱：冰块在融化，便宜≠值</td></tr>
 </tbody></table>
 
-<p><span class="em">💰</span> 本周组合（总额约【金额已脱敏】）</p>
-<table class="rpt-tb"><thead><tr><th>股票</th><th>评级</th><th>仓位</th><th>金额</th></tr></thead><tbody>
+<p>💰 本周组合（总额约【金额已脱敏】）</p>
+<table class="kami-tb striped"><thead><tr><th>股票</th><th>评级</th><th>仓位</th><th>金额</th></tr></thead><tbody>
 <tr><td>阿里9988</td><td>⭐⭐</td><td>16%</td><td>【金额已脱敏】</td></tr>
 <tr><td>比亚迪</td><td>⭐⭐</td><td>12%</td><td>【金额已脱敏】</td></tr>
 <tr><td>谷歌</td><td>⭐⭐</td><td>16%</td><td>【金额已脱敏】</td></tr>
 <tr><td>苹果/微软/亚马逊/特斯拉</td><td>⭐</td><td>各8%</td><td>各【金额已脱敏】</td></tr>
 </tbody></table>
 
-<p><span class="em">📋</span> 大师提醒</p>
-<p>- 巴菲特：指数温度99%时，聪明的做法不是离场，是把新钱挪到冷角落。</p>
-<p>- 芒格：温度计只量价格不量生意——LCID的8%就是给只看温度的人挖的坑。</p>
-<p>- Marks：美股热端与中国资产冷端同时存在，本周全部逻辑就是这句。</p>
-<p>- Dalio：中美周期错位（美紧中松）方向清楚；我对中国有已知乐观偏见（桥水在华有商业利益），请打折听。</p>
-<p>- Taleb：VIXY在52周低点=尾部保险最便宜的时候——不改变定投，但别忘了大盘在历史高点。</p>
-<p>- Andreessen：熊市里被抛售的在位者，历史上被错杀的次数远多于被杀死的次数。</p>
-<p>- Karpathy：AI资本开支周期是真的，但从demo到九个9的可靠性还有很长的坡——别为万无一失付全款。</p>
-<p>- Naval：你的优势是每周定投的时间杠杆，不是抓热点的能力——PLTR那种+30%是用别人的规则玩。</p>
+<p>📋 大师提醒</p>
+<p class="li">- 巴菲特：指数温度99%时，聪明的做法不是离场，是把新钱挪到冷角落。</p>
+<p class="li">- 芒格：温度计只量价格不量生意——LCID的8%就是给只看温度的人挖的坑。</p>
+<p class="li">- Marks：美股热端与中国资产冷端同时存在，本周全部逻辑就是这句。</p>
+<p class="li">- Dalio：中美周期错位（美紧中松）方向清楚；我对中国有已知乐观偏见（桥水在华有商业利益），请打折听。</p>
+<p class="li">- Taleb：VIXY在52周低点=尾部保险最便宜的时候——不改变定投，但别忘了大盘在历史高点。</p>
+<p class="li">- Andreessen：熊市里被抛售的在位者，历史上被错杀的次数远多于被杀死的次数。</p>
+<p class="li">- Karpathy：AI资本开支周期是真的，但从demo到九个9的可靠性还有很长的坡——别为万无一失付全款。</p>
+<p class="li">- Naval：你的优势是每周定投的时间杠杆，不是抓热点的能力——PLTR那种+30%是用别人的规则玩。</p>
 
-<p><span class="em">⚠</span>️ 免责声明：本报告为个人研究框架推演，非投资建议；大师视角基于公开言论提炼，非本人观点。定投有风险，决策需独立。</p>
+<p>⚠️ 免责声明：本报告为个人研究框架推演，非投资建议；大师视角基于公开言论提炼，非本人观点。定投有风险，决策需独立。</p>
 </div>
-<footer>⚠️ 非投资建议 · 金额已脱敏 · Hermes Agent 自动部署</footer>
+<div class="foot-note">⚠️ 非投资建议 · 金额已脱敏 · Hermes Agent 自动部署 · kami design</div>
 </div>
 </body>
 </html>
