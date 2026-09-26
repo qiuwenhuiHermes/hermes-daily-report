@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hermes 每日观察</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0b10;color:#e8eaf0;font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;padding:24px 16px 60px}
+.wrap{max-width:860px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+h1{font-size:26px;font-weight:700}
+h1 span{color:#4f7cff}
+.sub{color:#8b90a0;font-size:13px;margin-bottom:24px}
+.stats{display:flex;gap:12px;margin-bottom:22px}
+.stat{flex:1;background:#141726;border:1px solid #262b3d;border-radius:10px;padding:12px 14px}
+.stat .v{font-size:20px;font-weight:700;color:#4f7cff}
+.stat .l{font-size:12px;color:#8b90a0;margin-top:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:14px}
+.card{background:#141726;border:1px solid #262b3d;border-radius:12px;padding:16px 18px;text-decoration:none;color:#e8eaf0;transition:border-color .15s}
+.card:hover{border-color:#4f7cff}
+.card-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px}
+.card-type{color:#4f7cff;font-weight:600}
+.card-date{color:#5d6272;margin-left:auto}
+.card-title{font-size:15px;font-weight:600;line-height:1.45;margin-bottom:6px}
+.card-mkt{font-size:12px;color:#8b90a0;line-height:1.5;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+footer{margin-top:40px;text-align:center;color:#5d6272;font-size:12px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><h1>Hermes <span>每日观察</span></h1><span class="sub">自动更新</span></header>
+<div class="sub">美股盘后/盘前评估 · 温度计 · 定投信号 · 由 Hermes Agent 自动生成并部署</div>
+<div class="stats">
+<div class="stat"><div class="v">61</div><div class="l">已收录报告</div></div>
+<div class="stat"><div class="v">2</div><div class="l">日更栏目</div></div>
+<div class="stat"><div class="v">2026-09-26 18:23</div><div class="l">最近构建</div></div>
+</div>
+<div class="grid">
+<a class="card" href="reports/2026-09-25-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-25</span></div>
+  <div class="card-title">美股盘后评估 | 2026-09-25</div>
+  <div class="card-mkt">S&amp;P 7704 (-0.02%) | 纳指 26939 (+0.01%) | 道指 -0.31% | VIX ~21.7</div>
+</a>
+<a class="card" href="reports/2026-09-25-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-25</span></div>
+  <div class="card-title">美股盘前评估 | 2026-09-25（周五）</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-24-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-24</span></div>
+  <div class="card-title">美股盘后评估 | 2026-09-24</div>
+  <div class="card-mkt">S&amp;P 7706 (-0.75%) | 纳指100 30470 (-0.85%) | VIX 15.2（低位）</div>
+</a>
+<a class="card" href="reports/2026-09-24-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-24</span></div>
+  <div class="card-title">美股盘前评估 | 2026-09-24（周四）</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-23-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-23</span></div>
+  <div class="card-title">美股盘后评估 | 2026-09-23</div>
+  <div class="card-mkt">SPX 7764.6 (0.0%) | 纳指 27244 (+0.5%，连续第二日收盘新高) | VIX 14.2（回落）</div>
+</a>
+<a class="card" href="reports/2026-09-23-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-23</span></div>
+  <div class="card-title">美股盘前评估 | 2026-09-23（周三）</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-22-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-22</span></div>
+  <div class="card-title">美股盘后评估 | 2026-09-22（周二）</div>
+  <div class="card-mkt">S&amp;P 7764.7 (+1.49%) | 纳指100 30482 (+2.83%) | VIX 17.7 (-1.7%)</div>
+</a>
+<a class="card" href="reports/2026-09-22-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-22</span></div>
+  <div class="card-title">美股盘前评估 | 2026-09-22 周二</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-21-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-21</span></div>
+  <div class="card-title">美股盘后评估 | 2026-09-21</div>
+  <div class="card-mkt">S&amp;P 500 温度90 ⚠️ | Nasdaq100 温度86 | VIX 21.7（中性）</div>
+</a>
+<a class="card" href="reports/2026-09-21-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-21</span></div>
+  <div class="card-title">盘前信号</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-18-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-18</span></div>
+  <div class="card-title">盘前信号</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-17-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-17</span></div>
+  <div class="card-title">美股盘后评估 | 2026-09-17</div>
+  <div class="card-mkt">S&amp;P 7551.81 (-0.45%) | 纳指 25978 (-0.01%) | VIX 17.71 (+3.0%)</div>
+</a>
+<a class="card" href="reports/2026-09-17-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-17</span></div>
+  <div class="card-title">美股盘前评估 | 2026-09-17 周四</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-16-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-16</span></div>
+  <div class="card-title">市场：</div>
+  <div class="card-mkt">S&amp;P 7586 -0.45% | 纳指 25982 -0.78% | VIX ~17 持平</div>
+</a>
+<a class="card" href="reports/2026-09-16-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-16</span></div>
+  <div class="card-title">美股盘前评估 | 2026-09-16 周三</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-15-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-15</span></div>
+  <div class="card-title">市场：</div>
+  <div class="card-mkt">S&amp;P 7620 -0.48% | NDX 29127 -0.82% | VIX ~16↑（VIXY +1.1% 估）</div>
+</a>
+<a class="card" href="reports/2026-09-15-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-15</span></div>
+  <div class="card-title">美股盘前评估 | 2026-09-15 周二（盘前版）</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-14-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-14</span></div>
+  <div class="card-title">市场：</div>
+  <div class="card-mkt">S&amp;P 7657 (+0.86%) | NDX 29368 (+0.91%) | VIX 15.85 (-11.2%)</div>
+</a>
+<a class="card" href="reports/2026-09-14-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-14</span></div>
+  <div class="card-title">美股盘前评估 | 2026-09-14 周一</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-11-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-11</span></div>
+  <div class="card-title">美股盘后评估 | 2026-09-11 周五</div>
+  <div class="card-mkt">S&amp;P 7591.70 (-0.58%) | 纳指 26081.72 (-0.65%) | VIX 16.32</div>
+</a>
+<a class="card" href="reports/2026-09-11-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-11</span></div>
+  <div class="card-title">今晚20:30（开盘前1小时）公布8月CPI，下周三四FOMC，市场定价加息概率50/50</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-10-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-10</span></div>
+  <div class="card-title">美股盘后评估 | 2026-09-10</div>
+  <div class="card-mkt">S&amp;P 7636 (-0.48%) | 纳指100 29422 (-0.29%) | VIX 15.7</div>
+</a>
+<a class="card" href="reports/2026-09-10-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-10</span></div>
+  <div class="card-title">美股盘前评估 | 2026-09-10 周四</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-09-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-09</span></div>
+  <div class="card-title">美股盘后评估 | 2026-09-09</div>
+  <div class="card-mkt">S&amp;P 7,674 (-0.58%) | 纳指 26,421 (-0.32%) | VIX 15.72 (+8.2%)</div>
+</a>
+<a class="card" href="reports/2026-09-09-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-09</span></div>
+  <div class="card-title">美股盘前评估 | 2026-09-09 周三</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-08-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-08</span></div>
+  <div class="card-title">美股盘后评估 | 2026-09-08（周二）</div>
+  <div class="card-mkt">S&amp;P 7718.6（-0.4%，距52周高仅1.3%）｜纳指100 29544（+0.2%）｜VIX 14.5（低位，平静偏暖）</div>
+</a>
+<a class="card" href="reports/2026-09-08-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-08</span></div>
+  <div class="card-title">美股盘前评估 | 2026-09-08 周二（劳动节后首个交易日）</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-07-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-07</span></div>
+  <div class="card-title">美股盘后评估 | 2026-09-07（周一）</div>
+  <div class="card-mkt">S&amp;P 7718.60 (-0.4%) | 纳指100 26507 (-0.3%) | VIX 21.7</div>
+</a>
+<a class="card" href="reports/2026-09-07-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-07</span></div>
+  <div class="card-title">美股盘前评估 | 2026-09-07（周一）</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-09-02-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-02</span></div>
+  <div class="card-title">美股盘后评估 | 2026-09-02</div>
+  <div class="card-mkt">S&amp;P 7631 (-0.71%) | 纳指 26099 (-1.03%) | VIX ~17.8（VIXY代理+3.0%，低位略回升*）</div>
+</a>
+<a class="card" href="reports/2026-09-01-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-09-01</span></div>
+  <div class="card-title">数据核验摘要</div>
+  <div class="card-mkt">SPX 7686 (-0.33%) | NDX 29457 (+0.08%) | VIX 14.93（低位平静）</div>
+</a>
+<a class="card" href="reports/2026-09-01-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-09-01</span></div>
+  <div class="card-title">美股盘前评估 | 2026-09-01 周二 20:00 BJ</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-08-31-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-31</span></div>
+  <div class="card-title">美股盘后评估 | 2026-08-31</div>
+  <div class="card-mkt">S&amp;P 7711.76 (-0.25%) | Nasdaq 26402 (-0.52%) | VIX 数据源未提供</div>
+</a>
+<a class="card" href="reports/2026-08-29-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-08-29</span></div>
+  <div class="card-title">周一（8/31）开盘前</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-08-27-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-27</span></div>
+  <div class="card-title">美股盘后评估 | 2026-08-26（周三收盘）</div>
+  <div class="card-mkt">SPX 7675.70 (-0.02%) | NDX 26130 (-0.08%) | DJIA 53464 (-0.21%)</div>
+</a>
+<a class="card" href="reports/2026-08-27-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-08-27</span></div>
+  <div class="card-title">美股盘前评估 | 2026-08-27 周四</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-08-26-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-26</span></div>
+  <div class="card-title">美股盘后评估 | 2026-08-26</div>
+  <div class="card-mkt">S&amp;P 7677 (+0.3%) | 纳指100 29209 (+0.6%) | VIX 低位区（直接读数缺失，VIXY恐慌ETF创52周新低交叉验证——市场毫无恐惧）</div>
+</a>
+<a class="card" href="reports/2026-08-26-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-08-26</span></div>
+  <div class="card-title">美股盘前评估 | 2026-08-26 周三</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-08-25-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-25</span></div>
+  <div class="card-title">美股盘后评估 | 2026-08-24收盘</div>
+  <div class="card-mkt">SPX 7653 (-0.3%) 温度90%·超买 | NDX 25980 (-0.8%) 82%·超买 | VIX代理VIXY贴52周最低→恐慌极低</div>
+</a>
+<a class="card" href="reports/2026-08-24-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-24</span></div>
+  <div class="card-title">市场：</div>
+  <div class="card-mkt">S&amp;P 7674(+0.4%) | 纳指100 29309(+0.3%) | VIX 21.7（低位，市场偏自满）</div>
+</a>
+<a class="card" href="reports/2026-08-24-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-08-24</span></div>
+  <div class="card-title">美股盘前评估 | 2026-08-24 周一</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-08-21-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-21</span></div>
+  <div class="card-title">美股盘后评估 | 2026-08-21</div>
+  <div class="card-mkt">S&amp;P 7641 (-0.87%) | 纳指 26067 (-1.00%) | 道指 52759 (-1.32%) | VIX ≈21.7</div>
+</a>
+<a class="card" href="reports/2026-08-21-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-08-21</span></div>
+  <div class="card-title">美股盘前评估 | 2026-08-21 周五</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-08-20-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-20</span></div>
+  <div class="card-title">数据底稿（2026-08-19美股收盘，港股同日）</div>
+  <div class="card-mkt">S&amp;P 7708 (+0.2%) | 纳指 26331 (+0.2%) | VIX 15.8 (8/18)</div>
+</a>
+<a class="card" href="reports/2026-08-20-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-08-20</span></div>
+  <div class="card-title">美股盘前评估 | 2026-08-20 周四（美东 08:13 盘前）</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-08-19-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-19</span></div>
+  <div class="card-title">美股盘后评估 | 2026-08-19</div>
+  <div class="card-mkt">S&amp;P 7691(-0.7%) 距52周高仅1.6% | 纳指 26290(-1.3%) | VIX 21.7中性</div>
+</a>
+<a class="card" href="reports/2026-08-19-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-08-19</span></div>
+  <div class="card-title">美股盘前评估 | 2026-08-19 周三</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-08-18-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-18</span></div>
+  <div class="card-title">温度计算（已验证）：</div>
+  <div class="card-mkt">S&amp;P 7745 (-0.5%) | 纳指 26645 (-0.3%) | 恐慌代理VIXY 18.8 (+1.0%)，情绪中性偏稳</div>
+</a>
+<a class="card" href="reports/2026-08-18-pre_market.html">
+  <div class="card-top"><span class="card-icon">🌅</span>
+    <span class="card-type">美股盘前评估</span><span class="card-date">2026-08-18</span></div>
+  <div class="card-title">数据核对</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-08-17-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-17</span></div>
+  <div class="card-title">市场：</div>
+  <div class="card-mkt">S&amp;P 7785.76（-0.17%，52周温度99%，贴着历史高点）| 纳指100 26729（-0.28%）| VIXY 18.63（52周新低→恐慌指数处于低位，市场偏自满）</div>
+</a>
+<a class="card" href="reports/2026-08-14-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-14</span></div>
+  <div class="card-title">大盘</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-08-12-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-12</span></div>
+  <div class="card-title">美股盘后评估 | 2026年8月12日（周二）</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-08-11-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-11</span></div>
+  <div class="card-title">美股盘后评估 | 2026-08-11</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-08-10-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-10</span></div>
+  <div class="card-title">市场</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-08-07-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-07</span></div>
+  <div class="card-title">美股盘后评估 | 2026-08-07</div>
+  <div class="card-mkt">S&amp;P 6643.70 (+0.59%) | Nasdaq 22484 (+0.44%) | VIX 21.67 🔺偏高</div>
+</a>
+<a class="card" href="reports/2026-08-06-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-06</span></div>
+  <div class="card-title">美股盘后八大师评估 | 2026-08-06（周四）</div>
+  <div class="card-mkt">S&amp;P 6,644(+0.6%) | Nasdaq 22,484(+0.4%) | Dow 46,247(+0.7%) | VIX ~16低位(估) | 黄金$4,268 | USDCNY 6.74</div>
+</a>
+<a class="card" href="reports/2026-08-05-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-05</span></div>
+  <div class="card-title">美股盘后评估 | 2026年8月5日（周二收盘数据）</div>
+  <div class="card-mkt">S&amp;P 7,737(+1.79%) | Nasdaq 26,585(+2.59%) | VIX 21.67</div>
+</a>
+<a class="card" href="reports/2026-08-04-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-04</span></div>
+  <div class="card-title">美股盘后评估 | 2026年8月4日（周二）</div>
+  <div class="card-mkt">S&amp;P 6643.70 (+0.59%) | Nasdaq 28,776 (+1.78%) | 道琼斯 46,247 (+0.65%) | VIX ~16（估）</div>
+</a>
+<a class="card" href="reports/2026-08-03-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-08-03</span></div>
+  <div class="card-title">美股盘后评估 | 2026-08-03</div>
+  <div class="card-mkt"></div>
+</a>
+<a class="card" href="reports/2026-07-31-post_market.html">
+  <div class="card-top"><span class="card-icon">📈</span>
+    <span class="card-type">美股盘后评估</span><span class="card-date">2026-07-31</span></div>
+  <div class="card-title">市场：</div>
+  <div class="card-mkt">S&amp;P 7,437(+1.66%) | NDX 28,106(+3.36%) | 道指 52,208(+1.19%) | VIX 21.67</div>
+</a>
+</div>
+<footer>⚠️ 内容基于公开信息的研究推演，非投资建议 · 金额数据已脱敏<br>Hermes Agent · qiuwenhuiHermes/hermes-daily-report</footer>
+</div>
+</body>
+</html>
