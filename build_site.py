@@ -118,6 +118,8 @@ def md_to_html(text: str) -> str:
             cells.append('')
         return cells
 
+    PROSE_LABEL = re.compile(r'^\*{0,2}[^|*：:]{1,12}[：:]')
+
     def is_table_line(s: str) -> bool:
         if not s:
             return False
@@ -129,7 +131,7 @@ def md_to_html(text: str) -> str:
         # 伪表格: 竖线两侧都有空格, 至少 2 列
         if len(re.findall(r'\s\|\s', s)) >= 1 and not s.startswith('|') and not s.endswith('|'):
             # 形如 "标签：xxx | yyy" 的散文（市场播报/宏观要点）不是表格
-            if re.match(r'^\*{0,2}[^|*：:]{1,12}[：:]', s):
+            if PROSE_LABEL.match(s):
                 return False
             cells = re.split(r'\s\|\s', s)
             if len(cells) < 2 or any(len(c) > 40 for c in cells):
@@ -154,14 +156,21 @@ def md_to_html(text: str) -> str:
     table_flags = []
     for i, line in enumerate(lines):
         s = line.strip()
+        prev_tab = i > 0 and table_flags[-1]
         if not is_table_line(s):
+            # 块内续行: 上一行已判定属于表格 且本行含 ≥2 个 " | " 且不是"标签：xx | yy"式散文
+            # → 仍算表格行（否则长单元格的行会被踢出表格、退化成段落）
+            if (prev_tab and len(re.findall(r'\s\|\s', s)) >= 2
+                    and not PROSE_LABEL.match(s) and not s.startswith('- ')):
+                table_flags.append(True)
+                continue
             table_flags.append(False)
             continue
         nxt = lines[i + 1].strip() if i + 1 < len(lines) else ''
         cells = split_cells(s)
         if (is_table_line(nxt) or
                 (is_sep_row(cells) and is_table_line(nxt)) or
-                (i > 0 and table_flags and table_flags[-1])):
+                prev_tab):
             table_flags.append(True)
         else:
             table_flags.append(False)
