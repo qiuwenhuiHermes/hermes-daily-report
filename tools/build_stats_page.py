@@ -144,6 +144,8 @@ def cron_stats():
     close_ro(db)
     out = []
     for jid, j in per_job.items():
+        if jid not in name_of:
+            continue  # 跳过已删除任务的残留执行记录（否则页面出现"（已删除 xxx）0%"噪声）
         total = j["ok"] + j["fail"]
         wavg = sum(n * a for n, a in j["dur"]) / max(sum(n for n, _ in j["dur"]), 1) if j["dur"] else None
         out.append({
