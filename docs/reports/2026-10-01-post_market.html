@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f5f4ed">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="每日观察">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://qiuwenhuihermes.github.io/hermes-daily-report/" crossorigin>
+<link rel="preload" href="../fonts/kami-400.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hermes 每日观察">
+<meta property="og:url" content="https://qiuwenhuihermes.github.io/hermes-daily-report/reports/2026-10-01-post_market.html">
+<meta property="og:title" content="美股盘后评估 | 2026-09-30（周三收盘）">
+<meta property="og:description" content="S&amp;P 7651 (-0.25%) | 纳指 26861 (+0.24%) | VIX 21.7">
+<meta property="og:image" content="https://qiuwenhuihermes.github.io/hermes-daily-report/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="美股盘后评估 | 2026-09-30（周三收盘）">
+<meta name="twitter:description" content="S&amp;P 7651 (-0.25%) | 纳指 26861 (+0.24%) | VIX 21.7">
+<meta name="twitter:image" content="https://qiuwenhuihermes.github.io/hermes-daily-report/assets/og.png">
+<title>📈 美股盘后评估 | 2026-09-30（周三收盘）</title>
+<meta name="description" content="S&amp;P 7651 (-0.25%) | 纳指 26861 (+0.24%) | VIX 21.7">
+<style>
+@font-face{font-family:"TsangerJinKai02";src:url("../fonts/kami-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"TsangerJinKai02";src:url("../fonts/kami-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+:root{--parchment:#f5f4ed;--ivory:#fbfaf6;--sand:#e2dfd1;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e4e1d4;--border-soft:#e8e6dc;--tag-bg:#E4ECF5;
+--shadow:0 1px 2px rgba(27,54,93,.045),0 10px 24px -14px rgba(27,54,93,.13);
+--serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--parchment);-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+strong{font-weight:500;color:var(--near-black)}
+a{color:var(--brand-ink-light);text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:72px 48px 88px}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--brand);letter-spacing:.25em;font-weight:500;text-transform:uppercase;margin-bottom:14px}
+.eyebrow::before{content:"";width:12px;height:2px;border-radius:1px;background:var(--brand);flex-shrink:0}
+.foot-note{margin-top:64px;padding-top:14px;border-top:1px dotted var(--border);font-size:13px;color:var(--stone);text-align:center;line-height:1.9;overflow-wrap:anywhere;text-wrap:balance}
+/* 表格：横向溢出仅作兜底；滚动阴影只在真溢出时可见（Roman Komarov 技法） */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:4px;
+  background:linear-gradient(to right,var(--parchment) 40%,rgba(245,244,237,0)),
+    linear-gradient(to left,var(--parchment) 40%,rgba(245,244,237,0)) 100% 0,
+    radial-gradient(farthest-side at 0% 50%,rgba(27,54,93,.16),rgba(27,54,93,0)),
+    radial-gradient(farthest-side at 100% 50%,rgba(27,54,93,.16),rgba(27,54,93,0)) 100% 0;
+  background-repeat:no-repeat;background-size:32px 100%,32px 100%,14px 100%,14px 100%;
+  background-attachment:local,local,scroll,scroll}
+.tbl-wrap::-webkit-scrollbar{height:4px}
+.tbl-wrap::-webkit-scrollbar-thumb{background:var(--sand);border-radius:2px}
+.tbl-hint{font-size:12.5px;color:var(--stone);text-align:center;margin:-6px 0 16px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.wrap{max-width:860px}
+.top{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:baseline;gap:12px;background:var(--parchment);padding:12px 0 13px;margin-bottom:24px;border-bottom:.5px solid var(--border)}
+.back{font-size:14px;color:var(--brand-ink-light);white-space:nowrap;padding:11px 2px}
+.back:focus-visible,a:focus-visible{outline:2px solid var(--brand-ink-light);outline-offset:2px;border-radius:2px}
+.meta{font-size:13px;color:var(--stone);font-variant-numeric:tabular-nums;white-space:nowrap}
+h1{font-size:28px;font-weight:500;line-height:1.3;margin-bottom:26px;text-wrap:balance}
+.rpt-body{font-size:15px;line-height:1.75;letter-spacing:.15px;color:var(--near-black);overflow-wrap:anywhere}
+.rpt-body p{margin:0 0 13px}
+.rpt-body .li{padding-left:18px;position:relative}
+.rpt-body h3,.rpt-body h4{margin:26px 0 10px;font-weight:500;color:var(--near-black)}
+.rpt-body h3{font-size:20px}
+.rpt-body h4{font-size:16.5px;color:var(--dark-warm)}
+.rpt-body hr{border:none;border-top:.5px solid var(--border);margin:24px 0}
+.rpt-body .lead{font-size:16px;font-weight:500;color:var(--near-black)}
+.kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;font-variant-numeric:tabular-nums}
+.kami-tb th{text-align:left;font-weight:500;color:var(--near-black);padding:9px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
+.kami-tb td{padding:9px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black);overflow-wrap:break-word}
+.kami-tb .num{text-align:right}
+.kami-tb.striped tbody tr:nth-child(even) td{background:rgba(61,59,53,.045)}
+.pn{display:flex;justify-content:space-between;gap:14px;align-items:stretch;margin:44px 0 8px;padding-top:18px;border-top:.5px solid var(--border);font-size:13.5px}
+.pn a{flex:1;background:var(--ivory);border:1px solid var(--border);border-radius:6px;padding:14px 16px;box-shadow:var(--shadow);transition:border-color .18s,transform .18s;font-size:15px;color:var(--brand);display:block}
+.pn a:hover{border-color:#cfcaba;transform:translateY(-1px)}
+.pn .pn-b{text-align:right}
+.pn .pn-lab{display:block;font-size:11.5px;color:var(--stone);letter-spacing:.06em;margin-bottom:5px}
+.pn .pn-x{flex:1;padding:14px 16px;border:1px dashed var(--border);border-radius:6px;display:block}
+.pn .pn-b.pn-x{text-align:right}
+.pn .pn-none{display:block;font-size:14px;color:#a9a498}
+.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:50%;background:var(--ivory);border:1px solid var(--border);color:var(--brand);font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:20}
+.totop.on{opacity:1;pointer-events:auto}
+.totop:hover{transform:translateY(-2px)}
+@media(max-width:640px){
+.wrap{padding:calc(22px + env(safe-area-inset-top)) 18px calc(52px + env(safe-area-inset-bottom))}
+h1{font-size:23px;margin-bottom:22px}
+.rpt-body{font-size:16px;line-height:1.85}
+.rpt-body h3{font-size:19px}
+.rpt-body h4{font-size:17px}
+.kami-tb{font-size:13px}
+.pn{flex-direction:column;gap:10px}
+.pn .pn-b{text-align:left}
+.top{padding:10px 0 12px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a class="back" href="../index.html">← 返回首页</a><span class="meta">10月1日 08:06</span></div>
+<h1>📈 美股盘后评估 | 2026-09-30（周三收盘）</h1>
+<div class="rpt-body">
+<p>📊 <strong>美股盘后评估 | 2026-09-30（周三收盘）</strong></p>
+
+<p><strong>市场：</strong> S&amp;P 7651 (-0.25%) | 纳指 26861 (+0.24%) | VIX 21.7</p>
+<p>PCE 通胀低于预期，加息担忧缓解；资金继续轮入科技，道指走弱；今晚美光财报是 AI 交易试金石。指数温度约 89%，接近高位。</p>
+
+<p>🌡️ <strong>价格温度计</strong>（价格 | 日涨跌 | 温度 | 区间）</p>
+<p class="li">- AAPL 333.02 | +1.1% | 87.9 | 超买</p>
+<p class="li">- MSFT 512.90 | +0.8% | 80.0 | 超买</p>
+<p class="li">- GOOGL 344.08 | +0.9% | 62.6 | 偏贵</p>
+<p class="li">- AMZN 249.15 | +1.0% | 58.3 | 合理</p>
+<p class="li">- TSLA 354.81 | +0.6% | 28.5 | 低估</p>
+<p class="li">- RIVN 14.94 | -0.2% | 24.8 | 低估</p>
+<p class="li">- LCID 4.07 | 0.0% | 7.4 | 黄金*</p>
+<p class="li">- NVDA 228.38 | +0.5% | 88.7 | 超买</p>
+<p class="li">- TSM 456.19 | -0.2% | 89.2 | 超买</p>
+<p class="li">- PLTR 187.05 | 0.0% | 97.8 | 超买</p>
+<p class="li">- BYD 75.60 | -0.2% | 9.7 | 黄金</p>
+<p class="li">- 9988.HK 106.60 | +0.4% | 18.4 | 黄金</p>
+<p class="li">- 0700.HK 431.00 | -0.2% | 7.4 | 黄金</p>
+<p>*LCID 是坠落刀，黄金区无意义</p>
+
+<p>⭐⭐ <strong>本周加仓</strong></p>
+
+<p><strong>GOOGL</strong>（62.6% 偏贵，高点回撤 16%）</p>
+<p class="li">- 巴菲特：广告印钞机+TPU，从高点打了折的优质生意，终于给面安全边际</p>
+<p class="li">- 芒格：反垄断噪音压价格，生意没变——逆向分批</p>
+<p class="li">- 马克斯：温度从贪婪端回落中段，风险补偿比三个月前充足</p>
+<p class="li">- 达里奥：指数偏热但个股已消化部分风险，周期晚期选回撤标的</p>
+<p class="li">- 塔勒布：指数集中度极端，保护靠仓位不靠预测——可买但设限</p>
+<p class="li">- 安德森：TPU 自供算力是最强形式卡位，监管是唯一逆风</p>
+<p class="li">- 卡帕西：TPU+Gemini 是部署级工程优势，非 demo</p>
+<p class="li">- 纳瓦尔：现金流睡觉也在赚，AI CapEx 是算力期权</p>
+
+<p><strong>9988.HK</strong>（18.4% 黄金区，3月+13.3%）</p>
+<p class="li">- 巴菲特：电商现金流+云期权，中国折价就是安全边际</p>
+<p class="li">- 芒格：我在中国交过学费，但价格已计入悲观——小注分批</p>
+<p class="li">- 马克斯：钟摆在恐惧端，流动性折价即风险补偿</p>
+<p class="li">- 达里奥：中国宽松与美国错位，政策底已现</p>
+<p class="li">- 塔勒布：脱钩是尾部风险源，仓位须能承受冻结</p>
+<p class="li">- 安德森：Qwen 开源生态是真正的 builder 资产</p>
+<p class="li">- 卡帕西：开源模型生态是真实的开发者杠杆</p>
+<p class="li">- 纳瓦尔：电商+云复利，估值在地板上</p>
+
+<p><strong>0700.HK</strong>（7.4% 黄金区，贴 52 周低）</p>
+<p class="li">- 巴菲特：游戏印钞+回购注销，回购是最好的资本配置</p>
+<p class="li">- 芒格：价格没反映资产价值——价值区，买</p>
+<p class="li">- 马克斯：恐惧端读数清晰，补偿充足</p>
+<p class="li">- 达里奥：政策宽松+南向回流，周期位置向上</p>
+<p class="li">- 塔勒布：监管二次冲击是尾部，但已大幅折价</p>
+<p class="li">- 安德森：微信生态是复利机器，AI 入口被低估</p>
+<p class="li">- 卡帕西：混元+微信 AI 入口是部署级机会</p>
+<p class="li">- 纳瓦尔：生态锁定=睡觉赚钱的资产</p>
+
+<p><strong>BYD</strong>（9.7% 黄金区，3月-10.1%）</p>
+<p class="li">- 巴菲特：我拿过它 28 年，成本护城河还在，价格战吓跑了市场先生</p>
+<p class="li">- 芒格：我最成功的投资之一，价格战是周期噪音，技术优势是结构性的</p>
+<p class="li">- 马克斯：恐惧端但下跌理由真实——分批，不重仓</p>
+<p class="li">- 达里奥：中国刺激+出口扩张，周期低位</p>
+<p class="li">- 塔勒布：无底线价格战=遍历性风险，小注</p>
+<p class="li">- 安德森：垂直整合是 software-eats-cars 的最强形式</p>
+<p class="li">- 卡帕西：智驾平权落地速度被低估</p>
+<p class="li">- 纳瓦尔：制造复利+全球扩张，地板价</p>
+
+<p>⭐ <strong>正常定投</strong></p>
+<p class="li">- AMZN：58.3% 合理区，AWS+Trainium 稳健但无折扣，按节奏投</p>
+<p class="li">- TSLA：28.5% 低估但叙事驱动+交付疲软，大师分歧大，仅小额</p>
+
+<p>⚡ <strong>暂缓/跳过</strong></p>
+<p class="li">- 暂缓：AAPL（87.9 超买）、MSFT（80 超买，3月+33%）、NVDA（88.7 超买）、TSM（89.2 超买，等回调再加）</p>
+<p class="li">- 跳过：PLTR（97.8 贴 52 周高，3 月动量极端+腾讯复权数据或失真）、RIVN（现金消耗，塔勒布否决）、LCID（稀释机器）</p>
+
+<p>💰 <strong>本周组合</strong></p>
+<p>GOOGL 【金额已脱敏】| 9988 【金额已脱敏】| 0700 【金额已脱敏】| BYD 【金额已脱敏】| AMZN 【金额已脱敏】| TSLA 【金额已脱敏】→ 合计 【金额已脱敏】</p>
+
+<p>🔗 <strong>瓶颈评分速览</strong>（今日无 ±3% 触发重估，沿用；PLTR 触 52 周高维持 28.5）</p>
+<p class="li">- 🔴 TSM 81.7 | 第一梯队 | 先进制程+CoWoS 双卡位（09-18）</p>
+<p class="li">- 🔴 NVDA 65.6 | 第二梯队 | CUDA 生态支配（09-17）</p>
+<p class="li">- 🔴 GOOGL 60.2 | 第二梯队 | TPU 自供算力+相对低估（09-23）</p>
+<p class="li">- MSFT 52.2 | 第三梯队 | OpenAI+Azure，回报周期拉长</p>
+<p class="li">- AMZN 50.0 | 第三梯队 | Trainium+AWS</p>
+
+<p>📋 <strong>大师提醒</strong></p>
+<p class="li">- 巴菲特：指数温度 89%，市场先生亢奋——这周该做的是管住手，不是多买</p>
+<p class="li">- 芒格：美光财报是试金石；若证实需求，别追涨，等下一次恐慌</p>
+<p class="li">- 马克斯：VIX 21.7 不低不高，宽度收窄资金集中科技是顶部特征之一——留干火药</p>
+<p class="li">- 达里奥：PCE 缓解加息担忧，但周期位置仍在晚期；方向清楚，时点不清</p>
+<p class="li">- 塔勒布：Anthropic 招股书自曝生存风险还敢要 2 万亿估值——把“没风险”定价当风险本身</p>
+<p class="li">- 安德森：道指跌纳指涨，强形式 AI 资产继续吸筹弱形式被抛弃，趋势未变</p>
+<p class="li">- 卡帕西：应用层可靠性还没过 march of nines，确定性仍在基础设施层</p>
+<p class="li">- 纳瓦尔：季末高位，把弹药留给恐惧端——欲望少一点，收益多一点</p>
+
+<p>⚠️ 以上为研究参考非投资建议，交易决策自负。数据源：腾讯行情（东财接口今日被 WAF 拦截已切换备用），VIX 为快照参考值。</p>
+
+<p>（Skills：八大师 perspective ×8 + serenity-skill；工具：terminal/python 行情抓取、read_file、web_search）</p>
+</div>
+<nav class="pn" aria-label="报告导航"><span class="pn-x pn-a"><span class="pn-lab">← 较新</span><span class="pn-none">已是最新</span></span> <a class="pn-b" href="2026-10-01-pre_market.html"><span class="pn-lab">较早 →</span>10月1日 盘前</a></nav>
+<footer class="foot-note">非投资建议 · 金额已脱敏 · Hermes Agent 自动部署 · kami design</footer>
+</div>
+<a class="totop" href="#" aria-label="回到顶部">↑</a>
+<script>
+(function(){var t=document.querySelector('.totop');
+window.addEventListener('scroll',function(){if(window.scrollY>600){t.classList.add('on')}else{t.classList.remove('on')}},{passive:true});
+// 宽表提示：运行时按真实溢出量决定（构建期预估不准）
+function mark(){[].slice.call(document.querySelectorAll('.tbl-wrap')).forEach(function(w){
+  var over=(w.scrollWidth-w.clientWidth)>2, nx=w.nextElementSibling, has=nx&&nx.className==='tbl-hint';
+  if(over&&!has){var p=document.createElement('p');p.className='tbl-hint';p.textContent='← 左右滑动查看完整表格 →';w.parentNode.insertBefore(p,w.nextSibling);}
+  else if(!over&&has){nx.remove();}});}
+mark();window.addEventListener('resize',mark,{passive:true});window.addEventListener('orientationchange',mark,{passive:true});
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(mark);}})();
+</script>
+</body>
+</html>
