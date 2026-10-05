@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f5f4ed">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="每日观察">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://qiuwenhuihermes.github.io/hermes-daily-report/" crossorigin>
+<link rel="preload" href="../fonts/kami-400.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hermes 每日观察">
+<meta property="og:url" content="https://qiuwenhuihermes.github.io/hermes-daily-report/reports/2026-10-05-post_market.html">
+<meta property="og:title" content="市场：">
+<meta property="og:description" content="SPX 7722.72 (+0.73%) | 纳指 27190.86 (+1.19%，盘中新高) | 道指 51176.96 (+0.49%) | VIX 15.3（低位）">
+<meta property="og:image" content="https://qiuwenhuihermes.github.io/hermes-daily-report/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="市场：">
+<meta name="twitter:description" content="SPX 7722.72 (+0.73%) | 纳指 27190.86 (+1.19%，盘中新高) | 道指 51176.96 (+0.49%) | VIX 15.3（低位）">
+<meta name="twitter:image" content="https://qiuwenhuihermes.github.io/hermes-daily-report/assets/og.png">
+<title>📈 市场：</title>
+<meta name="description" content="SPX 7722.72 (+0.73%) | 纳指 27190.86 (+1.19%，盘中新高) | 道指 51176.96 (+0.49%) | VIX 15.3（低位）">
+<style>
+@font-face{font-family:"TsangerJinKai02";src:url("../fonts/kami-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"TsangerJinKai02";src:url("../fonts/kami-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+:root{--parchment:#f5f4ed;--ivory:#fbfaf6;--sand:#e2dfd1;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e4e1d4;--border-soft:#e8e6dc;--tag-bg:#E4ECF5;
+--shadow:0 1px 2px rgba(27,54,93,.045),0 10px 24px -14px rgba(27,54,93,.13);
+--serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--parchment);-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+strong{font-weight:500;color:var(--near-black)}
+a{color:var(--brand-ink-light);text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:72px 48px 88px}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--brand);letter-spacing:.25em;font-weight:500;text-transform:uppercase;margin-bottom:14px}
+.eyebrow::before{content:"";width:12px;height:2px;border-radius:1px;background:var(--brand);flex-shrink:0}
+.foot-note{margin-top:64px;padding-top:14px;border-top:1px dotted var(--border);font-size:13px;color:var(--stone);text-align:center;line-height:1.9;overflow-wrap:anywhere;text-wrap:balance}
+/* 表格：横向溢出仅作兜底；滚动阴影只在真溢出时可见（Roman Komarov 技法） */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:4px;
+  background:linear-gradient(to right,var(--parchment) 40%,rgba(245,244,237,0)),
+    linear-gradient(to left,var(--parchment) 40%,rgba(245,244,237,0)) 100% 0,
+    radial-gradient(farthest-side at 0% 50%,rgba(27,54,93,.16),rgba(27,54,93,0)),
+    radial-gradient(farthest-side at 100% 50%,rgba(27,54,93,.16),rgba(27,54,93,0)) 100% 0;
+  background-repeat:no-repeat;background-size:32px 100%,32px 100%,14px 100%,14px 100%;
+  background-attachment:local,local,scroll,scroll}
+.tbl-wrap::-webkit-scrollbar{height:4px}
+.tbl-wrap::-webkit-scrollbar-thumb{background:var(--sand);border-radius:2px}
+.tbl-hint{font-size:12.5px;color:var(--stone);text-align:center;margin:-6px 0 16px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.wrap{max-width:860px}
+.top{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:baseline;gap:12px;background:var(--parchment);padding:12px 0 13px;margin-bottom:24px;border-bottom:.5px solid var(--border)}
+.back{font-size:14px;color:var(--brand-ink-light);white-space:nowrap;padding:11px 2px}
+.back:focus-visible,a:focus-visible{outline:2px solid var(--brand-ink-light);outline-offset:2px;border-radius:2px}
+.meta{font-size:13px;color:var(--stone);font-variant-numeric:tabular-nums;white-space:nowrap}
+h1{font-size:28px;font-weight:500;line-height:1.3;margin-bottom:26px;text-wrap:balance}
+.rpt-body{font-size:15px;line-height:1.75;letter-spacing:.15px;color:var(--near-black);overflow-wrap:anywhere}
+.rpt-body p{margin:0 0 13px}
+.rpt-body .li{padding-left:18px;position:relative}
+.rpt-body h3,.rpt-body h4{margin:26px 0 10px;font-weight:500;color:var(--near-black)}
+.rpt-body h3{font-size:20px}
+.rpt-body h4{font-size:16.5px;color:var(--dark-warm)}
+.rpt-body hr{border:none;border-top:.5px solid var(--border);margin:24px 0}
+.rpt-body .lead{font-size:16px;font-weight:500;color:var(--near-black)}
+.kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;font-variant-numeric:tabular-nums}
+.kami-tb th{text-align:left;font-weight:500;color:var(--near-black);padding:9px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
+.kami-tb td{padding:9px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black);overflow-wrap:break-word}
+.kami-tb .num{text-align:right}
+.kami-tb.striped tbody tr:nth-child(even) td{background:rgba(61,59,53,.045)}
+.pn{display:flex;justify-content:space-between;gap:14px;align-items:stretch;margin:44px 0 8px;padding-top:18px;border-top:.5px solid var(--border);font-size:13.5px}
+.pn a{flex:1;background:var(--ivory);border:1px solid var(--border);border-radius:6px;padding:14px 16px;box-shadow:var(--shadow);transition:border-color .18s,transform .18s;font-size:15px;color:var(--brand);display:block}
+.pn a:hover{border-color:#cfcaba;transform:translateY(-1px)}
+.pn .pn-b{text-align:right}
+.pn .pn-lab{display:block;font-size:11.5px;color:var(--stone);letter-spacing:.06em;margin-bottom:5px}
+.pn .pn-x{flex:1;padding:14px 16px;border:1px dashed var(--border);border-radius:6px;display:block}
+.pn .pn-b.pn-x{text-align:right}
+.pn .pn-none{display:block;font-size:14px;color:#a9a498}
+.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:50%;background:var(--ivory);border:1px solid var(--border);color:var(--brand);font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:20}
+.totop.on{opacity:1;pointer-events:auto}
+.totop:hover{transform:translateY(-2px)}
+@media(max-width:640px){
+.wrap{padding:calc(22px + env(safe-area-inset-top)) 18px calc(52px + env(safe-area-inset-bottom))}
+h1{font-size:23px;margin-bottom:22px}
+.rpt-body{font-size:16px;line-height:1.85}
+.rpt-body h3{font-size:19px}
+.rpt-body h4{font-size:17px}
+.kami-tb{font-size:13px}
+.pn{flex-direction:column;gap:10px}
+.pn .pn-b{text-align:left}
+.top{padding:10px 0 12px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a class="back" href="../index.html">← 返回首页</a><span class="meta">10月5日 08:09</span></div>
+<h1>📈 市场：</h1>
+<div class="rpt-body">
+<p>报告已完成并保存基线（2902字符，符合3000字内限制）。</p>
+
+<p>📊 美股盘后评估 | 2026-10-05（周一，对应10/2周五收盘）</p>
+
+<p><strong>市场：</strong> SPX 7722.72 (+0.73%) | 纳指 27190.86 (+1.19%，盘中新高) | 道指 51176.96 (+0.49%) | VIX 15.3（低位）</p>
+<p><strong>背景：</strong> 9月非农+2.9万远低预期(预期9万)，10月加息概率骤降；英伟达盘中237.87创新高、市值一度回5.7万亿；特斯拉Q3交付超预期+4.65%；存储股崩盘（西数/希捷-10%，东芝宣布产能翻倍）；港股恒指-2.6%失守两万四（南向休市+全球债券抛售）</p>
+
+<p>🌡️ 价格温度计（52周区间）</p>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th class="">代码</th><th class="num">价格</th><th class="num">今日</th><th class="num">温度</th><th class="">区间</th></tr></thead><tbody>
+<tr><td class="">TSM</td><td class="num">472.78</td><td class="num">+2.96%</td><td class="num">98%</td><td class="">超买·收盘新高</td></tr>
+<tr><td class="">NVDA</td><td class="num">233.95</td><td class="num">+1.34%</td><td class="num">96%</td><td class="">超买·盘中新高</td></tr>
+<tr><td class="">AAPL</td><td class="num">333.69</td><td class="num">+1.02%</td><td class="num">92%</td><td class="">超买</td></tr>
+<tr><td class="">MSFT</td><td class="num">517.53</td><td class="num">+0.92%</td><td class="num">82%</td><td class="">超买</td></tr>
+<tr><td class="">PLTR</td><td class="num">188.75</td><td class="num">-0.68%</td><td class="num">81%</td><td class="">超买</td></tr>
+<tr><td class="">GOOGL</td><td class="num">343.50</td><td class="num">+1.56%</td><td class="num">73%</td><td class="">偏贵</td></tr>
+<tr><td class="">AMZN</td><td class="num">251.52</td><td class="num">+1.33%</td><td class="num">61%</td><td class="">偏贵边缘</td></tr>
+<tr><td class="">TSLA</td><td class="num">370.59</td><td class="num">+4.65%</td><td class="num">39%</td><td class="">低估</td></tr>
+<tr><td class="">RIVN</td><td class="num">14.30</td><td class="num">-3.12%</td><td class="num">25%</td><td class="">低估</td></tr>
+<tr><td class="">BABA</td><td class="num">104.40</td><td class="num">-2.06%</td><td class="num">16%</td><td class="">黄金区</td></tr>
+<tr><td class="">LCID</td><td class="num">4.13</td><td class="num">-1.43%</td><td class="num">9%</td><td class="">黄金区*</td></tr>
+<tr><td class="">腾讯</td><td class="num">421.20</td><td class="num">-2.27%</td><td class="num">4%</td><td class="">黄金区</td></tr>
+<tr><td class="">比亚迪</td><td class="num">73.90</td><td class="num">-2.25%</td><td class="num">4%</td><td class="">黄金区</td></tr>
+</tbody></table></div>
+<p>（HK为10/2收盘；南向资金休市至10/9）</p>
+
+<p>⭐ 本周定投建议</p>
+
+<p class="lead"><strong>⭐⭐ 可加码（三只）</strong></p>
+
+<p><strong>00700 腾讯</strong>（温度3.7%，贴近52周低411）</p>
+<p class="li">- 巴菲特：股价越低回购越划算——管理层在52周低位用股东的钱买自家股票，这是我最喜欢的资本配置</p>
+<p class="li">- 芒格：看行为不看新闻——回购持续+AI注入微信（“中国版Muse”催化），真金白银比PPT实在</p>
+<p class="li">- 马克斯：港股单日-2.6%、成交萎缩33%——钟摆在恐惧极端，风险溢价充足，该偏进攻的位置</p>
+<p class="li">- 达里奥：中国宽松周期 vs 美国紧缩末期，港股之冬按冬天的价格买</p>
+
+<p><strong>01211 比亚迪</strong>（温度3.9%，上周等待的交付数据落地）</p>
+<p class="li">- 巴菲特：9月销量46万辆+17%、出口占四成——生意没变差，只是价格在52周低位打折</p>
+<p class="li">- 芒格：这是我拿过39倍的老朋友——出口翻倍增长对冲国内价格战，全球规模第一的路径没断</p>
+<p class="li">- 达里奥：国内新能源周期触底+出口结构性上升，错位中的机会</p>
+<p class="li">- 马克斯：情绪冰点、数据回暖——典型的“悲观定价+改善基本面”</p>
+
+<p><strong>09988 阿里巴巴</strong>（温度16.1%）</p>
+<p class="li">- 巴菲特：云AI收入连续11季三位数增长+191亿美元回购额度——打折的好东西还在打折</p>
+<p class="li">- 芒格：三年前我栽过跟头，但现在买的是“云+AI期权”，悲观已充分计价</p>
+<p class="li">- 马克斯：温度16% vs 七巨头80-98%，同一轮AI行情两极定价</p>
+
+<p class="lead"><strong>⭐ 正常定投（一句理由）</strong></p>
+<p class="li">- NVDA：创新高但盈利增速&gt;股价增速+1500亿回购，纪律不追高也不恐高</p>
+<p class="li">- TSM：AI瓶颈最硬一层（ASML/AVGO/ARM齐涨确认），收盘新高，按节奏不加重</p>
+<p class="li">- GOOGL：TPU自供+加息预期降温利好成长，正常投</p>
+<p class="li">- TSLA：交付超预期当天已+4.65%，好消息进了价格，不追当日大涨</p>
+<p class="li">- AMZN：温度61%滑出合理区；80亿美元英伟达芯片挪SPV表外融资——观察项</p>
+
+<p class="lead"><strong>正常偏少（等回踩）</strong></p>
+<p class="li">- AAPL：92%超买，创新高追不得</p>
+<p class="li">- MSFT：82%超买+3个月+33%，等回踩</p>
+
+<p>⚡ 暂缓/跳过</p>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th class="">代码</th><th class="">理由</th></tr></thead><tbody>
+<tr><td class="">PLTR</td><td class="">81%超买+3个月+70%+PE 160</td></tr>
+<tr><td class="">RIVN</td><td class="">-3.1%且烧钱未止，等毛利率拐点</td></tr>
+<tr><td class="">LCID</td><td class="">黄金区之毒：3个月-31%</td></tr>
+</tbody></table></div>
+
+<p>💰 本周组合（弹药【已脱敏】RMB年内建仓）</p>
+<p>腾讯 ⭐⭐ 600 | 比亚迪 ⭐⭐ 400 | 阿里 ⭐⭐ 500</p>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th class="">GOOGL/NVDA/TSM ⭐ 各300</th><th class="">AMZN/TSLA ⭐ 各200-250</th></tr></thead><tbody>
+<tr><td class="">AAPL/MSFT 偏少 各100-150</td><td class="">PLTR/RIVN/LCID 0</td></tr>
+</tbody></table></div>
+<p>合计约3000-3300元/周</p>
+
+<p>🔗 瓶颈评分速览（10/5复核）</p>
+<div class="tbl-wrap"><table class="kami-tb striped"><thead><tr><th class="">代码</th><th class="num">评分</th><th class="">梯队</th><th class="">卡位</th><th class="">变化</th></tr></thead><tbody>
+<tr><td class="">TSM</td><td class="num">73.0</td><td class="">T1 🔴</td><td class="">先进制程+CoWoS双卡位</td><td class="">-8.7▼</td></tr>
+<tr><td class="">NVDA</td><td class="num">65.2</td><td class="">T2 🔴</td><td class="">CUDA生态支配</td><td class="">-0.4</td></tr>
+<tr><td class="">GOOGL</td><td class="num">60.2</td><td class="">T2 🔴</td><td class="">TPU自供算力</td><td class="">(9/23)</td></tr>
+<tr><td class="">MSFT</td><td class="num">52.2</td><td class="">T3</td><td class="">OpenAI+Azure</td><td class="">(9/23)</td></tr>
+<tr><td class="">AMZN</td><td class="num">50.0</td><td class="">T3</td><td class="">Trainium+AWS</td><td class="">(9/23)</td></tr>
+<tr><td class="">TSLA</td><td class="num">37.6</td><td class="">—</td><td class="">瓶颈采购方非持有方</td><td class="">新增</td></tr>
+<tr><td class="">PLTR</td><td class="num">28.5</td><td class="">降级</td><td class="">应用层无瓶颈</td><td class="">(9/23)</td></tr>
+</tbody></table></div>
+
+<p>📋 大师提醒</p>
+<p class="li">- 巴菲特：英伟达、台积电双双新高——好公司≠任何价格都值得买，创新高日不是定投加码日</p>
+<p class="li">- 芒格：存储股单日-10%——东芝一句“产能翻倍”就崩盘，供给决定价格的行业没有永久护城河，这就是我不碰大宗商品型生意的理由</p>
+<p class="li">- 达里奥：非农2.9万vs预期9万——劳动力市场急剧降温、10月加息概率消退；机制清楚：弱数据=紧缩暂停=风险资产喘息，但“坏消息就是好消息”本身就是周期晚期特征</p>
+<p class="li">- 马克斯：VIX 15.3+纳指新高+消费者信心冰点——乐观在价格里、恐慌在数据里，这种背离下我偏防守</p>
+<p class="li">- 塔勒布：亚马逊把80亿英伟达芯片塞进SPV表外——风险藏进表外≠风险消失，2008年教过一遍了；算力租赁链谁在裸泳，退潮才知道</p>
+<p class="li">- Karpathy：东芝扩产存储翻倍侧面验证AI基建需求是真的——需求信号真实，但供给追上需求那天就是周期拐点，两者都别忘</p>
+<p class="li">- Andreessen：非农弱≠建设弱——算力成本坍塌+弱就业反而加速AI部署，应用层的夏天在靠近</p>
+<p class="li">- Naval：港股三只黄金区都在52周低位附近——别人的恐惧是你现金的折价券；但该重仓的是你有specific knowledge的地方</p>
+
+<p>⚠️ 免责声明：以上为个人研究笔记与大师框架的模拟推演，非投资建议；行情数据来自腾讯接口（东财今日限流）+CNBC/东财交叉核验（VIX/PLTR 52周区间），定投决策请自行把握。</p>
+
+<p>（Skill: 八大师perspective + serenity-skill评分脚本；工具：terminal/python3/web_search；数据源 qt.gtimg.cn + ifzq.gtimg.cn）</p>
+</div>
+<nav class="pn" aria-label="报告导航"><span class="pn-x pn-a"><span class="pn-lab">← 较新</span><span class="pn-none">已是最新</span></span> <a class="pn-b" href="2026-10-05-pre_market.html"><span class="pn-lab">较早 →</span>10月5日 盘前</a></nav>
+<footer class="foot-note">非投资建议 · 金额已脱敏 · Hermes Agent 自动部署 · kami design</footer>
+</div>
+<a class="totop" href="#" aria-label="回到顶部">↑</a>
+<script>
+(function(){var t=document.querySelector('.totop');
+window.addEventListener('scroll',function(){if(window.scrollY>600){t.classList.add('on')}else{t.classList.remove('on')}},{passive:true});
+// 宽表提示：运行时按真实溢出量决定（构建期预估不准）
+function mark(){[].slice.call(document.querySelectorAll('.tbl-wrap')).forEach(function(w){
+  var over=(w.scrollWidth-w.clientWidth)>2, nx=w.nextElementSibling, has=nx&&nx.className==='tbl-hint';
+  if(over&&!has){var p=document.createElement('p');p.className='tbl-hint';p.textContent='← 左右滑动查看完整表格 →';w.parentNode.insertBefore(p,w.nextSibling);}
+  else if(!over&&has){nx.remove();}});}
+mark();window.addEventListener('resize',mark,{passive:true});window.addEventListener('orientationchange',mark,{passive:true});
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(mark);}})();
+</script>
+</body>
+</html>
