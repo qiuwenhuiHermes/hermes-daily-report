@@ -65,7 +65,11 @@ def extract_response(path: str) -> str:
     m = re.search(r'^## Response\s*$', raw, re.M)
     if not m:
         return ""
-    return sanitize(raw[m.end():].strip())
+    body = raw[m.end():]
+    # 剔掉 harness 追加在成稿之后的告警尾巴（如 File-mutation verifier）：那是运行诊断，
+    # 不是报告内容；留在页面上会污染正文、还会把本地绝对路径印出去。
+    body = re.split(r'(?m)^⚠️ File-mutation verifier.*$', body)[0]
+    return sanitize(body.strip())
 
 
 def parse_report(path: str, meta: dict):
