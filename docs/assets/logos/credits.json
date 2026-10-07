@@ -1,0 +1,93 @@
+{
+  "TSM": {
+    "source": "iconify:logos/tsmc",
+    "license": "CC0",
+    "mono": false,
+    "vb": "0 0 256 202",
+    "bytes": 13611
+  },
+  "MU": {
+    "source": "iconify:logos/micron-icon",
+    "license": "CC0",
+    "mono": true,
+    "vb": "0 0 256 135",
+    "bytes": 528
+  },
+  "AVGO": {
+    "source": "simple:broadcom",
+    "license": "CC0",
+    "mono": true,
+    "vb": "0 0 24 24",
+    "bytes": 1171
+  },
+  "NVDA": {
+    "source": "simple:nvidia",
+    "license": "CC0",
+    "mono": true,
+    "vb": "0 0 24 24",
+    "bytes": 896
+  },
+  "GOOGL": {
+    "source": "simple:google",
+    "license": "CC0",
+    "mono": true,
+    "vb": "0 0 24 24",
+    "bytes": 472
+  },
+  "MSFT": {
+    "source": "iconify:logos/microsoft-icon",
+    "license": "CC0",
+    "mono": false,
+    "vb": "0 0 256 256",
+    "bytes": 325
+  },
+  "AMD": {
+    "source": "simple:amd",
+    "license": "CC0",
+    "mono": true,
+    "vb": "0 0 24 24",
+    "bytes": 582
+  },
+  "AMZN": {
+    "source": "iconify:cib/amazon",
+    "license": "CC BY 4.0 (CoreUI)",
+    "mono": true,
+    "vb": "0 0 32 32",
+    "bytes": 2264
+  },
+  "META": {
+    "source": "simple:meta",
+    "license": "CC0",
+    "mono": true,
+    "vb": "0 0 24 24",
+    "bytes": 1339
+  },
+  "AAPL": {
+    "source": "simple:apple",
+    "license": "CC0",
+    "mono": true,
+    "vb": "0 0 24 24",
+    "bytes": 665
+  },
+  "PLTR": {
+    "source": "simple:palantir",
+    "license": "CC0",
+    "mono": true,
+    "vb": "0 0 24 24",
+    "bytes": 302
+  },
+  "ORCL": {
+    "source": "iconify:cib/oracle",
+    "license": "CC BY 4.0 (CoreUI)",
+    "mono": true,
+    "vb": "0 0 32 32",
+    "bytes": 358
+  },
+  "TSLA": {
+    "source": "simple:tesla",
+    "license": "CC0",
+    "mono": true,
+    "vb": "0 0 24 24",
+    "bytes": 556
+  }
+}

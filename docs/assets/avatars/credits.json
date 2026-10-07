@@ -1,0 +1,74 @@
+[
+ {
+  "key": "buffett",
+  "cn": "巴菲特",
+  "file": "File:Warren Buffett at the 2015 SelectUSA Investment Summit (cropped).jpg",
+  "license": "Public domain",
+  "author": "USA International Trade Administration",
+  "local": "/Users/qiuwenhui/.hermes/cache/scratch/avatars/buffett.jpg"
+ },
+ {
+  "key": "munger",
+  "cn": "芒格",
+  "file": "File:Charlie Munger (cropped).jpg",
+  "license": "CC BY 2.0",
+  "author": "Nick",
+  "local": "/Users/qiuwenhui/.hermes/cache/scratch/avatars/munger.jpg"
+ },
+ {
+  "key": "dalio",
+  "cn": "达里奥",
+  "file": "File:Ray Dalio, Bridgewater Associates.jpg",
+  "license": "CC BY 3.0",
+  "author": "Hedge Funds",
+  "local": "/Users/qiuwenhui/.hermes/cache/scratch/avatars/dalio.jpg"
+ },
+ {
+  "key": "marks",
+  "cn": "马克斯",
+  "file": "File:Howard Marks 2.17.12 (cropped).jpg",
+  "license": "CC BY 2.0",
+  "author": "kellywritershouse",
+  "local": "/Users/qiuwenhui/.hermes/cache/scratch/avatars/marks.jpg"
+ },
+ {
+  "key": "taleb",
+  "cn": "塔勒布",
+  "file": "File:Nassim Nicholas Taleb DLD 2009-012 (cropped).jpg",
+  "license": "CC BY-SA 2.0",
+  "author": "nrkbeta",
+  "local": "/Users/qiuwenhui/.hermes/cache/scratch/avatars/taleb.jpg"
+ },
+ {
+  "key": "karpathy",
+  "cn": "卡帕西",
+  "file": "File:Andrej Karpathy, OpenAI (cropped).png",
+  "license": "CC BY 3.0",
+  "author": "Gladwin Analytics",
+  "local": "/Users/qiuwenhui/.hermes/cache/scratch/avatars/karpathy.jpg"
+ },
+ {
+  "key": "andreessen",
+  "cn": "安德森",
+  "file": "File:Marc Andreessen-9 (cropped).jpg",
+  "license": "CC BY 2.0",
+  "author": "JD Lasica",
+  "local": "/Users/qiuwenhui/.hermes/cache/scratch/avatars/andreessen.jpg"
+ },
+ {
+  "key": "naval",
+  "cn": "纳瓦尔",
+  "file": "File:Naval2019.png",
+  "license": "CC BY 3.0",
+  "author": "Edmund Hillary Fellowship",
+  "local": "/Users/qiuwenhui/.hermes/cache/scratch/avatars/naval.jpg"
+ },
+ {
+  "key": "cz",
+  "cn": "CZ",
+  "file": "File:Changpeng Zhao in 2022.jpg",
+  "license": "CC BY-SA 4.0",
+  "author": "Aevozer",
+  "local": "/Users/qiuwenhui/.hermes/cache/scratch/avatars/cz.jpg"
+ }
+]
