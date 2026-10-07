@@ -19,7 +19,7 @@ v3 变化（design-taste-frontend + redesign-existing-projects 审计后落地�
 暖灰文本层级 / 单一衬线字体 TsangerJinKai02 / 实色标签底。
 用法: python3 build_site.py
 """
-import os, re, glob, html, sys
+import os, re, glob, html, sys, json
 from datetime import datetime
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "tools"))
@@ -364,6 +364,7 @@ h1{font-size:40px;font-weight:500;line-height:1.15;color:var(--near-black);margi
 .wl-note{margin-left:auto;font-size:12.5px;color:var(--stone);font-weight:400}
 .wl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
 .wl-row{display:flex;align-items:center;gap:12px;background:var(--ivory);border:1px solid var(--border);border-radius:6px;padding:11px 15px;box-shadow:var(--shadow)}
+.wl-logo{width:24px;height:24px;object-fit:contain;flex:none;display:block}
 .wl-tk{min-width:76px}
 .wl-tk b{display:block;font-size:14.5px;font-weight:500;color:var(--brand);letter-spacing:.02em}
 .wl-tk span{font-size:11.5px;color:var(--stone)}
@@ -381,6 +382,7 @@ h1{font-size:32px}
 .card{padding:15px 17px}
 .wl-grid{grid-template-columns:1fr;gap:9px}
 .wl-row{padding:9px 12px;gap:9px}
+.wl-logo{width:20px;height:20px}
 .wl-tk{min-width:64px}
 .wl-tk b{font-size:13.5px}
 .wl-sp .spk{width:104px;height:33px}
@@ -410,7 +412,7 @@ __WATCHLIST__
 __DAYS_HTML__
 __MORE__
 </main>
-<footer class="foot-note">⚠️ 内容基于公开信息的研究推演，非投资建议 · 金额数据已脱敏<br>Hermes Agent · qiuwenhuiHermes/hermes-daily-report · kami design</footer>
+<footer class="foot-note">⚠️ 内容基于公开信息的研究推演，非投资建议 · 金额数据已脱敏<br>Hermes Agent · qiuwenhuiHermes/hermes-daily-report · kami design · <a href="credits.html" style="color:var(--brand-ink-light)">图像素材授权</a></footer>
 </div>
 <a class="totop" href="#" aria-label="回到顶部">↑</a>
 <script>
@@ -504,6 +506,32 @@ def build_index(reports, watchlist_html=""):
             .replace('__MORE__', more))
 
 
+MASTER_AVATARS = {
+    "Buffett": "buffett", "Munger": "munger", "Dalio": "dalio", "Marks": "marks",
+    "Taleb": "taleb", "Karpathy": "karpathy", "Andreessen": "andreessen",
+    "Naval": "naval", "CZ": "cz",
+}
+# 非人物（框架/方法论）用单字徽章，避免与真人照片混淆
+MASTER_BADGES = {"Serenity": "静"}
+
+
+def add_master_avatars(html: str) -> str:
+    """在报告正文的人物名前注入头像/徽章，替换每个 <strong>姓名</strong> 出现处。
+
+    报告里大师姓名以 <strong> 加粗出现（列表项与正文提及），统一加头像。
+    """
+    for name, slug in MASTER_AVATARS.items():
+        html = html.replace(
+            f'<strong>{name}</strong>',
+            f'<img class="mv" src="../assets/avatars/{slug}.jpg" alt="" width="21" height="21" '
+            f'loading="lazy" decoding="async"><strong>{name}</strong>')
+    for name, badge in MASTER_BADGES.items():
+        html = html.replace(
+            f'<strong>{name}</strong>',
+            f'<span class="mvb" aria-hidden="true">{badge}</span><strong>{name}</strong>')
+    return html
+
+
 def build_report_page(r, prev_r, next_r):
     """prev_r = 较新一篇, next_r = 较早一篇"""
     def link(rr, arrow, cls):
@@ -527,7 +555,7 @@ def build_report_page(r, prev_r, next_r):
             .replace('__TITLE__', f'{r["icon"]} {r["title_raw"]}')
             .replace('__DESC__', og_desc)
             .replace('__DATE__', f'{r["day_label"]} {r["time"]}')
-            .replace('__BODY__', md_to_html(r["body"]))
+            .replace('__BODY__', add_master_avatars(md_to_html(r["body"])))
             .replace('__PREV__', link(prev_r, '← 较新', 'pn-a'))
             .replace('__NEXT__', link(next_r, '较早 →', 'pn-b')))
 
@@ -548,6 +576,8 @@ h1{font-size:28px;font-weight:500;line-height:1.3;margin-bottom:26px;text-wrap:b
 .rpt-body{font-size:15px;line-height:1.75;letter-spacing:.15px;color:var(--near-black);overflow-wrap:anywhere}
 .rpt-body p{margin:0 0 13px}
 .rpt-body .li{padding-left:18px;position:relative}
+.mv{width:21px;height:21px;border-radius:50%;object-fit:cover;vertical-align:-4.5px;margin-right:7px;border:1px solid var(--border);background:var(--ivory)}
+.mvb{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;border-radius:50%;background:var(--tag-bg);color:var(--brand);font-size:11.5px;line-height:1;vertical-align:-4.5px;margin-right:7px;border:1px solid var(--border)}
 .rpt-body h3,.rpt-body h4{margin:26px 0 10px;font-weight:500;color:var(--near-black)}
 .rpt-body h3{font-size:20px}
 .rpt-body h4{font-size:16.5px;color:var(--dark-warm)}
@@ -590,7 +620,7 @@ h1{font-size:23px;margin-bottom:22px}
 __BODY__
 </div>
 <nav class="pn" aria-label="报告导航">__PREV__ __NEXT__</nav>
-<footer class="foot-note">非投资建议 · 金额已脱敏 · Hermes Agent 自动部署 · kami design</footer>
+<footer class="foot-note">非投资建议 · 金额已脱敏 · Hermes Agent 自动部署 · kami design · <a href="../credits.html" style="color:var(--brand-ink-light)">图像素材授权</a></footer>
 </div>
 <a class="totop" href="#" aria-label="回到顶部">↑</a>
 <script>
@@ -606,6 +636,98 @@ if(document.fonts&&document.fonts.ready){document.fonts.ready.then(mark);}})();
 </script>
 </body>
 </html>'''
+
+
+CREDITS_CSS_EXTRA = """
+.wrap{max-width:820px}
+.top{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:baseline;gap:12px;background:var(--parchment);padding:12px 0 13px;margin-bottom:24px;border-bottom:.5px solid var(--border)}
+.back{font-size:14px;color:var(--brand-ink-light);white-space:nowrap;padding:11px 2px}
+.ct-meta{font-size:13px;color:var(--stone)}
+.ct-h1{font-size:26px;font-weight:500;margin-bottom:14px}
+.ct-lead{font-size:14.5px;color:var(--olive);line-height:1.7}
+.ct h3{font-size:16.5px;font-weight:500;color:var(--near-black);margin:28px 0 8px}
+.ct-tb{width:100%;border-collapse:collapse;font-size:13.5px}
+.ct-tb th{text-align:left;font-weight:500;color:var(--near-black);padding:8px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
+.ct-tb td{padding:9px 10px;border-bottom:.5px solid var(--border-soft);color:var(--olive);vertical-align:middle;overflow-wrap:anywhere}
+.ct-tb td:first-child{color:var(--near-black);white-space:nowrap}
+.ct-tb img{width:24px;height:24px;object-fit:contain;vertical-align:middle;margin-right:8px}
+.ct-tb img.av{width:30px;height:30px;border-radius:50%;object-fit:cover;border:1px solid var(--border)}
+.ct-note{font-size:13px;color:var(--stone);line-height:1.75;margin-top:20px;padding-top:16px;border-top:.5px solid var(--border)}
+@media(max-width:640px){.wrap{padding:calc(22px + env(safe-area-inset-top)) 18px calc(52px + env(safe-area-inset-bottom))}.ct-h1{font-size:22px}.ct-tb{font-size:12.5px}.ct-tb th,.ct-tb td{padding:7px 5px}.ct-tb img{width:20px;height:20px;margin-right:6px}.ct-tb img.av{width:26px;height:26px}}
+"""
+
+CREDITS_TPL = '''<!DOCTYPE html>
+<html lang="zh">
+<head>
+__HEAD__
+<title>图像素材授权 · Hermes 每日观察</title>
+<style>__CSS__</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a class="back" href="index.html">← 返回首页</a><span class="ct-meta">共 __N__ 项</span></div>
+<h1 class="ct-h1">图像素材授权</h1>
+<p class="ct-lead">本站使用的公司品牌标识与人物肖像均取自开放许可来源，按各自许可要求署名如下。品牌标识的商标权归各公司所有，此处仅用于识别对应的公司。</p>
+<div class="ct">
+<h3>公司品牌标识（__LOGO_N__ 项）</h3>
+<div class="tbl-wrap"><table class="ct-tb">
+<tr><th>标的</th><th>来源</th><th>许可</th></tr>
+__LOGO_ROWS__
+</table></div>
+<h3>人物肖像（__AVA_N__ 项）</h3>
+<div class="tbl-wrap"><table class="ct-tb">
+<tr><th>人物</th><th>原始文件</th><th>作者</th><th>许可</th></tr>
+__AVA_ROWS__
+</table></div>
+<p class="ct-note">说明：肖像已裁切为方形缩略图，属衍生作品。以 CC BY-SA 授权的原件，其衍生作品同样以 CC BY-SA 授权；以 CC BY 授权的原件，使用时应保留署名。人物肖像仅用于标识所引用的思维框架来源，<strong>不代表本人观点，也不表示其对本站任何内容的认可</strong>。</p>
+</div>
+<footer class="foot-note">非投资建议 · Hermes Agent 自动部署 · kami design</footer>
+</div>
+</body>
+</html>'''
+
+
+def build_credits_page() -> str:
+    """图像素材授权页 — CC BY / CC BY-SA 等许可要求署名，集中列出。"""
+    def _load(path, default):
+        try:
+            with open(path, encoding="utf-8") as fh:
+                return json.load(fh)
+        except Exception:
+            return default
+
+    logos = _load(os.path.join(OUT, "assets", "logos", "credits.json"), {})
+    avatars = _load(os.path.join(OUT, "assets", "avatars", "credits.json"), [])
+    src_label = {"simple": "Simple Icons", "iconify": "Iconify"}
+
+    lrows = []
+    for tk, m in sorted(logos.items()):
+        kind, _, slug = (m.get("source") or ":").partition(":")
+        lrows.append(f'<tr><td><img src="assets/logos/{tk}.svg" alt="">{tk}</td>'
+                     f'<td>{src_label.get(kind, kind)} · {html.escape(slug)}</td>'
+                     f'<td>{html.escape(m.get("license", ""))}</td></tr>')
+    arows = []
+    for a in sorted(avatars, key=lambda x: x.get("cn", "")):
+        arows.append(f'<tr><td><img class="av" src="assets/avatars/{a["key"]}.jpg" alt="">'
+                     f'{html.escape(a.get("cn", ""))}</td>'
+                     f'<td>{html.escape(a.get("file", ""))}</td>'
+                     f'<td>{html.escape(a.get("author", ""))}</td>'
+                     f'<td>{html.escape(a.get("license", ""))}</td></tr>')
+
+    head = (HEAD_COMMON.replace('__ROOT__', '').replace('__FONTS__', 'fonts/')
+            .replace('__SITE__', SITE_URL)
+            .replace('__OGURL__', SITE_URL + 'credits.html')
+            .replace('__OGTITLE__', '图像素材授权 · Hermes 每日观察')
+            .replace('__OGDESC__', '本站品牌标识与人物肖像的来源与许可署名。')
+            .replace('__OGIMAGE__', SITE_URL + 'assets/og.png'))
+    return (CREDITS_TPL
+            .replace('__HEAD__', head)
+            .replace('__CSS__', css('fonts/') + CREDITS_CSS_EXTRA)
+            .replace('__LOGO_ROWS__', "\n".join(lrows))
+            .replace('__AVA_ROWS__', "\n".join(arows))
+            .replace('__LOGO_N__', str(len(lrows)))
+            .replace('__AVA_N__', str(len(arows)))
+            .replace('__N__', str(len(lrows) + len(arows))))
 
 
 def main():
@@ -639,6 +761,8 @@ def main():
         print(f"  ⚠️ 自选池板块构建失败，已跳过（不影响报告部署）：{type(e).__name__}: {e}")
     with open(os.path.join(OUT, "index.html"), "w") as f:
         f.write(build_index(final, watchlist))
+    with open(os.path.join(OUT, "credits.html"), "w") as f:
+        f.write(build_credits_page())
     print(f"OK: {len(final)} reports -> {OUT}")
     if MISMATCH:
         print(f"⚠️ 表格列数不一致 {len(MISMATCH)} 处（可能源文行被粘连）:")

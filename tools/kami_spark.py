@@ -98,6 +98,7 @@ def render_watchlist(rows):
     for ticker, name, closes, last, chg30, chg1 in rows:
         col = UP if chg30 >= 0 else DOWN
         items.append(f'''<div class="wl-row">
+  <img class="wl-logo" src="assets/logos/{ticker}.svg" alt="" width="24" height="24" loading="lazy" decoding="async">
   <div class="wl-tk"><b>{ticker}</b><span>{name}</span></div>
   <div class="wl-sp">{sparkline_svg(closes, label=ticker)}</div>
   <div class="wl-num"><b>{last:,.2f}</b><span style="color:{col}">30日 {chg30:+.1f}%</span></div>
