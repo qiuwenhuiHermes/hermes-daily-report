@@ -19,8 +19,11 @@ v3 变化（design-taste-frontend + redesign-existing-projects 审计后落地�
 暖灰文本层级 / 单一衬线字体 TsangerJinKai02 / 实色标签底。
 用法: python3 build_site.py
 """
-import os, re, glob, html
+import os, re, glob, html, sys
 from datetime import datetime
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "tools"))
+from kami_spark import build_watchlist_html  # Apple Stocks 风格迷你趋势线（自选池板块）
 
 OUT = os.path.abspath(os.path.join(os.path.dirname(__file__), "docs"))
 CRON_OUT = os.path.expanduser("~/.hermes/cron/output")
@@ -356,6 +359,19 @@ h1{font-size:40px;font-weight:500;line-height:1.15;color:var(--near-black);margi
 .totop.on{opacity:1;pointer-events:auto}
 .totop:hover{transform:translateY(-2px)}
 [data-hidden="1"]{display:none!important}
+.wl{margin-top:34px}
+.wl-h{display:flex;align-items:baseline;gap:10px;font-size:14px;font-weight:500;color:var(--dark-warm);padding:9px 0 8px;border-bottom:1px solid var(--border);margin-bottom:14px}
+.wl-note{margin-left:auto;font-size:12.5px;color:var(--stone);font-weight:400}
+.wl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
+.wl-row{display:flex;align-items:center;gap:12px;background:var(--ivory);border:1px solid var(--border);border-radius:6px;padding:11px 15px;box-shadow:var(--shadow)}
+.wl-tk{min-width:76px}
+.wl-tk b{display:block;font-size:14.5px;font-weight:500;color:var(--brand);letter-spacing:.02em}
+.wl-tk span{font-size:11.5px;color:var(--stone)}
+.wl-sp{flex:1;display:flex;justify-content:center;min-width:0}
+.wl-sp .spk{display:block}
+.wl-num{margin-left:auto;text-align:right;font-variant-numeric:tabular-nums}
+.wl-num b{display:block;font-size:14.5px;font-weight:500;color:var(--near-black)}
+.wl-num span{font-size:12px}
 @media(max-width:640px){
 .wrap{padding:calc(40px + env(safe-area-inset-top)) 20px calc(56px + env(safe-area-inset-bottom))}
 .grid{grid-template-columns:1fr;gap:12px}
@@ -363,6 +379,15 @@ h1{font-size:32px}
 .statusline{gap:4px 14px}
 .day-h{padding:8px 0 7px}
 .card{padding:15px 17px}
+.wl-grid{grid-template-columns:1fr;gap:9px}
+.wl-row{padding:9px 12px;gap:9px}
+.wl-tk{min-width:64px}
+.wl-tk b{font-size:13.5px}
+.wl-sp .spk{width:104px;height:33px}
+.wl-num b{font-size:13.5px}
+.wl-num span{font-size:11.5px}
+.wl-h{flex-wrap:wrap}
+.wl-note{margin-left:0;width:100%}
 }
 @supports(padding:max(0px)){.wrap{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}}
 </style>
@@ -380,6 +405,7 @@ h1{font-size:32px}
     __FILTERS__
   </div>
 </header>
+__WATCHLIST__
 <main>
 __DAYS_HTML__
 __MORE__
@@ -424,7 +450,7 @@ __MORE__
 </html>'''
 
 
-def build_index(reports):
+def build_index(reports, watchlist_html=""):
     # 按日期分组（reports 已按 date desc 排序）
     days, order = {}, []
     for r in reports:
@@ -473,6 +499,7 @@ def build_index(reports):
             .replace('__COLUMNS__', str(len(filter_counts)))
             .replace('__UPDATED__', datetime.now().strftime('%m-%d %H:%M'))
             .replace('__FILTERS__', chips)
+            .replace('__WATCHLIST__', watchlist_html)
             .replace('__DAYS_HTML__', '\n'.join(blocks))
             .replace('__MORE__', more))
 
@@ -605,8 +632,13 @@ def main():
                                  final[i + 1] if i + 1 < len(final) else None)
         with open(os.path.join(OUT, "reports", f"{r['date']}-{r['type_key']}.html"), "w") as f:
             f.write(page)
+    watchlist = ""
+    try:
+        watchlist = build_watchlist_html()
+    except Exception as e:
+        print(f"  ⚠️ 自选池板块构建失败，已跳过（不影响报告部署）：{type(e).__name__}: {e}")
     with open(os.path.join(OUT, "index.html"), "w") as f:
-        f.write(build_index(final))
+        f.write(build_index(final, watchlist))
     print(f"OK: {len(final)} reports -> {OUT}")
     if MISMATCH:
         print(f"⚠️ 表格列数不一致 {len(MISMATCH)} 处（可能源文行被粘连）:")
