@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f5f4ed">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="每日观察">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://qiuwenhuihermes.github.io/hermes-daily-report/" crossorigin>
+<link rel="preload" href="../fonts/kami-400.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hermes 每日观察">
+<meta property="og:url" content="https://qiuwenhuihermes.github.io/hermes-daily-report/reports/2026-10-28-pre_market.html">
+<meta property="og:title" content="盘前信号">
+<meta property="og:description" content="美股盘前评估">
+<meta property="og:image" content="https://qiuwenhuihermes.github.io/hermes-daily-report/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="盘前信号">
+<meta name="twitter:description" content="美股盘前评估">
+<meta name="twitter:image" content="https://qiuwenhuihermes.github.io/hermes-daily-report/assets/og.png">
+<title>🌅 盘前信号</title>
+<meta name="description" content="美股盘前评估">
+<style>
+@font-face{font-family:"TsangerJinKai02";src:url("../fonts/kami-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"TsangerJinKai02";src:url("../fonts/kami-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+:root{--parchment:#f5f4ed;--ivory:#fbfaf6;--sand:#e2dfd1;--near-black:#141413;--dark-warm:#3d3d3a;--olive:#504e49;--stone:#6b6a64;--brand:#1B365D;--brand-ink-light:#2D5A8A;--border:#e4e1d4;--border-soft:#e8e6dc;--tag-bg:#E4ECF5;
+--shadow:0 1px 2px rgba(27,54,93,.045),0 10px 24px -14px rgba(27,54,93,.13);
+--serif:"TsangerJinKai02","Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--sans:var(--serif)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--parchment);-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--parchment);color:var(--near-black);font-family:var(--serif);font-size:15px;line-height:1.6;letter-spacing:.15px;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+strong{font-weight:500;color:var(--near-black)}
+a{color:var(--brand-ink-light);text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:72px 48px 88px}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--brand);letter-spacing:.25em;font-weight:500;text-transform:uppercase;margin-bottom:14px}
+.eyebrow::before{content:"";width:12px;height:2px;border-radius:1px;background:var(--brand);flex-shrink:0}
+.foot-note{margin-top:64px;padding-top:14px;border-top:1px dotted var(--border);font-size:13px;color:var(--stone);text-align:center;line-height:1.9;overflow-wrap:anywhere;text-wrap:balance}
+/* 表格：横向溢出仅作兜底；滚动阴影只在真溢出时可见（Roman Komarov 技法） */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:4px;
+  background:linear-gradient(to right,var(--parchment) 40%,rgba(245,244,237,0)),
+    linear-gradient(to left,var(--parchment) 40%,rgba(245,244,237,0)) 100% 0,
+    radial-gradient(farthest-side at 0% 50%,rgba(27,54,93,.16),rgba(27,54,93,0)),
+    radial-gradient(farthest-side at 100% 50%,rgba(27,54,93,.16),rgba(27,54,93,0)) 100% 0;
+  background-repeat:no-repeat;background-size:32px 100%,32px 100%,14px 100%,14px 100%;
+  background-attachment:local,local,scroll,scroll}
+.tbl-wrap::-webkit-scrollbar{height:4px}
+.tbl-wrap::-webkit-scrollbar-thumb{background:var(--sand);border-radius:2px}
+.tbl-hint{font-size:12.5px;color:var(--stone);text-align:center;margin:-6px 0 16px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.wrap{max-width:860px}
+.top{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:baseline;gap:12px;background:var(--parchment);padding:12px 0 13px;margin-bottom:24px;border-bottom:.5px solid var(--border)}
+.back{font-size:14px;color:var(--brand-ink-light);white-space:nowrap;padding:11px 2px}
+.back:focus-visible,a:focus-visible{outline:2px solid var(--brand-ink-light);outline-offset:2px;border-radius:2px}
+.meta{font-size:13px;color:var(--stone);font-variant-numeric:tabular-nums;white-space:nowrap}
+h1{font-size:28px;font-weight:500;line-height:1.3;margin-bottom:26px;text-wrap:balance}
+.rpt-body{font-size:15px;line-height:1.75;letter-spacing:.15px;color:var(--near-black);overflow-wrap:anywhere}
+.rpt-body p{margin:0 0 13px}
+.rpt-body .li{padding-left:18px;position:relative}
+.mv{width:21px;height:21px;border-radius:50%;object-fit:cover;vertical-align:-4.5px;margin-right:7px;border:1px solid var(--border);background:var(--ivory)}
+.mvb{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;border-radius:50%;background:var(--tag-bg);color:var(--brand);font-size:11.5px;line-height:1;vertical-align:-4.5px;margin-right:7px;border:1px solid var(--border)}
+.rpt-body h3,.rpt-body h4{margin:26px 0 10px;font-weight:500;color:var(--near-black)}
+.rpt-body h3{font-size:20px}
+.rpt-body h4{font-size:16.5px;color:var(--dark-warm)}
+.rpt-body hr{border:none;border-top:.5px solid var(--border);margin:24px 0}
+.rpt-body .lead{font-size:16px;font-weight:500;color:var(--near-black)}
+.kami-tb{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;font-variant-numeric:tabular-nums}
+.kami-tb th{text-align:left;font-weight:500;color:var(--near-black);padding:9px 10px;border-bottom:1px solid var(--border);white-space:nowrap}
+.kami-tb td{padding:9px 10px;border-bottom:.5px solid var(--border-soft);vertical-align:top;color:var(--near-black);overflow-wrap:break-word}
+.kami-tb .num{text-align:right}
+.kami-tb.striped tbody tr:nth-child(even) td{background:rgba(61,59,53,.045)}
+.pn{display:flex;justify-content:space-between;gap:14px;align-items:stretch;margin:44px 0 8px;padding-top:18px;border-top:.5px solid var(--border);font-size:13.5px}
+.pn a{flex:1;background:var(--ivory);border:1px solid var(--border);border-radius:6px;padding:14px 16px;box-shadow:var(--shadow);transition:border-color .18s,transform .18s;font-size:15px;color:var(--brand);display:block}
+.pn a:hover{border-color:#cfcaba;transform:translateY(-1px)}
+.pn .pn-b{text-align:right}
+.pn .pn-lab{display:block;font-size:11.5px;color:var(--stone);letter-spacing:.06em;margin-bottom:5px}
+.pn .pn-x{flex:1;padding:14px 16px;border:1px dashed var(--border);border-radius:6px;display:block}
+.pn .pn-b.pn-x{text-align:right}
+.pn .pn-none{display:block;font-size:14px;color:#a9a498}
+.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:50%;background:var(--ivory);border:1px solid var(--border);color:var(--brand);font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:20}
+.totop.on{opacity:1;pointer-events:auto}
+.totop:hover{transform:translateY(-2px)}
+@media(max-width:640px){
+.wrap{padding:calc(22px + env(safe-area-inset-top)) 18px calc(52px + env(safe-area-inset-bottom))}
+h1{font-size:23px;margin-bottom:22px}
+.rpt-body{font-size:16px;line-height:1.85}
+.rpt-body h3{font-size:19px}
+.rpt-body h4{font-size:17px}
+.kami-tb{font-size:13px}
+.pn{flex-direction:column;gap:10px}
+.pn .pn-b{text-align:left}
+.top{padding:10px 0 12px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a class="back" href="../index.html">← 返回首页</a><span class="meta">10月28日 20:18</span></div>
+<h1>🌅 盘前信号</h1>
+<div class="rpt-body">
+<p>飞书备份已送达（message_id om_x100b612a312118a0c08fbad425fec7d）。数据复核完毕，交付报告：</p>
+
+<hr>
+
+<p>📊 美股盘前评估 | 2026-10-29（北京）· 美东10-28周三盘前</p>
+
+<p><strong>盘前信号</strong>（昨收 + 08:16 EDT 盘前快照）</p>
+<p>昨收：SPX 7722.60（+0.60%）、纳指 26477（+1.18%）。盘前：GOOGL 324.67（+1.27%）、NVDA 219.75（+0.83%）、TSLA 410.70（+0.80%）、TSM 437.98（+0.25%）、MSFT 530.13（-0.23%）、AAPL 345.75（-0.39%）。</p>
+<p>今晚双重事件：<strong>北京周四凌晨2:00 FOMC</strong>（约九成概率按兵不动，悬念在12月路径）；<strong>凌晨4:00后微软+谷歌财报接力</strong>；亚马逊明晚、苹果11-2。本周是AI资本开支的“季度大考”。</p>
+
+<p>🌡️ 温度计（昨收计）</p>
+
+<p class="li">- AAPL 347.10 | +0.93% | 96° 超买</p>
+<p class="li">- MSFT 531.33 | -0.24% | 90° 超买</p>
+<p class="li">- GOOGL 320.58 | +1.19% | <strong>38° 低估</strong>（盘前~41°）</p>
+<p class="li">- AMZN 253.10 | +1.61% | 63°</p>
+<p class="li">- TSLA 407.46 | +4.04% | 55°</p>
+<p class="li">- RIVN 11.82 | +3.41% | <strong>4° 贴底</strong></p>
+<p class="li">- LCID 3.31 | -2.65% | 5°</p>
+<p class="li">- NVDA 217.94 | +0.90% | 68°</p>
+<p class="li">- TSM 436.87 | +2.95% | 77°</p>
+<p class="li">- PLTR 198.73 | -0.06% | 87°</p>
+<p class="li">- 9988.HK 98.90 | +1.96% | <strong>12° 黄金区</strong></p>
+<p class="li">- 0700.HK 387.60 | +0.62% | <strong>3° 贴底</strong></p>
+<p class="li">- BYD.HK 70.45 | +0.57% | 7° 黄金区</p>
+
+<p>结构性事实：美股清单7只在55°以上，港股三只全贴52周底部（3-12°）——中概与美股的温差是当前最大的分散化机会。</p>
+
+<p>⭐ 今日建议操作</p>
+
+<p class="lead"><strong>GOOGL ⭐⭐⭐｜等财报落地，不赌方向</strong></p>
+<p>今晚盘后Q3（预期营收1279亿/+25%，云+92%）。市场担心的是1950-2050亿资本开支压现金流，不是需求；机构预警若不及预期下看272。</p>
+<p>巴菲特：好生意被打折到38°，但今晚市场先生要掷骰子——我不在掷骰子前付钱。</p>
+<p>Marks：温度计从贪婪端回到中性偏冷，这是财报后值得盯的第一只。</p>
+<p>操作：<strong>Pass，明早看结果</strong>。若崩至272-290区，是清单内最好的加仓事件。</p>
+
+<p class="lead"><strong>中概三件套（9988/0700/BYD）⭐⭐⭐｜底部区域，与FOMC风险错开</strong></p>
+<p>Dalio：中美周期错位在拉大——一边贴历史高位，一边贴年内低点；时点给不了，位置看得清。</p>
+<p>芒格：腾讯从658跌到387，跌掉41%，买的是“别人恐惧”。但便宜不是理由，生意变好才是——<strong>阿里优先，BYD次之，腾讯小注</strong>。</p>
+<p>操作：本周可执行<strong>9988小额首仓</strong>（10-15%目标仓位的1/3），BYD、0700挂低吸单不追。美股事件夜买中概，本身就是对冲。</p>
+
+<p class="lead"><strong>RIVN ⭐⭐｜贴底+财报临近，小赌注可以</strong></p>
+<p>4°温度，Q3交付创纪录19,248辆（+45%），R2爬坡中；但现金消耗未止（Q2调整后EBITDA -3.79亿）。</p>
+<p>塔勒布：凸性赌注的正确形态——下行有限（52周低11.4近在咫尺），财报好则弹性大，仓位必须小到归零也无感。</p>
+<p>操作：<strong>已持有者拿住；未持有者≤3%弹药财报前埋伏，或干脆放弃</strong>。</p>
+
+<p>⚡ 暂缓/跳过</p>
+
+<p class="li">- AAPL | 96°+11-2财报，双理由等待</p>
+<p class="li">- MSFT | 今晚财报，事件前不加仓</p>
+<p class="li">- AMZN | 明晚财报，等</p>
+<p class="li">- NVDA | 68°中位，持有者续持</p>
+<p class="li">- TSM | 逼近前高，回踩400-410再接</p>
+<p class="li">- PLTR | 87°+PS 100x+，拉回再考虑</p>
+<p class="li">- LCID | 基本面失血无凸性，跳过</p>
+<p class="li">- TSLA | 三天+12%（巴克莱450+SpaceX合并+Robotaxi三层叙事），Lollapalooza式上涨而Q3净利-40%。不追，回踩380下方再看</p>
+
+<p>🔗 瓶颈评分速览（Serenity 基线，无环比）</p>
+
+<p class="li">- 🔴 TSM 77 | T1 | 先进制程+CoWoS独家，AI算力物理瓶颈本身</p>
+<p class="li">- 🔴 MSFT 73 | T1 | 算力最大买方+自研芯片</p>
+<p class="li">- 🔴 NVDA 69 | T1 | CUDA生态+架构耦合，HBM供给是软肋</p>
+<p class="li">- GOOGL 62 | T2 | TPU外售若落地则上修</p>
+<p class="li">- AMZN 53 | T2 | Trainium受益者而非瓶颈方</p>
+
+<p>今日触发重估：TSLA(+4.0%)/RIVN(+3.4%)/TSM(+3.0%)——TSM卡位不变，TSLA/RIVN非瓶颈标的。</p>
+
+<p>💰 今日操作清单</p>
+
+<p>1. <strong>9988.HK 小额首仓</strong>（明早港股执行，≤总弹药10%）</p>
+<p>2. <strong>GOOGL 设明早检查</strong>：&lt;290 启动加仓评估；&gt;340 继续等</p>
+<p>3. RIVN 可选 ≤3% 弹药小注</p>
+<p>4. 其余不动。<strong>本周纪律：FOMC+三巨头财报落地前，美股不加仓</strong></p>
+
+<p>⚠️ 大师提醒</p>
+
+<p class="li">- CZ：BTC 81K 年同比-28%，熊段。FOMC前一切风险资产在等同一信号——留弹药，4。</p>
+<p class="li">- Munger：财报周最大风险不是错过，是在capex赌局里当冤大头。</p>
+<p class="li">- Andreessen：五巨头capex是在build算力层，但Meta发债建AI说明军备竞赛已被定价。</p>
+
+<p>⚠️ 免责声明：研究框架推演，非投资建议；大师视角系基于公开言论的推断，非本人观点。数据源：腾讯/新浪（东财接口今日异常已切换），美股为10-27收盘+10-28盘前快照，港股为10-28收盘。Rivian财报日期两源分歧（10-29或11-3）。</p>
+
+<p>（本次触发 Skills：九大师 perspective + serenity-skill + cz-perspective + humanizer-zh 润色；本地工具：terminal+python 行情抓取。备注：20:09 首跑报告生成后 Telegram 投递超时，本条为自动重试通道补发，摘要已同步飞书备份。）</p>
+</div>
+<nav class="pn" aria-label="报告导航"><a class="pn-a" href="2026-10-28-post_market.html"><span class="pn-lab">← 较新</span>10月28日 盘后</a> <a class="pn-b" href="2026-10-27-post_market.html"><span class="pn-lab">较早 →</span>10月27日 盘后</a></nav>
+<footer class="foot-note">非投资建议 · 金额已脱敏 · Hermes Agent 自动部署 · kami design · <a href="../credits.html" style="color:var(--brand-ink-light)">图像素材授权</a></footer>
+</div>
+<a class="totop" href="#" aria-label="回到顶部">↑</a>
+<script>
+(function(){var t=document.querySelector('.totop');
+window.addEventListener('scroll',function(){if(window.scrollY>600){t.classList.add('on')}else{t.classList.remove('on')}},{passive:true});
+// 宽表提示：运行时按真实溢出量决定（构建期预估不准）
+function mark(){[].slice.call(document.querySelectorAll('.tbl-wrap')).forEach(function(w){
+  var over=(w.scrollWidth-w.clientWidth)>2, nx=w.nextElementSibling, has=nx&&nx.className==='tbl-hint';
+  if(over&&!has){var p=document.createElement('p');p.className='tbl-hint';p.textContent='← 左右滑动查看完整表格 →';w.parentNode.insertBefore(p,w.nextSibling);}
+  else if(!over&&has){nx.remove();}});}
+mark();window.addEventListener('resize',mark,{passive:true});window.addEventListener('orientationchange',mark,{passive:true});
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(mark);}})();
+</script>
+</body>
+</html>
